@@ -9,6 +9,7 @@ import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { RegistrationSection } from '@/components/RegistrationSection';
 import { ContactSection } from '@/components/ContactSection';
 import { AboutSection } from '@/components/AboutSection';
+import { LoginSection } from '@/components/LoginSection';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -49,6 +50,8 @@ const Index = () => {
         return <ServicesSection />;
       case 'testimonials':
         return <TestimonialsSection />;
+      case 'login':
+        return <LoginSection />;
       case 'registration':
         return <RegistrationSection />;
       case 'contact':

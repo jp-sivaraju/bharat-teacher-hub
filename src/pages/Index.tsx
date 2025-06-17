@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { HeroSection } from '@/components/HeroSection';
 import { TeacherFilters } from '@/components/TeacherFilters';
@@ -19,33 +19,45 @@ const Index = () => {
     board: ''
   });
 
+  useEffect(() => {
+    const handleNavigateToRegistration = () => {
+      setActiveSection('registration');
+    };
+
+    window.addEventListener('navigateToRegistration', handleNavigateToRegistration);
+    
+    return () => {
+      window.removeEventListener('navigateToRegistration', handleNavigateToRegistration);
+    };
+  }, []);
+
   const renderSection = () => {
     switch (activeSection) {
       case 'home':
         return (
-          <>
+          <div className="animate-fade-in">
             <HeroSection />
             <TeacherFilters filters={filters} setFilters={setFilters} />
             <TeacherCards filters={filters} />
-          </>
+          </div>
         );
       case 'about':
-        return <AboutSection />;
+        return <div className="animate-slide-in-right"><AboutSection /></div>;
       case 'services':
-        return <ServicesSection />;
+        return <div className="animate-slide-in-left"><ServicesSection /></div>;
       case 'testimonials':
-        return <TestimonialsSection />;
+        return <div className="animate-scale-in"><TestimonialsSection /></div>;
       case 'registration':
-        return <RegistrationSection />;
+        return <div className="animate-fade-in"><RegistrationSection /></div>;
       case 'contact':
-        return <ContactSection />;
+        return <div className="animate-slide-in-up"><ContactSection /></div>;
       default:
         return (
-          <>
+          <div className="animate-fade-in">
             <HeroSection />
             <TeacherFilters filters={filters} setFilters={setFilters} />
             <TeacherCards filters={filters} />
-          </>
+          </div>
         );
     }
   };

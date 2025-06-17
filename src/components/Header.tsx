@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X, Home, BookOpen, UserPlus, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -22,6 +21,10 @@ export const Header: React.FC = () => {
   const handleAuthClick = (type: AuthType) => {
     setAuthType(type);
     setShowAuthModal(true);
+  };
+
+  const handleAuthTypeChange = (type: AuthType) => {
+    setAuthType(type);
   };
 
   const menuItems = [
@@ -155,6 +158,7 @@ export const Header: React.FC = () => {
         isOpen={showAuthModal}
         onClose={() => setShowAuthModal(false)}
         authType={authType}
+        onAuthTypeChange={handleAuthTypeChange}
       />
     </>
   );

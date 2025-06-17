@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { School, Building, Home, User, BookOpen, ArrowLeft } from 'lucide-react';
+import { School, Building, Home, User, BookOpen, Users } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export const LoginSection = () => {
@@ -104,9 +104,15 @@ export const LoginSection = () => {
 
       <div className="max-w-6xl mx-auto">
         <Tabs defaultValue="teachers" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8 bg-orange-50">
+          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8 bg-orange-50">
             <TabsTrigger value="teachers" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
               Teachers
+            </TabsTrigger>
+            <TabsTrigger value="students" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
+              Students
+            </TabsTrigger>
+            <TabsTrigger value="parents" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
+              Parents
             </TabsTrigger>
             <TabsTrigger value="schools" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
               Schools
@@ -125,6 +131,24 @@ export const LoginSection = () => {
               icon={User}
               title="Teacher Login"
               description="Access your teaching profile and opportunities"
+            />
+          </TabsContent>
+
+          <TabsContent value="students">
+            <LoginForm
+              userType="student"
+              icon={BookOpen}
+              title="Student Login"
+              description="Access your learning dashboard and find teachers"
+            />
+          </TabsContent>
+
+          <TabsContent value="parents">
+            <LoginForm
+              userType="parent"
+              icon={Users}
+              title="Parent Login"
+              description="Manage your child's education and find tutors"
             />
           </TabsContent>
 

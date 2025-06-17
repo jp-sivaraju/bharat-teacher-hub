@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 import { LoginSection } from './LoginSection';
 import { RegistrationSection } from './RegistrationSection';
 import { TeacherRegistration } from './auth/TeacherRegistration';
@@ -16,9 +18,10 @@ interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
   authType: AuthType;
+  onAuthTypeChange?: (type: AuthType) => void;
 }
 
-export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType }) => {
+export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType, onAuthTypeChange }) => {
   const getModalTitle = () => {
     switch (authType) {
       case 'login':
@@ -42,12 +45,16 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType 
     }
   };
 
+  const handleBackToMenu = () => {
+    onAuthTypeChange?.('register');
+  };
+
   const renderContent = () => {
     switch (authType) {
       case 'login':
         return <LoginSection />;
       case 'register':
-        return <RegistrationSection />;
+        return <RegistrationSection onSelectType={(type) => onAuthTypeChange?.(type as AuthType)} />;
       case 'teacher-register':
         return <TeacherRegistration />;
       case 'student-register':
@@ -65,10 +72,23 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType 
     }
   };
 
+  const showBackButton = authType !== 'login' && authType !== 'register';
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
+        <DialogHeader className="relative">
+          {showBackButton && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleBackToMenu}
+              className="absolute left-0 top-0 flex items-center gap-2 text-orange-600 hover:text-orange-700"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Menu
+            </Button>
+          )}
           <DialogTitle className="text-2xl bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
             {getModalTitle()}
           </DialogTitle>

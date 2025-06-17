@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Sidebar } from '@/components/Sidebar';
+import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { TeacherFilters } from '@/components/TeacherFilters';
 import { TeacherCards } from '@/components/TeacherCards';
@@ -70,9 +70,9 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex w-full bg-gradient-to-br from-orange-50 via-white to-blue-50">
-      <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <main className="flex-1 p-4 md:p-6 lg:p-8">
+    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-white to-blue-50">
+      <Header activeSection={activeSection} setActiveSection={setActiveSection} />
+      <main className="p-4 md:p-6 lg:p-8">
         {renderSection()}
       </main>
     </div>

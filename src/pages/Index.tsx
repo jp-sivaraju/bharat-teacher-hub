@@ -35,28 +35,32 @@ const Index = () => {
     switch (activeSection) {
       case 'home':
         return (
-          <div className="animate-fade-in">
+          <div>
             <HeroSection />
             <TeacherFilters filters={filters} setFilters={setFilters} />
             <TeacherCards filters={filters} />
+            <ServicesSection />
+            <TestimonialsSection />
           </div>
         );
       case 'about':
-        return <div className="animate-slide-in-right"><AboutSection /></div>;
+        return <AboutSection />;
       case 'services':
-        return <div className="animate-slide-in-left"><ServicesSection /></div>;
+        return <ServicesSection />;
       case 'testimonials':
-        return <div className="animate-scale-in"><TestimonialsSection /></div>;
+        return <TestimonialsSection />;
       case 'registration':
-        return <div className="animate-fade-in"><RegistrationSection /></div>;
+        return <RegistrationSection />;
       case 'contact':
-        return <div className="animate-slide-in-up"><ContactSection /></div>;
+        return <ContactSection />;
       default:
         return (
-          <div className="animate-fade-in">
+          <div>
             <HeroSection />
             <TeacherFilters filters={filters} setFilters={setFilters} />
             <TeacherCards filters={filters} />
+            <ServicesSection />
+            <TestimonialsSection />
           </div>
         );
     }
@@ -65,7 +69,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex w-full bg-gradient-to-br from-orange-50 via-white to-blue-50">
       <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <main className="flex-1 p-4 md:p-6 lg:p-8 transition-all duration-300">
+      <main className="flex-1 p-4 md:p-6 lg:p-8">
         {renderSection()}
       </main>
     </div>

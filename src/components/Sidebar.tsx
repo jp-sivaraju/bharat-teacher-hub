@@ -16,7 +16,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSectio
     { id: 'about', label: 'About Us', icon: BookOpen },
     { id: 'services', label: 'Services', icon: Briefcase },
     { id: 'testimonials', label: 'Testimonials', icon: MessageCircle },
-    { id: 'registration', label: 'Teacher Registration', icon: UserPlus },
+    { id: 'registration', label: 'Register', icon: UserPlus },
     { id: 'contact', label: 'Contact Us', icon: Phone },
   ];
 
@@ -26,7 +26,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSectio
       <Button
         variant="ghost"
         size="icon"
-        className="md:hidden fixed top-4 left-4 z-50 bg-white shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+        className="md:hidden fixed top-4 left-4 z-50 bg-white shadow-lg hover:shadow-xl transition-all duration-300"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -38,12 +38,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSectio
         w-64 bg-white shadow-2xl
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-        flex flex-col animate-slide-in-left
+        flex flex-col
       `}>
         {/* Logo/Brand */}
-        <div className="p-6 border-b border-orange-100 animate-fade-in">
+        <div className="p-6 border-b border-orange-100">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-blue-600 rounded-xl flex items-center justify-center animate-pulse">
+            <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-blue-600 rounded-xl flex items-center justify-center">
               <BookOpen className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -58,10 +58,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSectio
         {/* Navigation */}
         <nav className="flex-1 py-6">
           <ul className="space-y-2 px-4">
-            {menuItems.map((item, index) => {
+            {menuItems.map((item) => {
               const Icon = item.icon;
               return (
-                <li key={item.id} className="animate-slide-in-right" style={{animationDelay: `${index * 0.1}s`}}>
+                <li key={item.id}>
                   <button
                     onClick={() => {
                       setActiveSection(item.id);
@@ -71,7 +71,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSectio
                       w-full flex items-center space-x-3 px-4 py-3 rounded-xl
                       transition-all duration-300 transform hover:scale-105
                       ${activeSection === item.id
-                        ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white shadow-lg animate-pulse'
+                        ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white shadow-lg'
                         : 'text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-blue-50 hover:text-orange-600 hover:shadow-md'
                       }
                     `}
@@ -86,7 +86,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSectio
         </nav>
 
         {/* Bottom Info */}
-        <div className="p-4 border-t border-orange-100 animate-fade-in" style={{animationDelay: '0.8s'}}>
+        <div className="p-4 border-t border-orange-100">
           <div className="bg-gradient-to-r from-orange-50 to-blue-50 p-4 rounded-xl hover:from-orange-100 hover:to-blue-100 transition-all duration-300">
             <p className="text-sm text-gray-600 text-center font-semibold">
               India's #1 Teaching Platform
@@ -101,7 +101,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSectio
       {/* Overlay for mobile */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden animate-fade-in"
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}

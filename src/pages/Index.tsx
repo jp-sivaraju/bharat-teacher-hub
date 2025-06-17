@@ -1,12 +1,61 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import { Sidebar } from '@/components/Sidebar';
+import { HeroSection } from '@/components/HeroSection';
+import { TeacherFilters } from '@/components/TeacherFilters';
+import { TeacherCards } from '@/components/TeacherCards';
+import { ServicesSection } from '@/components/ServicesSection';
+import { TestimonialsSection } from '@/components/TestimonialsSection';
+import { RegistrationSection } from '@/components/RegistrationSection';
+import { ContactSection } from '@/components/ContactSection';
+import { AboutSection } from '@/components/AboutSection';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('home');
+  const [filters, setFilters] = useState({
+    subject: '',
+    language: '',
+    experience: '',
+    board: ''
+  });
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'home':
+        return (
+          <>
+            <HeroSection />
+            <TeacherFilters filters={filters} setFilters={setFilters} />
+            <TeacherCards filters={filters} />
+          </>
+        );
+      case 'about':
+        return <AboutSection />;
+      case 'services':
+        return <ServicesSection />;
+      case 'testimonials':
+        return <TestimonialsSection />;
+      case 'registration':
+        return <RegistrationSection />;
+      case 'contact':
+        return <ContactSection />;
+      default:
+        return (
+          <>
+            <HeroSection />
+            <TeacherFilters filters={filters} setFilters={setFilters} />
+            <TeacherCards filters={filters} />
+          </>
+        );
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex w-full bg-gradient-to-br from-orange-50 via-white to-blue-50">
+      <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
+      <main className="flex-1 p-4 md:p-6 lg:p-8 transition-all duration-300">
+        {renderSection()}
+      </main>
     </div>
   );
 };

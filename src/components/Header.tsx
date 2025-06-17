@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAuth, setShowAuth] = useState<'login' | 'register' | null>(null);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -12,6 +13,12 @@ export const Header: React.FC = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+  };
+
+  const handleAuthClick = (type: 'login' | 'register') => {
+    setShowAuth(type);
+    // Dispatch custom event to notify parent components
+    window.dispatchEvent(new CustomEvent('showAuth', { detail: type }));
   };
 
   const menuItems = [
@@ -61,6 +68,7 @@ export const Header: React.FC = () => {
               size="sm"
               variant="outline"
               className="border-orange-200 hover:border-orange-400 hover:bg-orange-50"
+              onClick={() => handleAuthClick('register')}
             >
               <UserPlus className="w-4 h-4 mr-2" />
               Register
@@ -69,6 +77,7 @@ export const Header: React.FC = () => {
               size="sm"
               variant="outline"
               className="border-blue-200 hover:border-blue-400 hover:bg-blue-50"
+              onClick={() => handleAuthClick('login')}
             >
               <LogIn className="w-4 h-4 mr-2" />
               Login
@@ -111,7 +120,10 @@ export const Header: React.FC = () => {
                 size="sm"
                 variant="outline"
                 className="flex-1 border-orange-200 hover:border-orange-400 hover:bg-orange-50"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  handleAuthClick('register');
+                  setIsMenuOpen(false);
+                }}
               >
                 <UserPlus className="w-4 h-4 mr-2" />
                 Register
@@ -120,7 +132,10 @@ export const Header: React.FC = () => {
                 size="sm"
                 variant="outline"
                 className="flex-1 border-blue-200 hover:border-blue-400 hover:bg-blue-50"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  handleAuthClick('login');
+                  setIsMenuOpen(false);
+                }}
               >
                 <LogIn className="w-4 h-4 mr-2" />
                 Login

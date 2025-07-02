@@ -17,25 +17,25 @@ export const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-balance text-glow">
                 India's Premier
-                <span className="block text-amber-200">Teaching Platform</span>
+                <span className="block text-amber-200 font-display">Teaching Platform</span>
               </h1>
-              <p className="text-xl text-orange-100">
+              <p className="text-xl md:text-2xl text-orange-100 font-inter font-light leading-relaxed text-pretty">
                 Connecting Excellence in Education
               </p>
             </div>
             
             <div className="space-y-4">
-              <p className="text-lg text-orange-50 leading-relaxed">
+              <p className="text-lg md:text-xl text-orange-50 leading-relaxed font-inter text-pretty">
                 Join over 50,000+ certified teachers and connect with top educational institutions across India. 
                 From CBSE to IIT coaching centers, find your perfect teaching opportunity or hire exceptional educators.
               </p>
               <div className="flex flex-wrap gap-2 text-sm">
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30">CBSE Certified</span>
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30">IIT Coaching</span>
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30">Engineering Subjects</span>
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30">State Boards</span>
+                <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 font-medium font-inter">CBSE Certified</span>
+                <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 font-medium font-inter">IIT Coaching</span>
+                <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 font-medium font-inter">Engineering Subjects</span>
+                <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 font-medium font-inter">State Boards</span>
               </div>
             </div>
           </div>
@@ -43,40 +43,40 @@ export const HeroSection = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
               <Users className="w-8 h-8 text-amber-200 mb-3" />
-              <h3 className="text-2xl font-bold">50,000+</h3>
-              <p className="text-orange-100">Certified Teachers</p>
+              <h3 className="text-2xl md:text-3xl font-bold font-display">50,000+</h3>
+              <p className="text-orange-100 font-inter font-medium">Certified Teachers</p>
             </div>
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
               <Award className="w-8 h-8 text-amber-200 mb-3" />
-              <h3 className="text-2xl font-bold">2,500+</h3>
-              <p className="text-orange-100">Partner Institutions</p>
+              <h3 className="text-2xl md:text-3xl font-bold font-display">2,500+</h3>
+              <p className="text-orange-100 font-inter font-medium">Partner Institutions</p>
             </div>
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
               <TrendingUp className="w-8 h-8 text-amber-200 mb-3" />
-              <h3 className="text-2xl font-bold">98%</h3>
-              <p className="text-orange-100">Success Rate</p>
+              <h3 className="text-2xl md:text-3xl font-bold font-display">98%</h3>
+              <p className="text-orange-100 font-inter font-medium">Success Rate</p>
             </div>
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
               <GraduationCap className="w-8 h-8 text-amber-200 mb-3" />
-              <h3 className="text-2xl font-bold">1000+</h3>
-              <p className="text-orange-100">Daily Opportunities</p>
+              <h3 className="text-2xl md:text-3xl font-bold font-display">1000+</h3>
+              <p className="text-orange-100 font-inter font-medium">Daily Opportunities</p>
             </div>
           </div>
         </div>
 
         {/* Features Section */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          <div className="text-center p-4 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20">
-            <h4 className="font-semibold mb-2">IIT & NEET and Civils Focused</h4>
-            <p className="text-sm text-orange-100">Specialized opportunities in competitive exam preparation</p>
+          <div className="text-center p-6 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20 group">
+            <h4 className="font-display font-semibold text-lg mb-3 group-hover:text-glow transition-all">IIT & NEET and Civils Focused</h4>
+            <p className="text-sm md:text-base text-orange-100 font-inter leading-relaxed text-pretty">Specialized opportunities in competitive exam preparation</p>
           </div>
-          <div className="text-center p-4 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20">
-            <h4 className="font-semibold mb-2">Verified Credentials</h4>
-            <p className="text-sm text-orange-100">All teachers undergo thorough verification</p>
+          <div className="text-center p-6 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20 group">
+            <h4 className="font-display font-semibold text-lg mb-3 group-hover:text-glow transition-all">Verified Credentials</h4>
+            <p className="text-sm md:text-base text-orange-100 font-inter leading-relaxed text-pretty">All teachers undergo thorough verification</p>
           </div>
-          <div className="text-center p-4 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20">
-            <h4 className="font-semibold mb-2">Instant Matching</h4>
-            <p className="text-sm text-orange-100">AI-powered job matching system</p>
+          <div className="text-center p-6 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20 group">
+            <h4 className="font-display font-semibold text-lg mb-3 group-hover:text-glow transition-all">Instant Matching</h4>
+            <p className="text-sm md:text-base text-orange-100 font-inter leading-relaxed text-pretty">AI-powered job matching system</p>
           </div>
         </div>
       </div>

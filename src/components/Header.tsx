@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="w-full bg-white shadow-orange-lg border-b-2 border-orange-200 sticky top-0 z-50">
+      <header className="w-full bg-white shadow-orange-lg border-b-2 border-orange-200 sticky top-0 z-50 backdrop-blur-md bg-white/95">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo/Brand */}
@@ -37,10 +37,10 @@ export const Header: React.FC = () => {
                 <BookOpen className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-orange-gradient">
+                <h1 className="text-2xl font-display font-bold gradient-text text-balance">
                   TeacherConnect
                 </h1>
-                <p className="text-sm text-orange-700 font-medium hidden sm:block">Education Excellence Platform</p>
+                <p className="text-sm text-orange-700 font-medium hidden sm:block font-inter">Education Excellence Platform</p>
               </div>
             </div>
 
@@ -52,10 +52,10 @@ export const Header: React.FC = () => {
                   <button
                     key={item.id}
                     onClick={item.action}
-                    className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 font-medium text-sm text-orange-800 hover:bg-orange-100 hover:text-orange-900"
+                    className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 font-medium text-sm font-inter text-orange-800 hover:bg-orange-100 hover:text-orange-900 hover:scale-105"
                   >
                     <Icon className="w-4 h-4" />
-                    <span>{item.label}</span>
+                    <span className="font-medium">{item.label}</span>
                   </button>
                 );
               })}
@@ -71,31 +71,31 @@ export const Header: React.FC = () => {
                   }}
                   size="sm"
                   variant="outline"
-                  className="border-orange-300 hover:border-orange-500 hover:bg-orange-50 text-orange-700 hover:text-orange-800"
+                  className="border-orange-300 hover:border-orange-500 hover:bg-orange-50 text-orange-700 hover:text-orange-800 font-medium font-inter"
                 >
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
                 {showRegisterDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-orange-200 rounded-lg shadow-orange-lg z-50">
+                  <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-orange-200 rounded-lg shadow-orange-lg z-50 backdrop-blur-md">
                     <div className="py-2">
                       <Link 
                         to="/teacher-register" 
-                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        className="block px-4 py-3 text-sm font-medium font-inter text-orange-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         Teacher Registration
                       </Link>
                       <Link 
                         to="/school-register" 
-                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        className="block px-4 py-3 text-sm font-medium font-inter text-orange-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         School Registration
                       </Link>
                       <Link 
                         to="/college-register" 
-                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        className="block px-4 py-3 text-sm font-medium font-inter text-orange-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         College Registration
@@ -110,30 +110,30 @@ export const Header: React.FC = () => {
                     setShowLoginDropdown(!showLoginDropdown);
                     setShowRegisterDropdown(false);
                   }}
-                  className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white shadow-orange"
+                  className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white shadow-orange font-semibold font-inter hover:scale-105 transition-all duration-300"
                 >
                   Sign In
                 </Button>
                 {showLoginDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-orange-200 rounded-lg shadow-orange-lg z-50">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-orange-200 rounded-lg shadow-orange-lg z-50 backdrop-blur-md">
                     <div className="py-2">
                       <Link 
                         to="/teacher-login" 
-                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        className="block px-4 py-3 text-sm font-medium font-inter text-orange-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         Teacher Login
                       </Link>
                       <Link 
                         to="/school-login" 
-                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        className="block px-4 py-3 text-sm font-medium font-inter text-orange-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         School Login
                       </Link>
                       <Link 
                         to="/college-login" 
-                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        className="block px-4 py-3 text-sm font-medium font-inter text-orange-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         College Login
@@ -157,7 +157,7 @@ export const Header: React.FC = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-orange-200">
+            <div className="lg:hidden py-4 border-t border-orange-200 backdrop-blur-md bg-white/95">
               <div className="space-y-2">
                 {menuItems.map((item) => {
                   const Icon = item.icon;
@@ -165,7 +165,7 @@ export const Header: React.FC = () => {
                     <button
                       key={item.id}
                       onClick={item.action}
-                      className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 font-medium text-orange-800 hover:bg-orange-100 hover:text-orange-900"
+                      className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 font-medium font-inter text-orange-800 hover:bg-orange-100 hover:text-orange-900"
                     >
                       <Icon className="w-5 h-5" />
                       <span>{item.label}</span>
@@ -176,11 +176,11 @@ export const Header: React.FC = () => {
               
               {/* Mobile Auth Buttons */}
               <div className="mt-4 pt-4 border-t border-orange-200 flex space-x-3">
-                <Button size="sm" variant="outline" className="flex-1 border-orange-300 text-orange-700 hover:bg-orange-50">
+                <Button size="sm" variant="outline" className="flex-1 border-orange-300 text-orange-700 hover:bg-orange-50 font-medium font-inter">
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
-                <Button size="sm" className="flex-1 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white">
+                <Button size="sm" className="flex-1 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-semibold font-inter">
                   <LogIn className="w-4 h-4 mr-2" />
                   Login
                 </Button>

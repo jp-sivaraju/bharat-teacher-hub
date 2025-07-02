@@ -66,10 +66,10 @@ export const HeroSection = () => {
 
         {/* Features Section */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          <div className="text-center p-4 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-            <h4 className="font-semibold mb-2">IIT & Engineering Focus</h4>
-            <p className="text-sm text-orange-100">Specialized opportunities in technical education</p>
-          </div>
+            <div className="text-center p-4 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
+              <h4 className="font-semibold mb-2">IIT & NEET and Civils Focused</h4>
+              <p className="text-sm text-orange-100">Specialized opportunities in competitive exam preparation</p>
+            </div>
           <div className="text-center p-4 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
             <h4 className="font-semibold mb-2">Verified Credentials</h4>
             <p className="text-sm text-orange-100">All teachers undergo thorough verification</p>

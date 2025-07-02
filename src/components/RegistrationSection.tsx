@@ -13,20 +13,8 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({ onSele
     {
       id: 'teacher-register',
       title: 'Teachers',
-      description: 'Join our platform as a certified teacher and connect with institutions',
+      description: 'Join our platform as a certified teacher and find job opportunities',
       icon: User,
-    },
-    {
-      id: 'student-register',
-      title: 'Students',
-      description: 'Register as a student to find the best teachers and tutoring services',
-      icon: BookOpen,
-    },
-    {
-      id: 'parent-register',
-      title: 'Parents',
-      description: 'Find qualified teachers and tutoring services for your children',
-      icon: Users,
     },
     {
       id: 'school-register',
@@ -35,9 +23,9 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({ onSele
       icon: School,
     },
     {
-      id: 'institution-register',
-      title: 'Institutions',
-      description: 'Register your coaching center, college, or educational institution',
+      id: 'college-register',
+      title: 'Colleges',
+      description: 'Register your college to find qualified faculty members',
       icon: Building,
     },
     {
@@ -62,7 +50,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({ onSele
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {registrationTypes.map((type) => {
           const Icon = type.icon;
           return (

@@ -9,16 +9,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Building, UserPlus } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-export const InstitutionRegistration = () => {
+export const CollegeRegistration = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    institutionName: '',
+    collegeName: '',
     contactPersonName: '',
     email: '',
     phone: '',
     address: '',
     city: '',
-    institutionType: '',
+    collegeType: '',
+    registrationId: '',
+    certificate: '',
+    naacGrade: '',
+    isAutonomous: false,
     coursesOffered: '',
     facultyCount: '',
     establishedYear: '',
@@ -27,10 +31,10 @@ export const InstitutionRegistration = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Institution registration submitted:', formData);
+    console.log('College registration submitted:', formData);
     toast({
       title: "Registration Successful!",
-      description: "Your institution registration has been submitted. We'll contact you soon.",
+      description: "Your college registration has been submitted. We'll contact you soon.",
     });
   };
 
@@ -44,9 +48,9 @@ export const InstitutionRegistration = () => {
         <div className="flex items-center space-x-3">
           <Building className="w-8 h-8" />
           <div>
-            <CardTitle className="text-2xl">Institution Registration</CardTitle>
+            <CardTitle className="text-2xl">College Registration</CardTitle>
             <CardDescription className="text-orange-100">
-              Register your coaching center, college, or educational institution
+              Register your college or educational institution
             </CardDescription>
           </div>
         </div>
@@ -55,15 +59,15 @@ export const InstitutionRegistration = () => {
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">Institution Information</h3>
+            <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">College Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="institutionName">Institution Name *</Label>
+                <Label htmlFor="collegeName">College Name *</Label>
                 <Input 
-                  id="institutionName"
-                  value={formData.institutionName}
-                  onChange={(e) => handleInputChange('institutionName', e.target.value)}
-                  placeholder="Enter institution name"
+                  id="collegeName"
+                  value={formData.collegeName}
+                  onChange={(e) => handleInputChange('collegeName', e.target.value)}
+                  placeholder="Enter college name"
                   className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
                   required
                 />
@@ -119,17 +123,20 @@ export const InstitutionRegistration = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="institutionType">Institution Type *</Label>
-                <Select value={formData.institutionType} onValueChange={(value) => handleInputChange('institutionType', value)}>
+                <Label htmlFor="collegeType">College Type *</Label>
+                <Select value={formData.collegeType} onValueChange={(value) => handleInputChange('collegeType', value)}>
                   <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="coaching-center">Coaching Center</SelectItem>
-                    <SelectItem value="college">College</SelectItem>
-                    <SelectItem value="university">University</SelectItem>
-                    <SelectItem value="training-institute">Training Institute</SelectItem>
-                    <SelectItem value="skill-development">Skill Development Center</SelectItem>
+                    <SelectItem value="engineering">Engineering College</SelectItem>
+                    <SelectItem value="arts-science">Arts & Science College</SelectItem>
+                    <SelectItem value="medical">Medical College</SelectItem>
+                    <SelectItem value="law">Law College</SelectItem>
+                    <SelectItem value="management">Management College</SelectItem>
+                    <SelectItem value="pharmacy">Pharmacy College</SelectItem>
+                    <SelectItem value="naac">NAAC (optional)</SelectItem>
+                    <SelectItem value="autonomous">Autonomous</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -142,6 +149,30 @@ export const InstitutionRegistration = () => {
                   onChange={(e) => handleInputChange('facultyCount', e.target.value)}
                   placeholder="Number of faculty members"
                   className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="registrationId">Registration ID *</Label>
+                <Input 
+                  id="registrationId"
+                  value={formData.registrationId}
+                  onChange={(e) => handleInputChange('registrationId', e.target.value)}
+                  placeholder="College registration ID"
+                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="certificate">Certificate *</Label>
+                <Input 
+                  id="certificate"
+                  value={formData.certificate}
+                  onChange={(e) => handleInputChange('certificate', e.target.value)}
+                  placeholder="Certificate details"
+                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  required
                 />
               </div>
 
@@ -197,7 +228,7 @@ export const InstitutionRegistration = () => {
             className="w-full bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-lg py-6 transition-all duration-300"
           >
             <UserPlus className="w-5 h-5 mr-2" />
-            Register Institution
+            Register College
           </Button>
         </form>
       </CardContent>

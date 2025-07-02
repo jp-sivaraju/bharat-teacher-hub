@@ -104,21 +104,15 @@ export const LoginSection = () => {
 
       <div className="max-w-6xl mx-auto">
         <Tabs defaultValue="teachers" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8 bg-orange-50">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 mb-8 bg-orange-50">
             <TabsTrigger value="teachers" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
               Teachers
-            </TabsTrigger>
-            <TabsTrigger value="students" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
-              Students
-            </TabsTrigger>
-            <TabsTrigger value="parents" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
-              Parents
             </TabsTrigger>
             <TabsTrigger value="schools" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
               Schools
             </TabsTrigger>
-            <TabsTrigger value="institutions" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
-              Institutions
+            <TabsTrigger value="colleges" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
+              Colleges
             </TabsTrigger>
             <TabsTrigger value="home-tuitions" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-blue-600 data-[state=active]:text-white">
               Home Tuitions
@@ -130,25 +124,7 @@ export const LoginSection = () => {
               userType="teacher"
               icon={User}
               title="Teacher Login"
-              description="Access your teaching profile and opportunities"
-            />
-          </TabsContent>
-
-          <TabsContent value="students">
-            <LoginForm
-              userType="student"
-              icon={BookOpen}
-              title="Student Login"
-              description="Access your learning dashboard and find teachers"
-            />
-          </TabsContent>
-
-          <TabsContent value="parents">
-            <LoginForm
-              userType="parent"
-              icon={Users}
-              title="Parent Login"
-              description="Manage your child's education and find tutors"
+              description="Access your teaching profile and job opportunities"
             />
           </TabsContent>
 
@@ -161,12 +137,12 @@ export const LoginSection = () => {
             />
           </TabsContent>
 
-          <TabsContent value="institutions">
+          <TabsContent value="colleges">
             <LoginForm
-              userType="institution"
+              userType="college"
               icon={Building}
-              title="Institution Login"
-              description="Access your coaching center or college dashboard"
+              title="College Login"
+              description="Access your college dashboard and manage faculty"
             />
           </TabsContent>
 

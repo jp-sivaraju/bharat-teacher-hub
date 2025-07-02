@@ -6,13 +6,11 @@ import { ArrowLeft } from 'lucide-react';
 import { LoginSection } from './LoginSection';
 import { RegistrationSection } from './RegistrationSection';
 import { TeacherRegistration } from './auth/TeacherRegistration';
-import { StudentRegistration } from './auth/StudentRegistration';
-import { ParentRegistration } from './auth/ParentRegistration';
 import { SchoolRegistration } from './auth/SchoolRegistration';
-import { InstitutionRegistration } from './auth/InstitutionRegistration';
+import { CollegeRegistration } from './auth/CollegeRegistration';
 import { HomeTuitionRegistration } from './auth/HomeTuitionRegistration';
 
-type AuthType = 'login' | 'register' | 'teacher-register' | 'student-register' | 'parent-register' | 'school-register' | 'institution-register' | 'home-tuition-register';
+type AuthType = 'login' | 'register' | 'teacher-register' | 'school-register' | 'college-register' | 'home-tuition-register';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -30,14 +28,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType,
         return 'Choose Registration Type';
       case 'teacher-register':
         return 'Teacher Registration';
-      case 'student-register':
-        return 'Student Registration';
-      case 'parent-register':
-        return 'Parent Registration';
       case 'school-register':
         return 'School Registration';
-      case 'institution-register':
-        return 'Institution Registration';
+      case 'college-register':
+        return 'College Registration';
       case 'home-tuition-register':
         return 'Home Tuition Registration';
       default:
@@ -57,14 +51,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType,
         return <RegistrationSection onSelectType={(type) => onAuthTypeChange?.(type as AuthType)} />;
       case 'teacher-register':
         return <TeacherRegistration />;
-      case 'student-register':
-        return <StudentRegistration />;
-      case 'parent-register':
-        return <ParentRegistration />;
       case 'school-register':
         return <SchoolRegistration />;
-      case 'institution-register':
-        return <InstitutionRegistration />;
+      case 'college-register':
+        return <CollegeRegistration />;
       case 'home-tuition-register':
         return <HomeTuitionRegistration />;
       default:

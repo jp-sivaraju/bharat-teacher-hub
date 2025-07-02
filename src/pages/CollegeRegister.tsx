@@ -1,9 +1,9 @@
 import React from 'react';
-import { InstitutionRegistration } from '@/components/auth/InstitutionRegistration';
+import { CollegeRegistration } from '@/components/auth/CollegeRegistration';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-export const InstitutionRegister = () => {
+export const CollegeRegister = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50">
       <div className="p-6">
@@ -15,7 +15,7 @@ export const InstitutionRegister = () => {
               </Button>
             </Link>
           </div>
-          <InstitutionRegistration />
+          <CollegeRegistration />
         </div>
       </div>
     </div>

@@ -17,9 +17,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const institutionData = {
-  name: 'Excellence Coaching Institute',
-  type: 'JEE/NEET Coaching Center',
+const collegeData = {
+  name: 'Excellence Engineering College',
+  type: 'Engineering & Technical Education',
   location: 'Delhi, India',
   contact: '+91 87654 32109',
   totalTeachers: 15,
@@ -38,7 +38,7 @@ const institutionData = {
   ]
 };
 
-export const InstitutionDashboard = () => {
+export const CollegeDashboard = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50">
       {/* Header */}
@@ -49,16 +49,16 @@ export const InstitutionDashboard = () => {
               <Building className="w-8 h-8" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">{institutionData.name}</h1>
-              <Badge variant="secondary" className="bg-white/20 mt-1">{institutionData.type}</Badge>
+              <h1 className="text-3xl font-bold">{collegeData.name}</h1>
+              <Badge variant="secondary" className="bg-white/20 mt-1">{collegeData.type}</Badge>
               <div className="flex items-center space-x-4 mt-2">
                 <div className="flex items-center space-x-1">
                   <MapPin className="w-4 h-4" />
-                  <span className="text-sm">{institutionData.location}</span>
+                  <span className="text-sm">{collegeData.location}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Phone className="w-4 h-4" />
-                  <span className="text-sm">{institutionData.contact}</span>
+                  <span className="text-sm">{collegeData.contact}</span>
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@ export const InstitutionDashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Total Teachers</p>
-                  <p className="text-2xl font-bold">{institutionData.totalTeachers}</p>
+                  <p className="text-2xl font-bold">{collegeData.totalTeachers}</p>
                 </div>
               </div>
             </CardContent>
@@ -102,7 +102,7 @@ export const InstitutionDashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Open Positions</p>
-                  <p className="text-2xl font-bold">{institutionData.openPositions}</p>
+                  <p className="text-2xl font-bold">{collegeData.openPositions}</p>
                 </div>
               </div>
             </CardContent>
@@ -116,7 +116,7 @@ export const InstitutionDashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Total Students</p>
-                  <p className="text-2xl font-bold">{institutionData.totalStudents}</p>
+                  <p className="text-2xl font-bold">{collegeData.totalStudents}</p>
                 </div>
               </div>
             </CardContent>
@@ -130,7 +130,7 @@ export const InstitutionDashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Monthly Revenue</p>
-                  <p className="text-2xl font-bold">₹{institutionData.monthlyRevenue.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">₹{collegeData.monthlyRevenue.toLocaleString()}</p>
                 </div>
               </div>
             </CardContent>
@@ -148,7 +148,7 @@ export const InstitutionDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
-                {institutionData.courses.map((course, index) => (
+                {collegeData.courses.map((course, index) => (
                   <Badge key={index} variant="outline" className="border-indigo-300">
                     {course}
                   </Badge>
@@ -166,7 +166,7 @@ export const InstitutionDashboard = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              {institutionData.openings.map((opening, index) => (
+              {collegeData.openings.map((opening, index) => (
                 <div key={index} className="p-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center justify-between mb-2">
                     <p className="font-medium">{opening.subject}</p>
@@ -191,7 +191,7 @@ export const InstitutionDashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {institutionData.recentApplications.map((application, index) => (
+            {collegeData.recentApplications.map((application, index) => (
               <div key={index} className="p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-center justify-between mb-1">
                   <p className="font-medium">{application.name}</p>

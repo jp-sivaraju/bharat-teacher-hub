@@ -3,7 +3,7 @@ import { Menu, X, Home, BookOpen, UserPlus, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-type AuthType = 'login' | 'register' | 'teacher-register' | 'student-register' | 'parent-register' | 'school-register' | 'institution-register' | 'home-tuition-register';
+type AuthType = 'login' | 'register' | 'teacher-register' | 'school-register' | 'college-register' | 'home-tuition-register';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,17 +76,11 @@ export const Header: React.FC = () => {
                       <Link to="/teacher-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
                         Teacher Registration
                       </Link>
-                      <Link to="/student-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
-                        Student Registration
-                      </Link>
-                      <Link to="/parent-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
-                        Parent Registration
-                      </Link>
                       <Link to="/school-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
                         School Registration
                       </Link>
-                      <Link to="/institution-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
-                        Institution Registration
+                      <Link to="/college-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        College Registration
                       </Link>
                       <Link to="/home-tuition-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
                         Home Tuition Registration
@@ -109,17 +103,11 @@ export const Header: React.FC = () => {
                       <Link to="/teacher-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
                         Teacher Login
                       </Link>
-                      <Link to="/student-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
-                        Student Login
-                      </Link>
-                      <Link to="/parent-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
-                        Parent Login
-                      </Link>
                       <Link to="/school-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
                         School Login
                       </Link>
-                      <Link to="/institution-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
-                        Institution Login
+                      <Link to="/college-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        College Login
                       </Link>
                     </div>
                   </div>

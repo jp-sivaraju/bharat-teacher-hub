@@ -6,20 +6,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { TeacherLogin } from "./pages/TeacherLogin";
-import { StudentLogin } from "./pages/StudentLogin";
-import { ParentLogin } from "./pages/ParentLogin";
 import { SchoolLogin } from "./pages/SchoolLogin";
-import { InstitutionLogin } from "./pages/InstitutionLogin";
+import { CollegeLogin } from "./pages/CollegeLogin";
 import { TeacherDashboard } from "./pages/TeacherDashboard";
-import { StudentDashboard } from "./pages/StudentDashboard";
-import { ParentDashboard } from "./pages/ParentDashboard";
 import { SchoolDashboard } from "./pages/SchoolDashboard";
-import { InstitutionDashboard } from "./pages/InstitutionDashboard";
+import { CollegeDashboard } from "./pages/CollegeDashboard";
 import { TeacherRegister } from "./pages/TeacherRegister";
-import { StudentRegister } from "./pages/StudentRegister";
-import { ParentRegister } from "./pages/ParentRegister";
 import { SchoolRegister } from "./pages/SchoolRegister";
-import { InstitutionRegister } from "./pages/InstitutionRegister";
+import { CollegeRegister } from "./pages/CollegeRegister";
 import { HomeTuitionRegister } from "./pages/HomeTuitionRegister";
 
 const queryClient = new QueryClient();
@@ -35,25 +29,19 @@ const App = () => (
           
           {/* Login Pages */}
           <Route path="/teacher-login" element={<TeacherLogin />} />
-          <Route path="/student-login" element={<StudentLogin />} />
-          <Route path="/parent-login" element={<ParentLogin />} />
           <Route path="/school-login" element={<SchoolLogin />} />
-          <Route path="/institution-login" element={<InstitutionLogin />} />
+          <Route path="/college-login" element={<CollegeLogin />} />
           
           {/* Registration Pages */}
           <Route path="/teacher-register" element={<TeacherRegister />} />
-          <Route path="/student-register" element={<StudentRegister />} />
-          <Route path="/parent-register" element={<ParentRegister />} />
           <Route path="/school-register" element={<SchoolRegister />} />
-          <Route path="/institution-register" element={<InstitutionRegister />} />
+          <Route path="/college-register" element={<CollegeRegister />} />
           <Route path="/home-tuition-register" element={<HomeTuitionRegister />} />
           
           {/* Dashboard Pages */}
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
-          <Route path="/student-dashboard" element={<StudentDashboard />} />
-          <Route path="/parent-dashboard" element={<ParentDashboard />} />
           <Route path="/school-dashboard" element={<SchoolDashboard />} />
-          <Route path="/institution-dashboard" element={<InstitutionDashboard />} />
+          <Route path="/college-dashboard" element={<CollegeDashboard />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

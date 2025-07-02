@@ -14,26 +14,43 @@ import {
   TrendingUp,
   MapPin,
   Phone,
-  Plus
+  Plus,
+  Mail,
+  Calendar,
+  Award,
+  Target,
+  Building,
+  Star
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const schoolData = {
   name: 'Sunrise International School',
+  type: 'CBSE Affiliated School',
   location: 'Mumbai, Maharashtra',
+  address: '123 Education Street, Andheri West, Mumbai - 400058',
   contact: '+91 98765 43210',
+  email: 'info@sunriseschool.edu.in',
+  website: 'www.sunriseschool.edu.in',
+  established: '1995',
+  affiliation: 'CBSE Board',
+  principalName: 'Dr. Meera Sharma',
   totalTeachers: 25,
   openPositions: 8,
   totalStudents: 450,
   monthlyBudget: 120000,
+  facilities: ['Smart Classrooms', 'Science Labs', 'Computer Lab', 'Library', 'Sports Complex', 'Auditorium'],
+  achievements: ['Best Academic Performance 2023', 'Excellence in Sports', 'Environment Friendly School Award'],
+  grades: 'KG to XII',
+  studentTeacherRatio: '18:1',
   openings: [
-    { subject: 'Mathematics', level: 'Secondary', urgency: 'High', applicants: 12 },
-    { subject: 'Physics', level: 'Senior Secondary', urgency: 'Medium', applicants: 8 },
-    { subject: 'English', level: 'Primary', urgency: 'Low', applicants: 15 }
+    { subject: 'Mathematics', level: 'Secondary', urgency: 'High', applicants: 12, salary: '₹35,000 - ₹45,000' },
+    { subject: 'Physics', level: 'Senior Secondary', urgency: 'Medium', applicants: 8, salary: '₹40,000 - ₹50,000' },
+    { subject: 'English', level: 'Primary', urgency: 'Low', applicants: 15, salary: '₹30,000 - ₹40,000' }
   ],
   recentApplications: [
-    { name: 'Dr. Sarah Johnson', subject: 'Mathematics', experience: '10+ years', status: 'pending' },
-    { name: 'Prof. Amit Kumar', subject: 'Physics', experience: '8 years', status: 'reviewed' }
+    { name: 'Dr. Sarah Johnson', subject: 'Mathematics', experience: '10+ years', status: 'pending', appliedDate: '2024-01-15' },
+    { name: 'Prof. Amit Kumar', subject: 'Physics', experience: '8 years', status: 'reviewed', appliedDate: '2024-01-12' }
   ]
 };
 
@@ -49,14 +66,15 @@ export const SchoolDashboard = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold">{schoolData.name}</h1>
-              <div className="flex items-center space-x-4 mt-1">
+              <Badge variant="secondary" className="bg-white/20 mt-1">{schoolData.type}</Badge>
+              <div className="flex items-center space-x-4 mt-2">
                 <div className="flex items-center space-x-1">
                   <MapPin className="w-4 h-4" />
                   <span className="text-sm">{schoolData.location}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm">{schoolData.contact}</span>
+                  <Calendar className="w-4 h-4" />
+                  <span className="text-sm">Est. {schoolData.established}</span>
                 </div>
               </div>
             </div>
@@ -130,16 +148,98 @@ export const SchoolDashboard = () => {
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-amber-200 rounded-lg flex items-center justify-center">
-                  <DollarSign className="w-6 h-6 text-amber-700" />
+                  <Target className="w-6 h-6 text-amber-700" />
                 </div>
                 <div>
-                  <p className="text-sm text-orange-600">Monthly Budget</p>
-                  <p className="text-2xl font-bold text-orange-800">₹{schoolData.monthlyBudget.toLocaleString()}</p>
+                  <p className="text-sm text-orange-600">Student:Teacher</p>
+                  <p className="text-2xl font-bold text-orange-800">{schoolData.studentTeacherRatio}</p>
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
+
+        {/* School Information */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="border-2 border-orange-200 shadow-orange">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2 text-orange-gradient">
+                <Building className="w-5 h-5 text-orange-500" />
+                <span>School Information</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-sm text-orange-600">Principal</p>
+                  <p className="font-medium text-orange-900">{schoolData.principalName}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-orange-600">Grades</p>
+                  <p className="font-medium text-orange-900">{schoolData.grades}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-orange-600">Affiliation</p>
+                  <p className="font-medium text-orange-900">{schoolData.affiliation}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-orange-600">Established</p>
+                  <p className="font-medium text-orange-900">{schoolData.established}</p>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <MapPin className="w-4 h-4 text-orange-500" />
+                  <p className="text-sm text-orange-700">{schoolData.address}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-orange-500" />
+                  <p className="text-sm text-orange-700">{schoolData.contact}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail className="w-4 h-4 text-orange-500" />
+                  <p className="text-sm text-orange-700">{schoolData.email}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-orange-200 shadow-orange">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2 text-orange-gradient">
+                <Award className="w-5 h-5 text-orange-500" />
+                <span>Achievements & Recognition</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {schoolData.achievements.map((achievement, index) => (
+                <div key={index} className="flex items-center space-x-3 p-2 bg-orange-50 rounded-lg">
+                  <Star className="w-4 h-4 text-orange-500" />
+                  <p className="text-sm font-medium text-orange-900">{achievement}</p>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Facilities */}
+        <Card className="border-2 border-orange-200 shadow-orange">
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2 text-orange-gradient">
+              <Building className="w-5 h-5 text-orange-500" />
+              <span>School Facilities</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {schoolData.facilities.map((facility, index) => (
+                <Badge key={index} variant="outline" className="border-orange-300 text-orange-700 justify-center p-2">
+                  {facility}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Open Positions */}
@@ -169,6 +269,7 @@ export const SchoolDashboard = () => {
                   </div>
                   <p className="text-sm text-orange-700">{opening.level}</p>
                   <p className="text-sm text-orange-600">{opening.applicants} applicants</p>
+                  <p className="text-sm font-medium text-green-700">{opening.salary}</p>
                 </div>
               ))}
             </CardContent>
@@ -193,6 +294,7 @@ export const SchoolDashboard = () => {
                   </div>
                   <p className="text-sm text-orange-700">{application.subject}</p>
                   <p className="text-sm text-orange-600">{application.experience}</p>
+                  <p className="text-xs text-orange-500">Applied: {application.appliedDate}</p>
                 </div>
               ))}
             </CardContent>

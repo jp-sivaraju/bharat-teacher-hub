@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -13,7 +14,9 @@ import {
   TrendingUp,
   MapPin,
   Phone,
-  GraduationCap
+  GraduationCap,
+  Plus,
+  Briefcase
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -64,6 +67,10 @@ export const CollegeDashboard = () => {
             </div>
           </div>
           <div className="flex space-x-2">
+            <Button className="bg-green-600 hover:bg-green-700">
+              <Plus className="w-4 h-4 mr-2" />
+              Post Job Opening
+            </Button>
             <Button variant="secondary" className="bg-white/20 hover:bg-white/30">
               <Edit className="w-4 h-4 mr-2" />
               Edit Profile
@@ -160,10 +167,16 @@ export const CollegeDashboard = () => {
           {/* Open Positions */}
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Users className="w-5 h-5 text-purple-500" />
-                <span>Open Positions</span>
-              </CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="flex items-center space-x-2">
+                  <Briefcase className="w-5 h-5 text-purple-500" />
+                  <span>Open Positions</span>
+                </CardTitle>
+                <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                  <Plus className="w-4 h-4 mr-1" />
+                  Add New
+                </Button>
+              </div>
             </CardHeader>
             <CardContent className="space-y-3">
               {collegeData.openings.map((opening, index) => (

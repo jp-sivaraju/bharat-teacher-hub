@@ -15,6 +15,7 @@ import { TeacherRegister } from "./pages/TeacherRegister";
 import { SchoolRegister } from "./pages/SchoolRegister";
 import { CollegeRegister } from "./pages/CollegeRegister";
 import { HomeTuitionRegister } from "./pages/HomeTuitionRegister";
+import { VerificationPlans } from "./pages/VerificationPlans";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,8 @@ const App = () => (
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/school-dashboard" element={<SchoolDashboard />} />
           <Route path="/college-dashboard" element={<CollegeDashboard />} />
+          
+          <Route path="/verification-plans" element={<VerificationPlans />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

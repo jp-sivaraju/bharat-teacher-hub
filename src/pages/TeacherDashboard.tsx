@@ -13,9 +13,15 @@ import {
   MessageSquare,
   Users,
   TrendingUp,
-  Award
+  Award,
+  Shield,
+  Bell,
+  Eye,
+  Upload
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { TeacherProfileCompletion } from '@/components/TeacherProfileCompletion';
+import { VerificationBadge } from '@/components/VerificationBadge';
 
 const teacherData = {
   name: 'Dr. Sarah Johnson',
@@ -26,6 +32,14 @@ const teacherData = {
   activeClasses: 8,
   monthlyEarnings: 25000,
   completedLessons: 320,
+  profileViews: 1250,
+  verificationStatus: 'verified' as const,
+  salaryExpectation: '₹35,000 - ₹50,000',
+  notifications: [
+    { id: 1, message: 'Complete your salary expectations', type: 'warning' },
+    { id: 2, message: 'Upload your latest certificates', type: 'info' },
+    { id: 3, message: 'New job match available!', type: 'success' }
+  ],
   upcomingClasses: [
     { subject: 'Mathematics', time: '10:00 AM', student: 'Rahul Sharma' },
     { subject: 'Physics', time: '2:00 PM', student: 'Priya Patel' },
@@ -55,10 +69,17 @@ export const TeacherDashboard = () => {
                 <Badge variant="secondary" className="bg-white/20">
                   {teacherData.experience}
                 </Badge>
+                <VerificationBadge status={teacherData.verificationStatus} size="sm" />
               </div>
             </div>
           </div>
           <div className="flex space-x-2">
+            <Link to="/verification-plans">
+              <Button variant="secondary" className="bg-white/20 hover:bg-white/30">
+                <Shield className="w-4 h-4 mr-2" />
+                Verify Profile
+              </Button>
+            </Link>
             <Button variant="secondary" className="bg-white/20 hover:bg-white/30">
               <Edit className="w-4 h-4 mr-2" />
               Edit Profile
@@ -121,57 +142,127 @@ export const TeacherDashboard = () => {
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Award className="w-6 h-6 text-purple-600" />
+                  <Eye className="w-6 h-6 text-purple-600" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Completed Lessons</p>
-                  <p className="text-2xl font-bold">{teacherData.completedLessons}</p>
+                  <p className="text-sm text-gray-600">Profile Views</p>
+                  <p className="text-2xl font-bold">{teacherData.profileViews}</p>
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Teaching Subjects */}
-          <Card className="border-2">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <BookOpen className="w-5 h-5 text-orange-500" />
-                <span>Teaching Subjects</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {teacherData.subjects.map((subject, index) => (
-                  <Badge key={index} variant="outline" className="border-orange-300">
-                    {subject}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Today's Schedule */}
-          <Card className="border-2">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Clock className="w-5 h-5 text-blue-500" />
-                <span>Today's Classes</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {teacherData.upcomingClasses.map((class_, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <div>
-                    <p className="font-medium">{class_.subject}</p>
-                    <p className="text-sm text-gray-600">{class_.student}</p>
+        {/* New Enhanced Dashboard Layout */}
+        <div className="grid lg:grid-cols-3 gap-6">
+          {/* Left Column - Profile & Notifications */}
+          <div className="space-y-6">
+            <TeacherProfileCompletion />
+            
+            {/* Notifications */}
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Bell className="w-5 h-5 text-orange-500" />
+                  <span>Notifications</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {teacherData.notifications.map((notification) => (
+                  <div key={notification.id} className="p-3 bg-gray-50 rounded-lg">
+                    <p className="text-sm">{notification.message}</p>
                   </div>
-                  <span className="text-sm font-medium text-blue-600">{class_.time}</span>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Middle Column - Today's Schedule & Analytics */}
+          <div className="space-y-6">
+            {/* Today's Schedule */}
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Clock className="w-5 h-5 text-blue-500" />
+                  <span>Today's Classes</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {teacherData.upcomingClasses.map((class_, index) => (
+                  <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div>
+                      <p className="font-medium">{class_.subject}</p>
+                      <p className="text-sm text-gray-600">{class_.student}</p>
+                    </div>
+                    <span className="text-sm font-medium text-blue-600">{class_.time}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Profile Insights */}
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Eye className="w-5 h-5 text-green-500" />
+                  <span>Profile Insights</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Profile Views</span>
+                  <span className="font-medium">{teacherData.profileViews}</span>
                 </div>
-              ))}
-            </CardContent>
-          </Card>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Salary Expectation</span>
+                  <span className="font-medium">{teacherData.salaryExpectation}</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Column - Teaching Subjects & Reviews */}
+          <div className="space-y-6">
+            {/* Teaching Subjects */}
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <BookOpen className="w-5 h-5 text-orange-500" />
+                  <span>Teaching Subjects</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {teacherData.subjects.map((subject, index) => (
+                    <Badge key={index} variant="outline" className="border-orange-300">
+                      {subject}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Quick Actions */}
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle>Quick Actions</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <Button variant="outline" className="w-full justify-start">
+                  <Upload className="w-4 h-4 mr-2" />
+                  Upload Resume
+                </Button>
+                <Button variant="outline" className="w-full justify-start">
+                  <Upload className="w-4 h-4 mr-2" />
+                  Upload Certificates
+                </Button>
+                <Button variant="outline" className="w-full justify-start">
+                  <Edit className="w-4 h-4 mr-2" />
+                  Update Salary Expectations
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Recent Reviews */}

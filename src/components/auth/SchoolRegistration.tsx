@@ -18,6 +18,8 @@ export const SchoolRegistration = () => {
     phone: '',
     address: '',
     city: '',
+    registrationId: '',
+    certificate: '',
     boardAffiliation: '',
     studentStrength: '',
     establishedYear: '',
@@ -135,13 +137,26 @@ export const SchoolRegistration = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="studentStrength">Student Strength</Label>
+                <Label htmlFor="registrationId">Registration ID *</Label>
                 <Input 
-                  id="studentStrength"
-                  value={formData.studentStrength}
-                  onChange={(e) => handleInputChange('studentStrength', e.target.value)}
-                  placeholder="Number of students"
+                  id="registrationId"
+                  value={formData.registrationId}
+                  onChange={(e) => handleInputChange('registrationId', e.target.value)}
+                  placeholder="School registration ID"
                   className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="certificate">Certificate *</Label>
+                <Input 
+                  id="certificate"
+                  value={formData.certificate}
+                  onChange={(e) => handleInputChange('certificate', e.target.value)}
+                  placeholder="Certificate details"
+                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  required
                 />
               </div>
 

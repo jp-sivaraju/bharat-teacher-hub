@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X, Home, BookOpen, UserPlus, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { AuthModal } from './AuthModal';
+import { Link } from 'react-router-dom';
 
 type AuthType = 'login' | 'register' | 'teacher-register' | 'student-register' | 'parent-register' | 'school-register' | 'institution-register' | 'home-tuition-register';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showAuthModal, setShowAuthModal] = useState(false);
-  const [authType, setAuthType] = useState<AuthType>('login');
+  const [showLoginDropdown, setShowLoginDropdown] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -16,15 +15,6 @@ export const Header: React.FC = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
-  };
-
-  const handleAuthClick = (type: AuthType) => {
-    setAuthType(type);
-    setShowAuthModal(true);
-  };
-
-  const handleAuthTypeChange = (type: AuthType) => {
-    setAuthType(type);
   };
 
   const menuItems = [
@@ -68,27 +58,46 @@ export const Header: React.FC = () => {
                 );
               })}
             </nav>
-
             {/* Auth Buttons - Desktop */}
             <div className="hidden md:flex items-center space-x-3">
               <Button
                 size="sm"
                 variant="outline"
                 className="border-orange-200 hover:border-orange-400 hover:bg-orange-50"
-                onClick={() => handleAuthClick('register')}
               >
                 <UserPlus className="w-4 h-4 mr-2" />
                 Register
               </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-blue-200 hover:border-blue-400 hover:bg-blue-50"
-                onClick={() => handleAuthClick('login')}
-              >
-                <LogIn className="w-4 h-4 mr-2" />
-                Login
-              </Button>
+              <div className="relative">
+                <Button 
+                  onClick={() => setShowLoginDropdown(!showLoginDropdown)}
+                  variant="outline"
+                  className="hover:bg-orange-50 border-orange-200 hover:border-orange-300"
+                >
+                  Sign In
+                </Button>
+                {showLoginDropdown && (
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                    <div className="py-2">
+                      <Link to="/teacher-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Teacher Login
+                      </Link>
+                      <Link to="/student-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Student Login
+                      </Link>
+                      <Link to="/parent-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Parent Login
+                      </Link>
+                      <Link to="/school-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        School Login
+                      </Link>
+                      <Link to="/institution-login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Institution Login
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -123,27 +132,11 @@ export const Header: React.FC = () => {
               
               {/* Mobile Auth Buttons */}
               <div className="mt-4 pt-4 border-t border-orange-100 flex space-x-3">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="flex-1 border-orange-200 hover:border-orange-400 hover:bg-orange-50"
-                  onClick={() => {
-                    handleAuthClick('register');
-                    setIsMenuOpen(false);
-                  }}
-                >
+                <Button size="sm" variant="outline" className="flex-1">
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="flex-1 border-blue-200 hover:border-blue-400 hover:bg-blue-50"
-                  onClick={() => {
-                    handleAuthClick('login');
-                    setIsMenuOpen(false);
-                  }}
-                >
+                <Button size="sm" variant="outline" className="flex-1">
                   <LogIn className="w-4 h-4 mr-2" />
                   Login
                 </Button>
@@ -152,14 +145,6 @@ export const Header: React.FC = () => {
           )}
         </div>
       </header>
-
-      {/* Auth Modal */}
-      <AuthModal 
-        isOpen={showAuthModal}
-        onClose={() => setShowAuthModal(false)}
-        authType={authType}
-        onAuthTypeChange={handleAuthTypeChange}
-      />
     </>
   );
 };

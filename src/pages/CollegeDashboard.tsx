@@ -43,9 +43,9 @@ const collegeData = {
 
 export const CollegeDashboard = () => {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6">
+      <div className="bg-gradient-to-r from-orange-500 to-amber-600 text-white p-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
@@ -67,10 +67,12 @@ export const CollegeDashboard = () => {
             </div>
           </div>
           <div className="flex space-x-2">
-            <Button className="bg-green-600 hover:bg-green-700">
-              <Plus className="w-4 h-4 mr-2" />
-              Post Job Opening
-            </Button>
+            <Link to="/post-job?type=college">
+              <Button className="bg-green-600 hover:bg-green-700">
+                <Plus className="w-4 h-4 mr-2" />
+                Post Job Opening
+              </Button>
+            </Link>
             <Button variant="secondary" className="bg-white/20 hover:bg-white/30">
               <Edit className="w-4 h-4 mr-2" />
               Edit Profile
@@ -87,57 +89,57 @@ export const CollegeDashboard = () => {
       <div className="max-w-7xl mx-auto p-6 space-y-6">
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <Card className="border-2">
-            <CardContent className="p-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                  <UserCheck className="w-6 h-6 text-indigo-600" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600">Total Teachers</p>
-                  <p className="text-2xl font-bold">{collegeData.totalTeachers}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-2">
+          <Card className="border-2 border-orange-200 shadow-orange">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-orange-600" />
+                  <UserCheck className="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Open Positions</p>
-                  <p className="text-2xl font-bold">{collegeData.openPositions}</p>
+                  <p className="text-sm text-orange-600">Total Teachers</p>
+                  <p className="text-2xl font-bold text-orange-800">{collegeData.totalTeachers}</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-2">
+          <Card className="border-2 border-orange-200 shadow-orange">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <GraduationCap className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-amber-600" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Total Students</p>
-                  <p className="text-2xl font-bold">{collegeData.totalStudents}</p>
+                  <p className="text-sm text-orange-600">Open Positions</p>
+                  <p className="text-2xl font-bold text-orange-800">{collegeData.openPositions}</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-2">
+          <Card className="border-2 border-orange-200 shadow-orange">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <DollarSign className="w-6 h-6 text-green-600" />
+                <div className="w-12 h-12 bg-orange-200 rounded-lg flex items-center justify-center">
+                  <GraduationCap className="w-6 h-6 text-orange-700" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Monthly Revenue</p>
-                  <p className="text-2xl font-bold">₹{collegeData.monthlyRevenue.toLocaleString()}</p>
+                  <p className="text-sm text-orange-600">Total Students</p>
+                  <p className="text-2xl font-bold text-orange-800">{collegeData.totalStudents}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-orange-200 shadow-orange">
+            <CardContent className="p-6">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-amber-200 rounded-lg flex items-center justify-center">
+                  <DollarSign className="w-6 h-6 text-amber-700" />
+                </div>
+                <div>
+                  <p className="text-sm text-orange-600">Monthly Revenue</p>
+                  <p className="text-2xl font-bold text-orange-800">₹{collegeData.monthlyRevenue.toLocaleString()}</p>
                 </div>
               </div>
             </CardContent>
@@ -146,17 +148,17 @@ export const CollegeDashboard = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Courses Offered */}
-          <Card className="border-2">
+          <Card className="border-2 border-orange-200 shadow-orange">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <BookOpen className="w-5 h-5 text-indigo-500" />
+              <CardTitle className="flex items-center space-x-2 text-orange-gradient">
+                <BookOpen className="w-5 h-5 text-orange-500" />
                 <span>Courses Offered</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
                 {collegeData.courses.map((course, index) => (
-                  <Badge key={index} variant="outline" className="border-indigo-300">
+                  <Badge key={index} variant="outline" className="border-orange-300 text-orange-700">
                     {course}
                   </Badge>
                 ))}
@@ -165,30 +167,32 @@ export const CollegeDashboard = () => {
           </Card>
 
           {/* Open Positions */}
-          <Card className="border-2">
+          <Card className="border-2 border-orange-200 shadow-orange">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="flex items-center space-x-2">
-                  <Briefcase className="w-5 h-5 text-purple-500" />
+                <CardTitle className="flex items-center space-x-2 text-orange-gradient">
+                  <Briefcase className="w-5 h-5 text-orange-500" />
                   <span>Open Positions</span>
                 </CardTitle>
-                <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                  <Plus className="w-4 h-4 mr-1" />
-                  Add New
-                </Button>
+                <Link to="/post-job?type=college">
+                  <Button size="sm" className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700">
+                    <Plus className="w-4 h-4 mr-1" />
+                    Add New
+                  </Button>
+                </Link>
               </div>
             </CardHeader>
             <CardContent className="space-y-3">
               {collegeData.openings.map((opening, index) => (
-                <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                <div key={index} className="p-3 bg-orange-50 rounded-lg border border-orange-100">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="font-medium">{opening.subject}</p>
+                    <p className="font-medium text-orange-900">{opening.subject}</p>
                     <Badge variant={opening.urgency === 'High' ? 'destructive' : opening.urgency === 'Medium' ? 'default' : 'secondary'}>
                       {opening.urgency}
                     </Badge>
                   </div>
-                  <p className="text-sm text-gray-600">{opening.course}</p>
-                  <p className="text-sm text-gray-500">{opening.applicants} applicants</p>
+                  <p className="text-sm text-orange-700">{opening.course}</p>
+                  <p className="text-sm text-orange-600">{opening.applicants} applicants</p>
                 </div>
               ))}
             </CardContent>
@@ -196,24 +200,24 @@ export const CollegeDashboard = () => {
         </div>
 
         {/* Recent Applications */}
-        <Card className="border-2">
+        <Card className="border-2 border-orange-200 shadow-orange">
           <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
-              <UserCheck className="w-5 h-5 text-green-500" />
+            <CardTitle className="flex items-center space-x-2 text-orange-gradient">
+              <UserCheck className="w-5 h-5 text-orange-500" />
               <span>Recent Applications</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             {collegeData.recentApplications.map((application, index) => (
-              <div key={index} className="p-3 bg-gray-50 rounded-lg">
+              <div key={index} className="p-3 bg-orange-50 rounded-lg border border-orange-100">
                 <div className="flex items-center justify-between mb-1">
-                  <p className="font-medium">{application.name}</p>
+                  <p className="font-medium text-orange-900">{application.name}</p>
                   <Badge variant={application.status === 'pending' ? 'default' : 'secondary'}>
                     {application.status}
                   </Badge>
                 </div>
-                <p className="text-sm text-gray-600">{application.subject}</p>
-                <p className="text-sm text-gray-500">{application.experience}</p>
+                <p className="text-sm text-orange-700">{application.subject}</p>
+                <p className="text-sm text-orange-600">{application.experience}</p>
               </div>
             ))}
           </CardContent>

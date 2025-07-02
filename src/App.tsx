@@ -16,6 +16,7 @@ import { TeacherRegister } from "./pages/TeacherRegister";
 import { SchoolRegister } from "./pages/SchoolRegister";
 import { CollegeRegister } from "./pages/CollegeRegister";
 import { VerificationPlans } from "./pages/VerificationPlans";
+import { PostJob } from "./pages/PostJob";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/college-dashboard" element={<CollegeDashboard />} />
           
           <Route path="/verification-plans" element={<VerificationPlans />} />
+          <Route path="/post-job" element={<PostJob />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

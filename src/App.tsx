@@ -15,6 +15,12 @@ import { StudentDashboard } from "./pages/StudentDashboard";
 import { ParentDashboard } from "./pages/ParentDashboard";
 import { SchoolDashboard } from "./pages/SchoolDashboard";
 import { InstitutionDashboard } from "./pages/InstitutionDashboard";
+import { TeacherRegister } from "./pages/TeacherRegister";
+import { StudentRegister } from "./pages/StudentRegister";
+import { ParentRegister } from "./pages/ParentRegister";
+import { SchoolRegister } from "./pages/SchoolRegister";
+import { InstitutionRegister } from "./pages/InstitutionRegister";
+import { HomeTuitionRegister } from "./pages/HomeTuitionRegister";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +39,14 @@ const App = () => (
           <Route path="/parent-login" element={<ParentLogin />} />
           <Route path="/school-login" element={<SchoolLogin />} />
           <Route path="/institution-login" element={<InstitutionLogin />} />
+          
+          {/* Registration Pages */}
+          <Route path="/teacher-register" element={<TeacherRegister />} />
+          <Route path="/student-register" element={<StudentRegister />} />
+          <Route path="/parent-register" element={<ParentRegister />} />
+          <Route path="/school-register" element={<SchoolRegister />} />
+          <Route path="/institution-register" element={<InstitutionRegister />} />
+          <Route path="/home-tuition-register" element={<HomeTuitionRegister />} />
           
           {/* Dashboard Pages */}
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />

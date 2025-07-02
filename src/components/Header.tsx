@@ -60,14 +60,41 @@ export const Header: React.FC = () => {
             </nav>
             {/* Auth Buttons - Desktop */}
             <div className="hidden md:flex items-center space-x-3">
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-orange-200 hover:border-orange-400 hover:bg-orange-50"
-              >
-                <UserPlus className="w-4 h-4 mr-2" />
-                Register
-              </Button>
+              <div className="relative">
+                <Button
+                  onClick={() => setShowLoginDropdown(!showLoginDropdown)}
+                  size="sm"
+                  variant="outline"
+                  className="border-orange-200 hover:border-orange-400 hover:bg-orange-50"
+                >
+                  <UserPlus className="w-4 h-4 mr-2" />
+                  Register
+                </Button>
+                {showLoginDropdown && (
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                    <div className="py-2">
+                      <Link to="/teacher-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Teacher Registration
+                      </Link>
+                      <Link to="/student-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Student Registration
+                      </Link>
+                      <Link to="/parent-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Parent Registration
+                      </Link>
+                      <Link to="/school-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        School Registration
+                      </Link>
+                      <Link to="/institution-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Institution Registration
+                      </Link>
+                      <Link to="/home-tuition-register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">
+                        Home Tuition Registration
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
               <div className="relative">
                 <Button 
                   onClick={() => setShowLoginDropdown(!showLoginDropdown)}

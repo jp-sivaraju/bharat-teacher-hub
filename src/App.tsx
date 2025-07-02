@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,7 +15,6 @@ import { CollegeDashboard } from "./pages/CollegeDashboard";
 import { TeacherRegister } from "./pages/TeacherRegister";
 import { SchoolRegister } from "./pages/SchoolRegister";
 import { CollegeRegister } from "./pages/CollegeRegister";
-import { HomeTuitionRegister } from "./pages/HomeTuitionRegister";
 import { VerificationPlans } from "./pages/VerificationPlans";
 
 const queryClient = new QueryClient();
@@ -37,7 +37,6 @@ const App = () => (
           <Route path="/teacher-register" element={<TeacherRegister />} />
           <Route path="/school-register" element={<SchoolRegister />} />
           <Route path="/college-register" element={<CollegeRegister />} />
-          <Route path="/home-tuition-register" element={<HomeTuitionRegister />} />
           
           {/* Dashboard Pages */}
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />

@@ -4,10 +4,11 @@ import { Menu, X, Home, BookOpen, UserPlus, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-type AuthType = 'login' | 'register' | 'teacher-register' | 'school-register' | 'college-register' | 'home-tuition-register';
+type AuthType = 'login' | 'register' | 'teacher-register' | 'school-register' | 'college-register';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showRegisterDropdown, setShowRegisterDropdown] = useState(false);
   const [showLoginDropdown, setShowLoginDropdown] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
@@ -59,11 +60,15 @@ export const Header: React.FC = () => {
                 );
               })}
             </nav>
+
             {/* Auth Buttons - Desktop */}
             <div className="hidden md:flex items-center space-x-3">
               <div className="relative">
                 <Button
-                  onClick={() => setShowLoginDropdown(!showLoginDropdown)}
+                  onClick={() => {
+                    setShowRegisterDropdown(!showRegisterDropdown);
+                    setShowLoginDropdown(false);
+                  }}
                   size="sm"
                   variant="outline"
                   className="border-orange-300 hover:border-orange-500 hover:bg-orange-50 text-orange-700 hover:text-orange-800"
@@ -71,20 +76,29 @@ export const Header: React.FC = () => {
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
-                {showLoginDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-orange-200 rounded-lg shadow-orange-lg z-50">
+                {showRegisterDropdown && (
+                  <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-orange-200 rounded-lg shadow-orange-lg z-50">
                     <div className="py-2">
-                      <Link to="/teacher-register" className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800">
+                      <Link 
+                        to="/teacher-register" 
+                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        onClick={() => setShowRegisterDropdown(false)}
+                      >
                         Teacher Registration
                       </Link>
-                      <Link to="/school-register" className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800">
+                      <Link 
+                        to="/school-register" 
+                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        onClick={() => setShowRegisterDropdown(false)}
+                      >
                         School Registration
                       </Link>
-                      <Link to="/college-register" className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800">
+                      <Link 
+                        to="/college-register" 
+                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        onClick={() => setShowRegisterDropdown(false)}
+                      >
                         College Registration
-                      </Link>
-                      <Link to="/home-tuition-register" className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800">
-                        Home Tuition Registration
                       </Link>
                     </div>
                   </div>
@@ -92,7 +106,10 @@ export const Header: React.FC = () => {
               </div>
               <div className="relative">
                 <Button 
-                  onClick={() => setShowLoginDropdown(!showLoginDropdown)}
+                  onClick={() => {
+                    setShowLoginDropdown(!showLoginDropdown);
+                    setShowRegisterDropdown(false);
+                  }}
                   className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white shadow-orange"
                 >
                   Sign In
@@ -100,13 +117,25 @@ export const Header: React.FC = () => {
                 {showLoginDropdown && (
                   <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-orange-200 rounded-lg shadow-orange-lg z-50">
                     <div className="py-2">
-                      <Link to="/teacher-login" className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800">
+                      <Link 
+                        to="/teacher-login" 
+                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        onClick={() => setShowLoginDropdown(false)}
+                      >
                         Teacher Login
                       </Link>
-                      <Link to="/school-login" className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800">
+                      <Link 
+                        to="/school-login" 
+                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        onClick={() => setShowLoginDropdown(false)}
+                      >
                         School Login
                       </Link>
-                      <Link to="/college-login" className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800">
+                      <Link 
+                        to="/college-login" 
+                        className="block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-800"
+                        onClick={() => setShowLoginDropdown(false)}
+                      >
                         College Login
                       </Link>
                     </div>

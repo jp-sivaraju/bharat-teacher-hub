@@ -24,10 +24,10 @@ export const SchoolLogin = () => {
     console.log('School login attempted:', formData.email);
     toast({
       title: "Login Successful!",
-      description: "Welcome back! Redirecting to your school dashboard.",
+      description: "Welcome back! Redirecting to home page to view teachers.",
     });
     setTimeout(() => {
-      navigate('/school-dashboard');
+      navigate('/');
     }, 1000);
   };
 

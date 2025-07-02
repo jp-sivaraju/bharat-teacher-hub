@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Design System with Enhanced Readability */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
 @layer base {
   :root {
@@ -35,7 +35,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -93,201 +93,61 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: -0.01em;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.3;
-  }
-
-  p {
-    line-height: 1.7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 }
 
-/* Modern Visual Effects */
-.glass-effect {
-  @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl;
+/* Enhanced hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.glass-dark {
-  @apply bg-gray-900/80 backdrop-blur-xl border border-gray-700/20 shadow-2xl;
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.modern-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* Gradient text utilities */
+.gradient-text {
+  @apply bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent;
 }
 
-.modern-gradient-orange {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+/* Enhanced card styles */
+.card-elevated {
+  @apply bg-white rounded-2xl shadow-xl border-2 border-orange-100 hover:border-orange-300 transition-all duration-300;
 }
 
-.modern-gradient-blue {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+/* Button gradient styles */
+.btn-gradient {
+  @apply bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-white font-semibold transition-all duration-300 transform hover:scale-105;
 }
 
-.modern-gradient-purple {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+/* Enhanced input styles */
+.input-enhanced {
+  @apply border-2 border-gray-200 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-lg;
 }
 
-/* Enhanced Card Styles */
-.modern-card {
-  @apply bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1;
-  backdrop-filter: blur(10px);
-}
-
-.modern-card-dark {
-  @apply bg-gray-800/90 rounded-2xl shadow-xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1;
-  backdrop-filter: blur(10px);
-}
-
-/* Modern Button Styles */
-.btn-modern {
-  @apply px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.btn-modern:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-}
-
-.btn-modern-orange {
-  @apply px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-}
-
-.btn-modern-orange:hover {
-  background: linear-gradient(135deg, #ff5252 0(), #d63031 100%);
-}
-
-.btn-modern-blue {
-  @apply px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-.btn-modern-blue:hover {
-  background: linear-gradient(135deg, #3742fa 0%, #00d2ff 100%);
-}
-
-/* Enhanced Input Styles */
-.input-modern {
-  @apply border-2 border-gray-200 hover:border-blue-300 focus:border-blue-500 transition-all duration-300 rounded-xl bg-white/50 backdrop-blur-sm shadow-sm focus:shadow-lg;
-}
-
-.input-modern:focus {
-  @apply ring-4 ring-blue-100;
-}
-
-/* Background Patterns */
-.bg-modern-pattern {
+/* Background patterns */
+.bg-pattern {
   background-image: 
-    radial-gradient(circle at 25px 25px, rgba(102, 126, 234, 0.1) 2px, transparent 0),
-    radial-gradient(circle at 75px 75px, rgba(118, 75, 162, 0.1) 2px, transparent 0);
+    radial-gradient(circle at 25px 25px, rgba(255, 165, 0, 0.1) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(59, 130, 246, 0.1) 2px, transparent 0);
   background-size: 100px 100px;
 }
 
-.bg-modern-mesh {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Modern Text Styles */
-.text-modern-gradient {
-  @apply bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent font-bold;
-}
-
-.text-shadow-modern {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Improved Hover Effects */
-.hover-lift-modern {
-  @apply transition-all duration-500 ease-out;
-}
-
-.hover-lift-modern:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-/* Enhanced Scrollbar */
+/* Scrollbar customization */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 rounded-xl;
+  @apply bg-orange-50;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-xl;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  @apply bg-gradient-to-b from-orange-400 to-blue-500 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-}
-
-/* Modern Selection */
-::selection {
-  @apply bg-blue-200 text-blue-900;
-}
-
-/* Accessibility Improvements */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus Improvements */
-*:focus {
-  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white;
-}
-
-/* Modern Typography Scale */
-.text-display-large {
-  @apply text-6xl md:text-7xl font-bold leading-tight tracking-tight;
-}
-
-.text-display-medium {
-  @apply text-4xl md:text-5xl font-bold leading-tight tracking-tight;
-}
-
-.text-display-small {
-  @apply text-3xl md:text-4xl font-bold leading-tight tracking-tight;
-}
-
-.text-headline-large {
-  @apply text-2xl md:text-3xl font-semibold leading-snug;
-}
-
-.text-headline-medium {
-  @apply text-xl md:text-2xl font-semibold leading-snug;
-}
-
-.text-body-large {
-  @apply text-lg leading-relaxed;
-}
-
-.text-body-medium {
-  @apply text-base leading-relaxed;
-}
-
-.text-body-small {
-  @apply text-sm leading-relaxed;
+  @apply from-orange-500 to-blue-600;
 }

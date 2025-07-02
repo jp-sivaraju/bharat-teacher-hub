@@ -57,12 +57,18 @@ const Index = () => {
         <section className="max-w-7xl mx-auto text-center">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-orange-100">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-4">
-              Find Your Perfect Job with Find Your Perfect Teacher
+              Find Your Perfect Teacher
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Join thousands of educators who have found their ideal teaching positions through our comprehensive platform. 
-              Connect with schools, colleges, and home tuition opportunities across India.
+              Discover qualified educators across India. Search by subject, experience, location, and more to find the ideal teacher for your educational needs.
             </p>
+          </div>
+        </section>
+        
+        <section className="max-w-7xl mx-auto">
+          <TeacherFilters filters={filters} setFilters={setFilters} />
+          <div className="mt-8">
+            <TeacherCards filters={filters} />
           </div>
         </section>
         

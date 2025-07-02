@@ -1,11 +1,14 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Building } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Building, Filter } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import { VerificationBadge } from '@/components/VerificationBadge';
 
 export const CollegeLogin = () => {
   const { toast } = useToast();
@@ -14,6 +17,7 @@ export const CollegeLogin = () => {
     email: '',
     password: ''
   });
+  const [verificationFilter, setVerificationFilter] = useState('all');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +49,38 @@ export const CollegeLogin = () => {
             Sign in to access your college dashboard
           </p>
         </div>
+
+        {/* Verification Filter */}
+        <Card className="border-2 border-indigo-200">
+          <CardHeader className="pb-4">
+            <div className="flex items-center space-x-2">
+              <Filter className="w-5 h-5 text-indigo-600" />
+              <CardTitle className="text-lg text-indigo-700">Filter by Verification Status</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <Select value={verificationFilter} onValueChange={setVerificationFilter}>
+              <SelectTrigger className="border-2 hover:border-indigo-300 focus:border-indigo-500 transition-all duration-300">
+                <SelectValue placeholder="Select verification status" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Colleges</SelectItem>
+                <SelectItem value="verified">
+                  <div className="flex items-center space-x-2">
+                    <span>Verified Colleges</span>
+                    <VerificationBadge status="verified" size="sm" />
+                  </div>
+                </SelectItem>
+                <SelectItem value="non-verified">
+                  <div className="flex items-center space-x-2">
+                    <span>Non-Verified Colleges</span>
+                    <VerificationBadge status="not-verified" size="sm" />
+                  </div>
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </CardContent>
+        </Card>
 
         <Card className="border-2 hover:border-indigo-300 transition-all duration-300">
           <CardHeader className="text-center">

@@ -91,59 +91,6 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				// New color scheme
-				'soft-blue': {
-					DEFAULT: '#4A90E2',
-					50: '#E6F2FF',
-					100: '#CCE5FF',
-					200: '#99CCFF',
-					300: '#66B2FF',
-					400: '#4A90E2',
-					500: '#3D7BC7',
-					600: '#2F66AC',
-					700: '#225191',
-					800: '#143C76',
-					900: '#07275B'
-				},
-				'warm-white': {
-					DEFAULT: '#F5F6F5',
-					50: '#FFFFFF',
-					100: '#F5F6F5',
-					200: '#EBECED',
-					300: '#E1E2E5',
-					400: '#D7D8DD',
-					500: '#CDCED5',
-					600: '#C3C4CD',
-					700: '#B9BAC5',
-					800: '#AFB0BD',
-					900: '#A5A6B5'
-				},
-				'muted-coral': {
-					DEFAULT: '#FF6F61',
-					50: '#FFE8E6',
-					100: '#FFD1CC',
-					200: '#FFA399',
-					300: '#FF7566',
-					400: '#FF6F61',
-					500: '#E6564A',
-					600: '#CC3D33',
-					700: '#B3241C',
-					800: '#990B05',
-					900: '#800000'
-				},
-				'slate-gray': {
-					DEFAULT: '#6B7280',
-					50: '#F8FAFC',
-					100: '#F1F5F9',
-					200: '#E2E8F0',
-					300: '#CBD5E1',
-					400: '#94A3B8',
-					500: '#6B7280',
-					600: '#475569',
-					700: '#334155',
-					800: '#1E293B',
-					900: '#0F172A'
 				}
 			},
 			borderRadius: {

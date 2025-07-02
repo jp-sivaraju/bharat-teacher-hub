@@ -4,7 +4,7 @@ import { GraduationCap, Users, Award, TrendingUp } from 'lucide-react';
 
 export const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-soft-blue-500 via-soft-blue-600 to-muted-coral-500 rounded-3xl mb-8 p-8 md:p-12 text-white shadow-blue-lg">
+    <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 rounded-3xl mb-8 p-8 md:p-12 text-white shadow-orange-lg">
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
@@ -19,15 +19,15 @@ export const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-balance text-glow">
                 India's Premier
-                <span className="block text-warm-white-100 font-display">Teaching Platform</span>
+                <span className="block text-amber-200 font-display">Teaching Platform</span>
               </h1>
-              <p className="text-xl md:text-2xl text-warm-white-200 font-inter font-light leading-relaxed text-pretty">
+              <p className="text-xl md:text-2xl text-orange-100 font-inter font-light leading-relaxed text-pretty">
                 Connecting Excellence in Education
               </p>
             </div>
             
             <div className="space-y-4">
-              <p className="text-lg md:text-xl text-warm-white-100 leading-relaxed font-inter text-pretty">
+              <p className="text-lg md:text-xl text-orange-50 leading-relaxed font-inter text-pretty">
                 Join over 50,000+ certified teachers and connect with top educational institutions across India. 
                 From CBSE to IIT coaching centers, find your perfect teaching opportunity or hire exceptional educators.
               </p>
@@ -42,24 +42,24 @@ export const HeroSection = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
-              <Users className="w-8 h-8 text-warm-white-100 mb-3" />
+              <Users className="w-8 h-8 text-amber-200 mb-3" />
               <h3 className="text-2xl md:text-3xl font-bold font-display">50,000+</h3>
-              <p className="text-warm-white-200 font-inter font-medium">Certified Teachers</p>
+              <p className="text-orange-100 font-inter font-medium">Certified Teachers</p>
             </div>
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
-              <Award className="w-8 h-8 text-warm-white-100 mb-3" />
+              <Award className="w-8 h-8 text-amber-200 mb-3" />
               <h3 className="text-2xl md:text-3xl font-bold font-display">2,500+</h3>
-              <p className="text-warm-white-200 font-inter font-medium">Partner Institutions</p>
+              <p className="text-orange-100 font-inter font-medium">Partner Institutions</p>
             </div>
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
-              <TrendingUp className="w-8 h-8 text-warm-white-100 mb-3" />
+              <TrendingUp className="w-8 h-8 text-amber-200 mb-3" />
               <h3 className="text-2xl md:text-3xl font-bold font-display">98%</h3>
-              <p className="text-warm-white-200 font-inter font-medium">Success Rate</p>
+              <p className="text-orange-100 font-inter font-medium">Success Rate</p>
             </div>
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/25 border border-white/20">
-              <GraduationCap className="w-8 h-8 text-warm-white-100 mb-3" />
+              <GraduationCap className="w-8 h-8 text-amber-200 mb-3" />
               <h3 className="text-2xl md:text-3xl font-bold font-display">1000+</h3>
-              <p className="text-warm-white-200 font-inter font-medium">Daily Opportunities</p>
+              <p className="text-orange-100 font-inter font-medium">Daily Opportunities</p>
             </div>
           </div>
         </div>
@@ -68,15 +68,15 @@ export const HeroSection = () => {
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           <div className="text-center p-6 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20 group">
             <h4 className="font-display font-semibold text-lg mb-3 group-hover:text-glow transition-all">IIT & NEET and Civils Focused</h4>
-            <p className="text-sm md:text-base text-warm-white-200 font-inter leading-relaxed text-pretty">Specialized opportunities in competitive exam preparation</p>
+            <p className="text-sm md:text-base text-orange-100 font-inter leading-relaxed text-pretty">Specialized opportunities in competitive exam preparation</p>
           </div>
           <div className="text-center p-6 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20 group">
             <h4 className="font-display font-semibold text-lg mb-3 group-hover:text-glow transition-all">Verified Credentials</h4>
-            <p className="text-sm md:text-base text-warm-white-200 font-inter leading-relaxed text-pretty">All teachers undergo thorough verification</p>
+            <p className="text-sm md:text-base text-orange-100 font-inter leading-relaxed text-pretty">All teachers undergo thorough verification</p>
           </div>
           <div className="text-center p-6 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20 group">
             <h4 className="font-display font-semibold text-lg mb-3 group-hover:text-glow transition-all">Instant Matching</h4>
-            <p className="text-sm md:text-base text-warm-white-200 font-inter leading-relaxed text-pretty">AI-powered job matching system</p>
+            <p className="text-sm md:text-base text-orange-100 font-inter leading-relaxed text-pretty">AI-powered job matching system</p>
           </div>
         </div>
       </div>

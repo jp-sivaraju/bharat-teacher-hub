@@ -6,8 +6,9 @@ import { ServicesSection } from '@/components/ServicesSection';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ProfileDemo } from '@/components/ProfileDemo';
+import { JobListings } from '@/components/JobListings';
 import { Button } from '@/components/ui/button';
-import { User } from 'lucide-react';
+import { User, Briefcase } from 'lucide-react';
 
 const Index = () => {
   const [showProfileDemo, setShowProfileDemo] = useState(false);
@@ -52,6 +53,20 @@ const Index = () => {
         
         <section className="max-w-7xl mx-auto">
           <ServicesSection />
+        </section>
+
+        {/* Job Listings Section */}
+        <section className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <Briefcase className="w-8 h-8 text-orange-600" />
+              <h2 className="text-3xl font-bold text-orange-900">Latest Job Opportunities</h2>
+            </div>
+            <p className="text-orange-700 text-lg max-w-2xl mx-auto">
+              Discover amazing teaching positions from top schools and colleges across India
+            </p>
+          </div>
+          <JobListings />
         </section>
         
         <section className="max-w-7xl mx-auto">

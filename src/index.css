@@ -19,7 +19,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
 
-    --primary: 24.6 95% 53.1%;
+    --primary: 21 76% 55%;
     --primary-foreground: 60 9.1% 97.8%;
 
     --secondary: 60 4.8% 95.9%;
@@ -28,26 +28,26 @@
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
 
-    --accent: 33 100% 96.5%;
+    --accent: 35 100% 85%;
     --accent-foreground: 20 14.3% 4.1%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
 
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --ring: 24.6 95% 53.1%;
+    --border: 35 50% 88%;
+    --input: 35 50% 88%;
+    --ring: 21 76% 55%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 24.6 95% 53.1%;
+    --sidebar-primary: 21 76% 55%;
     --sidebar-primary-foreground: 60 9.1% 97.8%;
-    --sidebar-accent: 33 100% 96.5%;
+    --sidebar-accent: 35 100% 85%;
     --sidebar-accent-foreground: 20 14.3% 4.1%;
-    --sidebar-border: 20 13% 91%;
-    --sidebar-ring: 24.6 95% 53.1%;
+    --sidebar-border: 35 50% 88%;
+    --sidebar-ring: 21 76% 55%;
   }
 
   .dark {
@@ -60,7 +60,7 @@
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
 
-    --primary: 20.5 90.2% 48.2%;
+    --primary: 21 76% 55%;
     --primary-foreground: 60 9.1% 97.8%;
 
     --secondary: 12 6.5% 15.1%;
@@ -77,16 +77,16 @@
 
     --border: 12 6.5% 15.1%;
     --input: 12 6.5% 15.1%;
-    --ring: 20.5 90.2% 48.2%;
+    --ring: 21 76% 55%;
     
     --sidebar-background: 20 14.3% 4.1%;
     --sidebar-foreground: 60 9.1% 97.8%;
-    --sidebar-primary: 20.5 90.2% 48.2%;
+    --sidebar-primary: 21 76% 55%;
     --sidebar-primary-foreground: 60 9.1% 97.8%;
     --sidebar-accent: 12 6.5% 15.1%;
     --sidebar-accent-foreground: 60 9.1% 97.8%;
     --sidebar-border: 12 6.5% 15.1%;
-    --sidebar-ring: 20.5 90.2% 48.2%;
+    --sidebar-ring: 21 76% 55%;
   }
 }
 
@@ -169,93 +169,128 @@
   text-wrap: pretty;
 }
 
-/* Enhanced hover effects with orange theme */
+/* Enhanced hover effects with new color palette */
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-lift:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(251, 146, 60, 0.2);
+  box-shadow: 0 20px 40px rgba(255, 125, 41, 0.2);
 }
 
 /* Gradient text utilities */
 .gradient-text {
-  @apply bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent font-bold;
-}
-
-.gradient-text-subtle {
-  @apply bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent;
-}
-
-/* Enhanced card styles with orange theme */
-.card-elevated {
-  @apply bg-white rounded-2xl shadow-xl border-2 border-orange-100 hover:border-orange-300 transition-all duration-300;
-}
-
-/* Button gradient styles with orange theme */
-.btn-gradient {
-  @apply bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-semibold transition-all duration-300 transform hover:scale-105;
-}
-
-/* Enhanced input styles with orange theme */
-.input-enhanced {
-  @apply border-2 border-orange-200 hover:border-orange-400 focus:border-orange-500 transition-all duration-300 rounded-lg;
-}
-
-/* Background patterns with orange theme */
-.bg-pattern {
-  background-image: 
-    radial-gradient(circle at 25px 25px, rgba(251, 146, 60, 0.1) 2px, transparent 0),
-    radial-gradient(circle at 75px 75px, rgba(245, 158, 11, 0.1) 2px, transparent 0);
-  background-size: 100px 100px;
-}
-
-/* Scrollbar customization with orange theme */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-orange-50;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-orange-400 to-amber-500 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply from-orange-500 to-amber-600;
-}
-
-/* Orange theme utility classes */
-.bg-orange-gradient {
-  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 25%, #fb923c 50%, #f97316 75%, #ea580c 100%);
-}
-
-.text-orange-gradient {
-  background: linear-gradient(135deg, #f97316, #ea580c, #d97706);
+  background: linear-gradient(135deg, rgb(123, 64, 25), rgb(255, 125, 41));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
 }
 
-.border-orange-gradient {
-  border-image: linear-gradient(135deg, #fed7aa, #fb923c, #ea580c) 1;
+.gradient-text-subtle {
+  background: linear-gradient(135deg, rgb(255, 125, 41), rgb(255, 191, 120));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.shadow-orange {
-  box-shadow: 0 4px 14px 0 rgba(251, 146, 60, 0.15);
+/* Enhanced card styles with new color palette */
+.card-elevated {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(255, 125, 41, 0.1), 0 10px 10px -5px rgba(255, 125, 41, 0.04);
+  border: 2px solid rgba(255, 191, 120, 0.3);
+  transition: all 0.3s;
 }
 
-.shadow-orange-lg {
-  box-shadow: 0 10px 25px -3px rgba(251, 146, 60, 0.2), 0 4px 6px -2px rgba(251, 146, 60, 0.1);
+.card-elevated:hover {
+  border-color: rgba(255, 125, 41, 0.5);
+}
+
+/* Button gradient styles with new color palette */
+.btn-gradient {
+  background: linear-gradient(135deg, rgb(255, 125, 41), rgb(123, 64, 25));
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, rgb(123, 64, 25), rgb(255, 125, 41));
+  transform: scale(1.05);
+}
+
+/* Enhanced input styles with new color palette */
+.input-enhanced {
+  border: 2px solid rgba(255, 191, 120, 0.5);
+  transition: all 0.3s;
+  border-radius: 0.5rem;
+}
+
+.input-enhanced:hover {
+  border-color: rgba(255, 125, 41, 0.7);
+}
+
+.input-enhanced:focus {
+  border-color: rgb(255, 125, 41);
+}
+
+/* Background patterns with new color palette */
+.bg-pattern {
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(255, 125, 41, 0.1) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(255, 191, 120, 0.1) 2px, transparent 0);
+  background-size: 100px 100px;
+}
+
+/* Scrollbar customization with new color palette */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 238, 169, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(255, 125, 41), rgb(123, 64, 25));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgb(123, 64, 25), rgb(255, 125, 41));
+}
+
+/* New color palette utility classes */
+.bg-primary-gradient {
+  background: linear-gradient(135deg, rgb(255, 238, 169) 0%, rgb(255, 191, 120) 25%, rgb(255, 125, 41) 50%, rgb(123, 64, 25) 100%);
+}
+
+.text-primary-gradient {
+  background: linear-gradient(135deg, rgb(123, 64, 25), rgb(255, 125, 41), rgb(255, 191, 120));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.border-primary-gradient {
+  border-image: linear-gradient(135deg, rgb(255, 238, 169), rgb(255, 125, 41), rgb(123, 64, 25)) 1;
+}
+
+.shadow-primary {
+  box-shadow: 0 4px 14px 0 rgba(255, 125, 41, 0.15);
+}
+
+.shadow-primary-lg {
+  box-shadow: 0 10px 25px -3px rgba(255, 125, 41, 0.2), 0 4px 6px -2px rgba(255, 125, 41, 0.1);
 }
 
 /* Modern text effects */
 .text-glow {
-  text-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
+  text-shadow: 0 0 20px rgba(255, 125, 41, 0.3);
 }
 
 .text-sharp {

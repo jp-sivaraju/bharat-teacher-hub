@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -44,12 +43,12 @@ export const CollegeRegistration = () => {
 
   return (
     <Card className="border-2 shadow-2xl">
-      <CardHeader className="bg-gradient-to-r from-orange-500 to-blue-600 text-white">
+      <CardHeader className="bg-gradient-to-r from-brand-500 to-brand-900 text-white">
         <div className="flex items-center space-x-3">
           <Building className="w-8 h-8" />
           <div>
             <CardTitle className="text-2xl">College Registration</CardTitle>
-            <CardDescription className="text-orange-100">
+            <CardDescription className="text-brand-100">
               Register your college or educational institution
             </CardDescription>
           </div>
@@ -68,7 +67,7 @@ export const CollegeRegistration = () => {
                   value={formData.collegeName}
                   onChange={(e) => handleInputChange('collegeName', e.target.value)}
                   placeholder="Enter college name"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                   required
                 />
               </div>
@@ -80,7 +79,7 @@ export const CollegeRegistration = () => {
                   value={formData.contactPersonName}
                   onChange={(e) => handleInputChange('contactPersonName', e.target.value)}
                   placeholder="Director/Administrator name"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                   required
                 />
               </div>
@@ -93,7 +92,7 @@ export const CollegeRegistration = () => {
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="institution@example.com"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                   required
                 />
               </div>
@@ -105,7 +104,7 @@ export const CollegeRegistration = () => {
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   placeholder="+91 98765 43210"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                   required
                 />
               </div>
@@ -117,7 +116,7 @@ export const CollegeRegistration = () => {
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
                   placeholder="Enter city"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                   required
                 />
               </div>
@@ -125,7 +124,7 @@ export const CollegeRegistration = () => {
               <div className="space-y-2">
                 <Label htmlFor="collegeType">College Type *</Label>
                 <Select value={formData.collegeType} onValueChange={(value) => handleInputChange('collegeType', value)}>
-                  <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
+                  <SelectTrigger className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300">
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -148,7 +147,7 @@ export const CollegeRegistration = () => {
                   value={formData.facultyCount}
                   onChange={(e) => handleInputChange('facultyCount', e.target.value)}
                   placeholder="Number of faculty members"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                 />
               </div>
 
@@ -159,7 +158,7 @@ export const CollegeRegistration = () => {
                   value={formData.registrationId}
                   onChange={(e) => handleInputChange('registrationId', e.target.value)}
                   placeholder="College registration ID"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                   required
                 />
               </div>
@@ -171,7 +170,7 @@ export const CollegeRegistration = () => {
                   value={formData.certificate}
                   onChange={(e) => handleInputChange('certificate', e.target.value)}
                   placeholder="Certificate details"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                   required
                 />
               </div>
@@ -183,7 +182,7 @@ export const CollegeRegistration = () => {
                   value={formData.establishedYear}
                   onChange={(e) => handleInputChange('establishedYear', e.target.value)}
                   placeholder="Year established"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                 />
               </div>
             </div>
@@ -195,7 +194,7 @@ export const CollegeRegistration = () => {
                 value={formData.address}
                 onChange={(e) => handleInputChange('address', e.target.value)}
                 placeholder="Enter complete institution address"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
                 required
               />
             </div>
@@ -207,7 +206,7 @@ export const CollegeRegistration = () => {
                 value={formData.coursesOffered}
                 onChange={(e) => handleInputChange('coursesOffered', e.target.value)}
                 placeholder="IIT-JEE, NEET, Engineering, MBA, etc."
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
               />
             </div>
 
@@ -218,14 +217,14 @@ export const CollegeRegistration = () => {
                 value={formData.requirements}
                 onChange={(e) => handleInputChange('requirements', e.target.value)}
                 placeholder="Tell us about the faculty positions and qualifications you're looking for"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-brand-300 focus:border-brand-500 transition-all duration-300"
               />
             </div>
           </div>
 
           <Button 
             type="submit" 
-            className="w-full bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-lg py-6 transition-all duration-300"
+            className="w-full bg-gradient-to-r from-brand-500 to-brand-900 hover:from-brand-600 hover:to-brand-800 text-lg py-6 transition-all duration-300"
           >
             <UserPlus className="w-5 h-5 mr-2" />
             Register College

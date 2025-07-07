@@ -91,6 +91,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom color palette
+				brand: {
+					50: 'rgb(255, 238, 169)',   // Lightest - #FFEEA9
+					100: 'rgb(255, 230, 140)',
+					200: 'rgb(255, 210, 110)',
+					300: 'rgb(255, 191, 120)',  // Light - #FFBF78
+					400: 'rgb(255, 170, 80)',
+					500: 'rgb(255, 125, 41)',   // Main - #FF7D29
+					600: 'rgb(230, 100, 30)',
+					700: 'rgb(200, 80, 25)',
+					800: 'rgb(150, 60, 20)',
+					900: 'rgb(123, 64, 25)',    // Dark - #7B4019
+					950: 'rgb(100, 50, 20)',
 				}
 			},
 			borderRadius: {

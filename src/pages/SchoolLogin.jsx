@@ -16,7 +16,7 @@ export const SchoolLogin = () => {
     password: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('School login attempted:', formData.email);
     toast({
@@ -28,7 +28,7 @@ export const SchoolLogin = () => {
     }, 1000);
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 

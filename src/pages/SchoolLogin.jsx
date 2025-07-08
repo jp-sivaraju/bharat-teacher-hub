@@ -1,112 +1,24 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { SchoolLogin as SchoolLoginComponent } from '@/components/auth/SchoolLogin';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { School } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { Link, useNavigate } from 'react-router-dom';
 
 export const SchoolLogin = () => {
-  const { toast } = useToast();
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('School login attempted:', formData.email);
-    toast({
-      title: "Login Successful!",
-      description: "Welcome back! Redirecting to your school dashboard.",
-    });
-    setTimeout(() => {
-      navigate('/school-dashboard');
-    }, 1000);
-  };
-
-  const handleInputChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100 flex items-center justify-center p-6">
-      <div className="max-w-md w-full space-y-8">
-        <div className="text-center space-y-4">
-          <div className="flex items-center justify-center mb-4">
-            <School className="w-12 h-12 text-orange-600" />
-          </div>
-          <h1 className="text-4xl font-bold text-orange-gradient">
-            School Portal
-          </h1>
-          <p className="text-lg text-orange-800">
-            Sign in to access your school dashboard
-          </p>
-        </div>
-
-        <Card className="border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 shadow-orange">
-          <CardHeader className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full flex items-center justify-center shadow-orange">
-                <School className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <CardTitle className="text-2xl text-orange-gradient">
-              School Login
-            </CardTitle>
-            <CardDescription className="text-orange-700">Access your school dashboard and post job openings</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="institution-email" className="text-orange-800">Email Address</Label>
-                <Input
-                  id="institution-email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="border-2 border-orange-200 hover:border-orange-400 focus:border-orange-500 transition-all duration-300"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="institution-password" className="text-orange-800">Password</Label>
-                <Input
-                  id="institution-password"
-                  type="password"
-                  placeholder="Enter your password"
-                  value={formData.password}
-                  onChange={(e) => handleInputChange('password', e.target.value)}
-                  className="border-2 border-orange-200 hover:border-orange-400 focus:border-orange-500 transition-all duration-300"
-                  required
-                />
-              </div>
-              <Button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white shadow-orange transition-all duration-300"
-              >
-                Sign In as School
+    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
+      <div className="p-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <Link to="/">
+              <Button variant="outline" className="mb-4 border-orange-300 hover:border-orange-500 hover:bg-orange-50 text-orange-700">
+                ← Back to Home
               </Button>
-              <div className="text-center space-y-2">
-                <a href="#" className="text-sm text-orange-600 hover:text-orange-700 hover:underline block">
-                  Forgot your password?
-                </a>
-                <Link to="/school-register" className="text-sm text-orange-600 hover:text-orange-700 hover:underline block">
-                  Don't have an account? Register here
-                </Link>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
-
-        <div className="text-center">
-          <Link to="/" className="text-orange-600 hover:text-orange-700 hover:underline">
-            ← Back to Home
-          </Link>
+            </Link>
+          </div>
+          <div className="max-w-md mx-auto">
+            <SchoolLoginComponent />
+          </div>
         </div>
       </div>
     </div>

@@ -30,10 +30,10 @@ export const PostJob = () => {
     employmentType: 'Full-time'
   });
 
-  const [skills, setSkills] = useState<string[]>([]);
+  const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Job posting submitted:', { ...formData, skills });
     toast({
@@ -45,7 +45,7 @@ export const PostJob = () => {
     }, 1500);
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -56,7 +56,7 @@ export const PostJob = () => {
     }
   };
 
-  const removeSkill = (skillToRemove: string) => {
+  const removeSkill = (skillToRemove) => {
     setSkills(skills.filter(skill => skill !== skillToRemove));
   };
 

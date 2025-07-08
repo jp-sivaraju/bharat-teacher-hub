@@ -1,116 +1,118 @@
 
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Import modern fonts - must be at the top */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* Design System Configuration */
-@theme {
-  /* Color Palette */
-  --color-background: 0 0% 100%;
-  --color-foreground: 20 14.3% 4.1%;
-  --color-card: 0 0% 100%;
-  --color-card-foreground: 20 14.3% 4.1%;
-  --color-popover: 0 0% 100%;
-  --color-popover-foreground: 20 14.3% 4.1%;
-  --color-primary: 21 76% 55%;
-  --color-primary-foreground: 60 9.1% 97.8%;
-  --color-secondary: 60 4.8% 95.9%;
-  --color-secondary-foreground: 25 5.3% 44.7%;
-  --color-muted: 60 4.8% 95.9%;
-  --color-muted-foreground: 25 5.3% 44.7%;
-  --color-accent: 35 100% 85%;
-  --color-accent-foreground: 20 14.3% 4.1%;
-  --color-destructive: 0 84.2% 60.2%;
-  --color-destructive-foreground: 60 9.1% 97.8%;
-  --color-border: 35 50% 88%;
-  --color-input: 35 50% 88%;
-  --color-ring: 21 76% 55%;
-  --color-sidebar-background: 0 0% 98%;
-  --color-sidebar-foreground: 240 5.3% 26.1%;
-  --color-sidebar-primary: 21 76% 55%;
-  --color-sidebar-primary-foreground: 60 9.1% 97.8%;
-  --color-sidebar-accent: 35 100% 85%;
-  --color-sidebar-accent-foreground: 20 14.3% 4.1%;
-  --color-sidebar-border: 35 50% 88%;
-  --color-sidebar-ring: 21 76% 55%;
-
-  /* Brand Colors */
-  --color-brand-50: 255 238 169;
-  --color-brand-100: 255 230 140;
-  --color-brand-200: 255 210 110;
-  --color-brand-300: 255 191 120;
-  --color-brand-400: 255 170 80;
-  --color-brand-500: 255 125 41;
-  --color-brand-600: 230 100 30;
-  --color-brand-700: 200 80 25;
-  --color-brand-800: 150 60 20;
-  --color-brand-900: 123 64 25;
-  --color-brand-950: 100 50 20;
-
-  /* Typography */
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-family-display: 'Poppins', system-ui, -apple-system, sans-serif;
-  --font-family-inter: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-family-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
-
-  /* Border Radius */
-  --radius: 0.5rem;
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-}
-
-.dark {
-  --color-background: 20 14.3% 4.1%;
-  --color-foreground: 60 9.1% 97.8%;
-  --color-card: 20 14.3% 4.1%;
-  --color-card-foreground: 60 9.1% 97.8%;
-  --color-popover: 20 14.3% 4.1%;
-  --color-popover-foreground: 60 9.1% 97.8%;
-  --color-primary: 21 76% 55%;
-  --color-primary-foreground: 60 9.1% 97.8%;
-  --color-secondary: 12 6.5% 15.1%;
-  --color-secondary-foreground: 60 9.1% 97.8%;
-  --color-muted: 12 6.5% 15.1%;
-  --color-muted-foreground: 24 5.4% 63.9%;
-  --color-accent: 12 6.5% 15.1%;
-  --color-accent-foreground: 60 9.1% 97.8%;
-  --color-destructive: 0 62.8% 30.6%;
-  --color-destructive-foreground: 60 9.1% 97.8%;
-  --color-border: 12 6.5% 15.1%;
-  --color-input: 12 6.5% 15.1%;
-  --color-ring: 21 76% 55%;
-  --color-sidebar-background: 20 14.3% 4.1%;
-  --color-sidebar-foreground: 60 9.1% 97.8%;
-  --color-sidebar-primary: 21 76% 55%;
-  --color-sidebar-primary-foreground: 60 9.1% 97.8%;
-  --color-sidebar-accent: 12 6.5% 15.1%;
-  --color-sidebar-accent-foreground: 60 9.1% 97.8%;
-  --color-sidebar-border: 12 6.5% 15.1%;
-  --color-sidebar-ring: 21 76% 55%;
-}
-
-/* Keyframe Animations */
-@keyframes accordion-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
-}
-
-@keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
-  }
-}
-
 @layer base {
+  :root {
+    /* Color Palette */
+    --color-background: 0 0% 100%;
+    --color-foreground: 20 14.3% 4.1%;
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 20 14.3% 4.1%;
+    --color-popover: 0 0% 100%;
+    --color-popover-foreground: 20 14.3% 4.1%;
+    --color-primary: 21 76% 55%;
+    --color-primary-foreground: 60 9.1% 97.8%;
+    --color-secondary: 60 4.8% 95.9%;
+    --color-secondary-foreground: 25 5.3% 44.7%;
+    --color-muted: 60 4.8% 95.9%;
+    --color-muted-foreground: 25 5.3% 44.7%;
+    --color-accent: 35 100% 85%;
+    --color-accent-foreground: 20 14.3% 4.1%;
+    --color-destructive: 0 84.2% 60.2%;
+    --color-destructive-foreground: 60 9.1% 97.8%;
+    --color-border: 35 50% 88%;
+    --color-input: 35 50% 88%;
+    --color-ring: 21 76% 55%;
+    --color-sidebar-background: 0 0% 98%;
+    --color-sidebar-foreground: 240 5.3% 26.1%;
+    --color-sidebar-primary: 21 76% 55%;
+    --color-sidebar-primary-foreground: 60 9.1% 97.8%;
+    --color-sidebar-accent: 35 100% 85%;
+    --color-sidebar-accent-foreground: 20 14.3% 4.1%;
+    --color-sidebar-border: 35 50% 88%;
+    --color-sidebar-ring: 21 76% 55%;
+
+    /* Brand Colors */
+    --color-brand-50: 255 238 169;
+    --color-brand-100: 255 230 140;
+    --color-brand-200: 255 210 110;
+    --color-brand-300: 255 191 120;
+    --color-brand-400: 255 170 80;
+    --color-brand-500: 255 125 41;
+    --color-brand-600: 230 100 30;
+    --color-brand-700: 200 80 25;
+    --color-brand-800: 150 60 20;
+    --color-brand-900: 123 64 25;
+    --color-brand-950: 100 50 20;
+
+    /* Typography */
+    --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-family-display: 'Poppins', system-ui, -apple-system, sans-serif;
+    --font-family-inter: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-family-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+  }
+
+  .dark {
+    --color-background: 20 14.3% 4.1%;
+    --color-foreground: 60 9.1% 97.8%;
+    --color-card: 20 14.3% 4.1%;
+    --color-card-foreground: 60 9.1% 97.8%;
+    --color-popover: 20 14.3% 4.1%;
+    --color-popover-foreground: 60 9.1% 97.8%;
+    --color-primary: 21 76% 55%;
+    --color-primary-foreground: 60 9.1% 97.8%;
+    --color-secondary: 12 6.5% 15.1%;
+    --color-secondary-foreground: 60 9.1% 97.8%;
+    --color-muted: 12 6.5% 15.1%;
+    --color-muted-foreground: 24 5.4% 63.9%;
+    --color-accent: 12 6.5% 15.1%;
+    --color-accent-foreground: 60 9.1% 97.8%;
+    --color-destructive: 0 62.8% 30.6%;
+    --color-destructive-foreground: 60 9.1% 97.8%;
+    --color-border: 12 6.5% 15.1%;
+    --color-input: 12 6.5% 15.1%;
+    --color-ring: 21 76% 55%;
+    --color-sidebar-background: 20 14.3% 4.1%;
+    --color-sidebar-foreground: 60 9.1% 97.8%;
+    --color-sidebar-primary: 21 76% 55%;
+    --color-sidebar-primary-foreground: 60 9.1% 97.8%;
+    --color-sidebar-accent: 12 6.5% 15.1%;
+    --color-sidebar-accent-foreground: 60 9.1% 97.8%;
+    --color-sidebar-border: 12 6.5% 15.1%;
+    --color-sidebar-ring: 21 76% 55%;
+  }
+
+  /* Keyframe Animations */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
   * {
     @apply border-border;
   }

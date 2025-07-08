@@ -20,24 +20,23 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Explicitly disable TypeScript checking in Vite
+  // Configure for JavaScript only
   build: {
     target: 'esnext',
     minify: 'esbuild',
     rollupOptions: {
-      // Ensure we're not trying to process TypeScript files
       external: [],
     },
   },
-  // Configure esbuild to handle JSX without TypeScript
+  // Configure esbuild to handle JSX in JavaScript mode
   esbuild: {
     jsxInject: `import React from 'react'`,
     loader: 'jsx',
-    include: /\.(jsx?|tsx?)$/,
-    exclude: [],
+    include: /\.(jsx?)$/,
+    exclude: /\.(ts|tsx)$/,
   },
-  // Ensure we're working with JavaScript only
+  // Disable TypeScript checking completely
   define: {
-    // Remove any TypeScript-specific definitions
+    'process.env.NODE_ENV': JSON.stringify(mode),
   },
 }));

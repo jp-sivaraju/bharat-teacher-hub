@@ -10,16 +10,7 @@ import { SchoolRegistration } from './auth/SchoolRegistration';
 import { CollegeRegistration } from './auth/CollegeRegistration';
 import { HomeTuitionRegistration } from './auth/HomeTuitionRegistration';
 
-type AuthType = 'login' | 'register' | 'teacher-register' | 'school-register' | 'college-register' | 'home-tuition-register';
-
-interface AuthModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  authType: AuthType;
-  onAuthTypeChange?: (type: AuthType) => void;
-}
-
-export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType, onAuthTypeChange }) => {
+export const AuthModal = ({ isOpen, onClose, authType, onAuthTypeChange }) => {
   const getModalTitle = () => {
     switch (authType) {
       case 'login':
@@ -48,7 +39,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, authType,
       case 'login':
         return <LoginSection />;
       case 'register':
-        return <RegistrationSection onSelectType={(type) => onAuthTypeChange?.(type as AuthType)} />;
+        return <RegistrationSection onSelectType={(type) => onAuthTypeChange?.(type)} />;
       case 'teacher-register':
         return <TeacherRegistration />;
       case 'school-register':

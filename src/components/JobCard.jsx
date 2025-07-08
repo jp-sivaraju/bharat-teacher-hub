@@ -5,28 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, Users, BookOpen, Building } from 'lucide-react';
 
-interface JobPosting {
-  id: string;
-  title: string;
-  subject: string;
-  level: string;
-  type: 'school' | 'college';
-  instituteName: string;
-  location: string;
-  urgency: 'High' | 'Medium' | 'Low';
-  applicants: number;
-  description: string;
-  requirements: string[];
-  postedDate: string;
-  experience: string;
-}
-
-interface JobCardProps {
-  job: JobPosting;
-  onViewDetails: (job: JobPosting) => void;
-}
-
-export const JobCard: React.FC<JobCardProps> = ({ job, onViewDetails }) => {
+export const JobCard = ({ job, onViewDetails }) => {
   return (
     <Card className="border-2 border-orange-200 shadow-orange hover:shadow-lg transition-shadow">
       <CardContent className="p-4">

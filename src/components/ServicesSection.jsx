@@ -57,29 +57,22 @@ export const ServicesSection = () => {
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-orange-100 overflow-hidden"
-            >
-              <div className="p-8">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800">{service.title}</h3>
+            <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-orange-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-white" />
                 </div>
-                
-                <p className="text-gray-700 mb-6">{service.description}</p>
-                
-                <div className="space-y-3">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full"></div>
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-xl font-semibold ml-4 text-gray-900">{service.title}</h3>
               </div>
+              <p className="text-gray-600 mb-4">{service.description}</p>
+              <ul className="space-y-2">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center text-sm text-gray-700">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
           );
         })}

@@ -30,17 +30,14 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           
-          {/* Login Pages */}
           <Route path="/teacher-login" element={<TeacherLogin />} />
           <Route path="/school-login" element={<SchoolLogin />} />
           <Route path="/college-login" element={<CollegeLogin />} />
           
-          {/* Registration Pages */}
           <Route path="/teacher-register" element={<TeacherRegister />} />
           <Route path="/school-register" element={<SchoolRegister />} />
           <Route path="/college-register" element={<CollegeRegister />} />
           
-          {/* Dashboard Pages */}
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/school-dashboard" element={<SchoolDashboard />} />
           <Route path="/college-dashboard" element={<CollegeDashboard />} />
@@ -49,7 +46,6 @@ const App = () => (
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/jobs" element={<JobListingsPage />} />
           
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

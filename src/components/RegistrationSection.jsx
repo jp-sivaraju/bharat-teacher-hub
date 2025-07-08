@@ -2,13 +2,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { UserPlus, Building, Home, GraduationCap, School, User, BookOpen, Users } from 'lucide-react';
+import { UserPlus, Building, Home, GraduationCap, School, User } from 'lucide-react';
 
-interface RegistrationSectionProps {
-  onSelectType?: (type: string) => void;
-}
-
-export const RegistrationSection: React.FC<RegistrationSectionProps> = ({ onSelectType }) => {
+export const RegistrationSection = ({ onSelectType }) => {
   const registrationTypes = [
     {
       id: 'teacher-register',

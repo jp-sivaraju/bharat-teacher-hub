@@ -8,7 +8,6 @@ import { Briefcase, ArrowLeft } from 'lucide-react';
 export const JobListingsPage = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
-      {/* Header */}
       <div className="bg-gradient-to-r from-orange-500 to-amber-600 text-white p-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">

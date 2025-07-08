@@ -60,7 +60,6 @@ const Index = () => {
       <main className="space-y-16 px-4 md:px-6 lg:px-8 py-8">
         <HeroSection />
         
-        {/* Demo Profile Button */}
         <section className="max-w-7xl mx-auto text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button

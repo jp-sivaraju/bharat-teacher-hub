@@ -5,7 +5,6 @@ import { GraduationCap, Users, Award, TrendingUp } from 'lucide-react';
 export const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-500 via-brand-600 to-brand-900 rounded-3xl mb-8 p-8 md:p-12 text-white shadow-primary-lg">
-      {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
         style={{
@@ -64,7 +63,6 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Features Section */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           <div className="text-center p-6 bg-white/15 rounded-xl backdrop-blur-sm hover:bg-white/25 transition-all duration-300 border border-white/20 group">
             <h4 className="font-display font-semibold text-lg mb-3 group-hover:text-glow transition-all">IIT & NEET and Civils Focused</h4>

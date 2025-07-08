@@ -1,18 +1,12 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, AlertCircle, Upload, Edit } from 'lucide-react';
+import { CheckCircle, AlertCircle, Edit } from 'lucide-react';
 
-interface ProfileSection {
-  id: string;
-  title: string;
-  completed: boolean;
-  required: boolean;
-}
-
-const profileSections: ProfileSection[] = [
+const profileSections = [
   { id: 'personal', title: 'Personal Information', completed: true, required: true },
   { id: 'contact', title: 'Contact Details', completed: true, required: true },
   { id: 'education', title: 'Educational Qualifications', completed: false, required: true },

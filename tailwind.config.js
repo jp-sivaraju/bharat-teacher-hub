@@ -1,13 +1,11 @@
 
-import type { Config } from "tailwindcss";
-
 export default {
 	darkMode: ["class"],
 	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./pages/**/*.{js,jsx}",
+		"./components/**/*.{js,jsx}",
+		"./app/**/*.{js,jsx}",
+		"./src/**/*.{js,jsx}",
 	],
 	prefix: "",
 	theme: {
@@ -92,18 +90,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom color palette
 				brand: {
-					50: 'rgb(255, 238, 169)',   // Lightest - #FFEEA9
+					50: 'rgb(255, 238, 169)',
 					100: 'rgb(255, 230, 140)',
 					200: 'rgb(255, 210, 110)',
-					300: 'rgb(255, 191, 120)',  // Light - #FFBF78
+					300: 'rgb(255, 191, 120)',
 					400: 'rgb(255, 170, 80)',
-					500: 'rgb(255, 125, 41)',   // Main - #FF7D29
+					500: 'rgb(255, 125, 41)',
 					600: 'rgb(230, 100, 30)',
 					700: 'rgb(200, 80, 25)',
 					800: 'rgb(150, 60, 20)',
-					900: 'rgb(123, 64, 25)',    // Dark - #7B4019
+					900: 'rgb(123, 64, 25)',
 					950: 'rgb(100, 50, 20)',
 				}
 			},
@@ -137,4 +134,4 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};

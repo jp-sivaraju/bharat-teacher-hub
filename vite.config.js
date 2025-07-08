@@ -20,4 +20,13 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Explicitly set the build configuration for JavaScript
+  build: {
+    target: 'esnext',
+    minify: 'esbuild',
+  },
+  // Ensure we're working with JavaScript
+  esbuild: {
+    jsxInject: `import React from 'react'`,
+  },
 }));

@@ -20,24 +20,19 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Disable TypeScript completely
   build: {
     target: 'esnext',
     rollupOptions: {
       external: [],
     },
   },
-  // Force everything to be treated as JSX
   esbuild: {
     loader: 'jsx',
     include: /\.(jsx|js)$/,
-    exclude: /\.(ts|tsx)$/,
   },
-  // Completely bypass TypeScript configuration
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
   },
-  // Override TypeScript settings
   optimizeDeps: {
     esbuildOptions: {
       loader: {
@@ -45,10 +40,5 @@ export default defineConfig(({ mode }) => ({
         '.jsx': 'jsx',
       },
     },
-  },
-  // Disable TypeScript checking entirely
-  typescript: {
-    ignoreBuildErrors: true,
-    skipLibCheck: true,
   },
 }));

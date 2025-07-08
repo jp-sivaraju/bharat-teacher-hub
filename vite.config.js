@@ -20,23 +20,30 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Configure for JavaScript only
+  // Completely bypass TypeScript
   build: {
     target: 'esnext',
-    minify: 'esbuild',
     rollupOptions: {
       external: [],
     },
   },
-  // Configure esbuild to handle JSX in JavaScript mode
+  // Force esbuild to treat everything as JSX
   esbuild: {
-    jsxInject: `import React from 'react'`,
     loader: 'jsx',
-    include: /\.(jsx?)$/,
+    include: /\.(jsx|js)$/,
     exclude: /\.(ts|tsx)$/,
   },
-  // Disable TypeScript checking completely
+  // Override any TypeScript configuration
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
+  },
+  // Disable TypeScript completely
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+        '.jsx': 'jsx',
+      },
+    },
   },
 }));

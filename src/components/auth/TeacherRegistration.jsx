@@ -24,7 +24,7 @@ export const TeacherRegistration = () => {
     requirements: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Teacher registration submitted:', formData);
     toast({
@@ -33,7 +33,7 @@ export const TeacherRegistration = () => {
     });
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 

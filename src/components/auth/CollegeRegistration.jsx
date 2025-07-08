@@ -28,7 +28,7 @@ export const CollegeRegistration = () => {
     requirements: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('College registration submitted:', formData);
     toast({
@@ -37,7 +37,7 @@ export const CollegeRegistration = () => {
     });
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 

@@ -15,7 +15,7 @@ export const LoginSection = () => {
     password: ''
   });
 
-  const handleSubmit = (e: React.FormEvent, userType: string) => {
+  const handleSubmit = (e, userType) => {
     e.preventDefault();
     console.log('Login attempted:', { userType, email: formData.email });
     toast({
@@ -24,16 +24,11 @@ export const LoginSection = () => {
     });
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const LoginForm = ({ userType, icon: Icon, title, description }: {
-    userType: string;
-    icon: React.ElementType;
-    title: string;
-    description: string;
-  }) => (
+  const LoginForm = ({ userType, icon: Icon, title, description }) => (
     <Card className="border-2 hover:border-orange-300 transition-all duration-300">
       <CardHeader className="text-center">
         <div className="flex justify-center mb-4">

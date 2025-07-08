@@ -17,7 +17,7 @@ export const ContactSection = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Contact form submitted:', formData);
     toast({
@@ -27,7 +27,7 @@ export const ContactSection = () => {
     setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 

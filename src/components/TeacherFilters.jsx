@@ -4,23 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search } from 'lucide-react';
 
-interface TeacherFiltersProps {
-  filters: {
-    subject: string;
-    language: string;
-    experience: string;
-    board: string;
-  };
-  setFilters: React.Dispatch<React.SetStateAction<{
-    subject: string;
-    language: string;
-    experience: string;
-    board: string;
-  }>>;
-}
-
-export const TeacherFilters: React.FC<TeacherFiltersProps> = ({ filters, setFilters }) => {
-  const handleFilterChange = (key: string, value: string) => {
+export const TeacherFilters = ({ filters, setFilters }) => {
+  const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
   };
 

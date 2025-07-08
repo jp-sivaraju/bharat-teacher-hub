@@ -4,16 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Star, MapPin, BookOpen, Clock, Phone, Mail, GraduationCap, Users } from 'lucide-react';
 
-interface TeacherCardsProps {
-  filters: {
-    subject: string;
-    language: string;
-    experience: string;
-    board: string;
-  };
-}
-
-export const TeacherCards: React.FC<TeacherCardsProps> = ({ filters }) => {
+export const TeacherCards = ({ filters }) => {
   const teachers = [
     {
       id: 1,

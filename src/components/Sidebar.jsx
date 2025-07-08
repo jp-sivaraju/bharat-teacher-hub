@@ -3,12 +3,7 @@ import React, { useState } from 'react';
 import { Menu, X, Home, User, Briefcase, MessageCircle, UserPlus, Phone, BookOpen, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-interface SidebarProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
-
-export const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) => {
+export const Sidebar = ({ activeSection, setActiveSection }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [

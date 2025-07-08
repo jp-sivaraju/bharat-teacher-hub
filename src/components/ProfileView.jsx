@@ -15,37 +15,7 @@ import {
   Star
 } from 'lucide-react';
 
-interface ProfileData {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  address: string;
-  city: string;
-  userType: 'teacher' | 'student' | 'parent' | 'school' | 'institution' | 'home-tuition';
-  profileImage?: string;
-  // Teacher specific fields
-  qualification?: string;
-  experience?: string;
-  specialization?: string;
-  subjects?: string[];
-  rating?: number;
-  // Student specific fields
-  age?: number;
-  currentClass?: string;
-  targetExams?: string;
-  // Additional info
-  bio?: string;
-  joinDate?: string;
-}
-
-interface ProfileViewProps {
-  profile: ProfileData;
-  isOwnProfile?: boolean;
-  onEdit?: () => void;
-}
-
-export const ProfileView: React.FC<ProfileViewProps> = ({ 
+export const ProfileView = ({
   profile, 
   isOwnProfile = false, 
   onEdit 
@@ -74,7 +44,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
     }
   };
 
-  const formatUserType = (type: string) => {
+  const formatUserType = (type) => {
     return type.charAt(0).toUpperCase() + type.slice(1).replace('-', ' ');
   };
 

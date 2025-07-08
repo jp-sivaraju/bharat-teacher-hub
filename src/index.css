@@ -1,14 +1,12 @@
 
+/* Import Tailwind CSS v4 */
+@import "tailwindcss";
+
 /* Import modern fonts - must be at the top */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* Import Tailwind CSS */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Design System Configuration */
-:root {
+@theme {
   /* Color Palette */
   --color-background: 0 0% 100%;
   --color-foreground: 20 14.3% 4.1%;

@@ -26,8 +26,8 @@ export const Header = () => {
 
   return (
     <>
-      <header className="w-full bg-white shadow-primary-lg border-b-2 border-brand-200 sticky top-0 z-50 backdrop-blur-md bg-white/95">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="w-full bg shadow-primary-lg border-b-2 border-brand-200 sticky top-0 z-50 backdrop-blur-md bg-white/95">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo/Brand */}
             <div className="flex items-center space-x-3">
@@ -35,7 +35,7 @@ export const Header = () => {
                 <BookOpen className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-display font-bold gradient-text text-balance">
+                <h1 className="text-2xl px-3 py-3 font-display font-bold gradient-text text-balance">
                   TeacherConnect
                 </h1>
                 <p className="text-sm text-brand-700 font-medium hidden sm:block font-inter">Education Excellence Platform</p>

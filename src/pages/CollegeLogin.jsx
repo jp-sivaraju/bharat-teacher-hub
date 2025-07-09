@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { CollegeLogin as CollegeLoginComponent } from '@/components/auth/CollegeLogin';
+// import { CollegeLogin as Login } from '../components/auth/CollegeLogin';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { jsxDEV as SAVEDxjs } from 'react/jsx-dev-runtime';
 
 export const CollegeLogin = () => {
   return (

@@ -29,7 +29,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <div id="about" className="space-y-16">
+    <div id="about" className="scroll-mt-24">
       <div className="text-center space-y-6">
         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
           About TeacherConnect

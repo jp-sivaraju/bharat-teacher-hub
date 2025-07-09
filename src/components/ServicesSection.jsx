@@ -43,7 +43,7 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <div id="services" className="space-y-12">
+    <div id="services" className="scroll-mt-24">
       <div className="text-center space-y-6">
         <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
           Our Services

@@ -122,7 +122,7 @@ const SelectSeparator = React.forwardRef(({ className, ...props }, ref) => (
     {...props}
   />
 ))
-SelectSeparator.displayName = SelectPrimitive.Separator.displayName
+// SelectSeparator.displayName = SelectPrimitive.Separator.displayName
 
 export {
   Select,

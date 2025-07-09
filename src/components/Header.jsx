@@ -113,7 +113,7 @@ export const Header = () => {
                   Sign In
                 </Button>
                 {showLoginDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-orange border border-brand-200 rounded-lg shadow-primary-lg z-50 backdrop-blur-md">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-orange border border-brand-200 rounded-lg shadow-primary-lg z-50 bg-amber-50">
                     <div className="py-2">
                       <Link 
                         to="/teacher-login" 

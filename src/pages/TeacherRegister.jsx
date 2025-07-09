@@ -4,7 +4,7 @@ import { TeacherRegistration } from '@/components/auth/TeacherRegistration';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-export const TeacherRegister = () => {
+ const TeacherRegister = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
       <div className="p-6">
@@ -22,3 +22,4 @@ export const TeacherRegister = () => {
     </div>
   );
 };
+export default TeacherRegister;

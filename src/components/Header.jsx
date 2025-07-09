@@ -28,17 +28,17 @@ export const Header = () => {
     <>
       <header className="w-full bg shadow-primary-lg border-b-2 border-brand-200 sticky top-0 z-50 backdrop-blur-md bg-white/95">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-15">
             {/* Logo/Brand */}
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-r from-brand-500 to-brand-900 rounded-xl flex items-center justify-center shadow-primary">
                 <BookOpen className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl px-3 py-3 font-display font-bold gradient-text text-balance">
+                <h1 className="text-2xl px-3 py-3 font-lg text-orange- font-bold gradient-text text-balance">
                   TeacherConnect
                 </h1>
-                <p className="text-sm text-brand-700 font-medium hidden sm:block font-inter">Education Excellence Platform</p>
+                {/* <p className="text-sm text-brand-700 font-medium hidden sm:block font-inter">Education Excellence Platform</p> */}
               </div>
             </div>
 
@@ -108,12 +108,12 @@ export const Header = () => {
                     setShowLoginDropdown(!showLoginDropdown);
                     setShowRegisterDropdown(false);
                   }}
-                  className="bg-gradient-to-r from-brand-500 to-brand-900 hover:from-brand-600 hover:to-brand-800 text-white shadow-primary font-semibold font-inter hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white shadow-md hover:shadow-lg font-medium font-inter rounded-lg hover:scale-105 transition-all duration-300 ease-in-out"
                 >
                   Sign In
                 </Button>
                 {showLoginDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-brand-200 rounded-lg shadow-primary-lg z-50 backdrop-blur-md">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-orange border border-brand-200 rounded-lg shadow-primary-lg z-50 backdrop-blur-md">
                     <div className="py-2">
                       <Link 
                         to="/teacher-login" 

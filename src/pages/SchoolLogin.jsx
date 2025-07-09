@@ -1,6 +1,6 @@
 
 import React from 'react';
-// import { SchoolLogin as SchoolLoginComponent } from '../components/auth/SchoolLogin';
+// import { schoolLogin as SchoolLoginComponent } from '../components/pages/SchoolLogin';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 

@@ -1,10 +1,10 @@
 
 import React from 'react';
-// import { TeacherLogin as TeacherLoginComponent } from '../components/auth/TeacherLogin';
+// import { Tead } from '../pages/TeacherRegister';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { jsxDEV as SAVEDxjs } from 'react/jsx-dev-runtime';
-export const TeacherLogin = () => {
+ const TeacherLogin = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
       <div className="p-6">
@@ -17,10 +17,11 @@ export const TeacherLogin = () => {
             </Link>
           </div>
           <div className="max-w-md mx-auto">
-            <TeacherLoginComponent />
+            <TeacherLogin />
           </div>
         </div>
       </div>
     </div>
   );
 };
+export default TeacherLogin;

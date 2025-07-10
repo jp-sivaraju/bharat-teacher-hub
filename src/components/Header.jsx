@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X, Home, BookOpen, UserPlus, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,48 +18,46 @@ export const Header = () => {
 
   const menuItems = [
     { id: 'home', label: 'Home', icon: Home, action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
-    { id: 'about', label: 'About Us', icon: BookOpen, action: () => scrollToSection('about') },
+    { id: 'about', label: 'About', icon: BookOpen, action: () => scrollToSection('about') },
     { id: 'services', label: 'Services', icon: BookOpen, action: () => scrollToSection('services') },
     { id: 'testimonials', label: 'Testimonials', icon: BookOpen, action: () => scrollToSection('testimonials') },
   ];
 
   return (
     <>
-      <header className="w-full bg shadow-primary-lg border-b-2 border-brand-200 sticky top-0 z-50 backdrop-blur-md bg-white/95">
-        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-15">
+      <header className="w-full bg-white text-gray-900 sticky top-0 z-50 shadow-md border-b-2 border-gray-200">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
             {/* Logo/Brand */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-brand-500 to-brand-900 rounded-xl flex items-center justify-center shadow-primary">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full flex items-center justify-center">
                 <BookOpen className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl px-3 py-3 font-lg text-orange- font-bold gradient-text text-balance">
-                  TeacherConnect
-                </h1>
-                {/* <p className="text-sm text-brand-700 font-medium hidden sm:block font-inter">Education Excellence Platform</p> */}
+                <h1 className="text-2xl font-bold text-orange-600">TeacherConnect</h1>
+                {/* <p className="text-sm text-gray-600 hidden sm:block">Professional Education Hub</p> */}
               </div>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-6">
               {menuItems.map((item) => {
                 const Icon = item.icon;
                 return (
                   <button
                     key={item.id}
                     onClick={item.action}
-                    className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 font-medium text-sm font-inter text-brand-800 hover:bg-brand-100 hover:text-brand-900 hover:scale-105"
+                    className="flex items-center space-x-2 px-4 py-2 rounded-md transition-all duration-300 text-gray-700 hover:bg-gray-100 hover:text-orange-600 font-medium"
                   >
-                    <Icon className="w-4 h-4" />
-                    <span className="font-medium">{item.label}</span>
+                    <Icon className="w-5 h-5" />
+                    <span>{item.label}</span>
                   </button>
                 );
               })}
             </nav>
 
             {/* Auth Buttons - Desktop */}
-            <div className="hidden md:flex items-center space-x-3">
+            <div className="hidden md:flex items-center space-x-4">
               <div className="relative">
                 <Button
                   onClick={() => {
@@ -69,31 +66,31 @@ export const Header = () => {
                   }}
                   size="sm"
                   variant="outline"
-                  className="border-brand-300 hover:border-brand-500 hover:bg-brand-50 text-brand-700 hover:text-brand-800 font-medium font-inter"
+                  className="border-gray-300 hover:border-orange-500 hover:bg-orange-50 text-gray-700 hover:text-orange-600 font-medium"
                 >
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
                 {showRegisterDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-brand-200 rounded-lg shadow-primary-lg z-50 backdrop-blur-md">
+                  <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-md z-50">
                     <div className="py-2">
                       <Link 
                         to="/teacher-register" 
-                        className="block px-4 py-3 text-sm font-medium font-inter text-brand-700 hover:bg-brand-50 hover:text-brand-800 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         Teacher Registration
                       </Link>
                       <Link 
                         to="/school-register" 
-                        className="block px-4 py-3 text-sm font-medium font-inter text-brand-700 hover:bg-brand-50 hover:text-brand-800 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         School Registration
                       </Link>
                       <Link 
                         to="/college-register" 
-                        className="block px-4 py-3 text-sm font-medium font-inter text-brand-700 hover:bg-brand-50 hover:text-brand-800 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         College Registration
@@ -108,30 +105,31 @@ export const Header = () => {
                     setShowLoginDropdown(!showLoginDropdown);
                     setShowRegisterDropdown(false);
                   }}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white shadow-md hover:shadow-lg font-medium font-inter rounded-lg hover:scale-105 transition-all duration-300 ease-in-out"
+                  className="bg-orange-600 hover:bg-orange-700 text-white shadow-md hover:shadow-lg font-medium rounded-md transition-all duration-300"
                 >
+                  <LogIn className="w-4 h-4 mr-2" />
                   Sign In
                 </Button>
                 {showLoginDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-orange border border-brand-200 rounded-lg shadow-primary-lg z-50 bg-amber-50">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-md z-50">
                     <div className="py-2">
                       <Link 
                         to="/teacher-login" 
-                        className="block px-4 py-3 text-sm font-medium font-inter text-brand-700 hover:bg-brand-50 hover:text-brand-800 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         Teacher Login
                       </Link>
                       <Link 
                         to="/school-login" 
-                        className="block px-4 py-3 text-sm font-medium font-inter text-brand-700 hover:bg-brand-50 hover:text-brand-800 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         School Login
                       </Link>
                       <Link 
                         to="/college-login" 
-                        className="block px-4 py-3 text-sm font-medium font-inter text-brand-700 hover:bg-brand-50 hover:text-brand-800 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         College Login
@@ -146,7 +144,7 @@ export const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden text-brand-700 hover:bg-brand-100"
+              className="lg:hidden text-gray-700 hover:bg-gray-100"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -155,7 +153,7 @@ export const Header = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-brand-200 backdrop-blur-md bg-white/95">
+            <div className="lg:hidden py-4 border-t border-gray-200 backdrop-blur-md bg-white/90">
               <div className="space-y-2">
                 {menuItems.map((item) => {
                   const Icon = item.icon;
@@ -163,7 +161,7 @@ export const Header = () => {
                     <button
                       key={item.id}
                       onClick={item.action}
-                      className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 font-medium font-inter text-brand-800 hover:bg-brand-100 hover:text-brand-900"
+                      className="w-full flex items-center space-x-3 px-4 py-2 rounded-md text-left text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
                     >
                       <Icon className="w-5 h-5" />
                       <span>{item.label}</span>
@@ -173,12 +171,12 @@ export const Header = () => {
               </div>
               
               {/* Mobile Auth Buttons */}
-              <div className="mt-4 pt-4 border-t border-brand-200 flex space-x-3">
-                <Button size="sm" variant="outline" className="flex-1 border-brand-300 text-brand-700 hover:bg-brand-50 font-medium font-inter">
+              <div className="mt-4 pt-4 border-t border-gray-200 flex space-x-3">
+                <Button size="sm" variant="outline" className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-orange-600 font-medium">
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
-                <Button size="sm" className="flex-1 bg-gradient-to-r from-brand-500 to-brand-900 hover:from-brand-600 hover:to-brand-800 text-white font-semibold font-inter">
+                <Button size="sm" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white font-medium">
                   <LogIn className="w-4 h-4 mr-2" />
                   Login
                 </Button>

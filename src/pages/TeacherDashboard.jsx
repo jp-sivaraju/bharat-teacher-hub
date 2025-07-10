@@ -34,10 +34,11 @@ export const TeacherDashboard = () => {
   const handleEdit = () => {
     console.log('Edit profile clicked');
   };
-
+  const handleSubmit = () => {;
+    navigate('/job-dashboard');};
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br mt-2 from-orange-50 via-amber-50 to-orange-100 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-orange-500 text-white p-4 rounded-t-lg flex justify-between items-center mb-4 border-2 border-orange-600">
@@ -47,14 +48,15 @@ export const TeacherDashboard = () => {
             </div>
             <div>
               <h1 className="text-2xl font-bold">{sampleProfiles.teacher.name}</h1>
-              <p className="text-sm text-orange-100">{sampleProfiles.teacher.experience} <span className="text-green-300">Verified</span> <span className="text-green-300">Teacher</span></p>
+              <p className="text-sm text-orange-100">{sampleProfiles.teacher.experience} • <span className="text-green-300">Verified</span></p>
             </div>
           </div>
           <div className="flex items-center space-x-2">
             <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-orange-500">
               Verify Profile
             </Button>
-            <Button variant="outline" onClick={handleSubmit} size="sm" className="text-white border-white hover:bg-white hover:text-orange-500">
+            <Button variant="outline" onClick={handleEdit} size="sm" className="text-white border-white hover:bg-white hover:text-orange-500">
+
 
               Edit Profile
             </Button>

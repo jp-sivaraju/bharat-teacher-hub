@@ -109,7 +109,8 @@ export const TeacherRegistration = () => {
                 <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
                   <SelectValue placeholder="Select qualification" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white shadow-md">
+
                   <SelectItem value="b.tech">B.Tech</SelectItem>
                   <SelectItem value="m.tech">M.Tech</SelectItem>
                   <SelectItem value="phd">PhD</SelectItem>
@@ -124,10 +125,10 @@ export const TeacherRegistration = () => {
             <div className="space-y-2">
               <Label htmlFor="experience">Teaching Experience *</Label>
               <Select value={formData.experience} onValueChange={(value) => handleInputChange('experience', value)}>
-                <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
+                <SelectTrigger className="border-2 hover:border-orange-300 bg-yellow-50 focus:border-orange-500 transition-all duration-300">
                   <SelectValue placeholder="Select experience" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white shadow-md">
                   <SelectItem value="0-1">0-1 years</SelectItem>
                   <SelectItem value="1-3">1-3 years</SelectItem>
                   <SelectItem value="3-5">3-5 years</SelectItem>

@@ -41,10 +41,10 @@ export const TestimonialsSection = () => {
   return (
     <div id="testimonials" className="scroll-mt-24">
       <div className="text-center space-y-6">
-        <h1 className="text-4xl font-bold text-foreground">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
           What Teachers Say
         </h1>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
           Read success stories from thousands of teachers who found their dream jobs through our platform.
         </p>
       </div>
@@ -53,30 +53,30 @@ export const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => (
           <div 
             key={index}
-            className="bg-card rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 border border-border overflow-hidden"
+            className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-orange-100 overflow-hidden"
           >
             <div className="p-8">
               <div className="flex items-start space-x-4 mb-6">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-4 border-primary/20"
+                  className="w-16 h-16 rounded-full object-cover border-4 border-orange-200"
                 />
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-foreground">{testimonial.name}</h3>
-                  <p className="text-primary font-medium">{testimonial.role}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.school}</p>
+                  <h3 className="text-xl font-bold text-gray-800">{testimonial.name}</h3>
+                  <p className="text-orange-600 font-medium">{testimonial.role}</p>
+                  <p className="text-sm text-gray-600">{testimonial.school}</p>
                   <div className="flex items-center space-x-1 mt-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                 </div>
-                <Quote className="w-8 h-8 text-primary/20" />
+                <Quote className="w-8 h-8 text-orange-200" />
               </div>
               
-              <div className="bg-accent rounded-xl p-6">
-                <p className="text-foreground italic leading-relaxed">"{testimonial.testimonial}"</p>
+              <div className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-xl p-6">
+                <p className="text-gray-700 italic leading-relaxed">"{testimonial.testimonial}"</p>
               </div>
             </div>
           </div>

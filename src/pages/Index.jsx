@@ -16,12 +16,12 @@ const Index = () => {
 
   if (showProfileDemo) {
     return (
-      <div className="min-h-screen w-full bg-gradient-to-br from-brand-50 via-brand-100 to-brand-200">
+      <div className="min-h-screen w-full bg-background">
         <Header />
         <div className="p-6">
           <Button
             onClick={() => setShowProfileDemo(false)}
-            className="mb-6 bg-gradient-to-r from-brand-500 to-brand-900 hover:from-brand-600 hover:to-brand-800 text-white shadow-primary"
+            className="mb-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
           >
             ← Back to Home
           </Button>
@@ -33,19 +33,19 @@ const Index = () => {
 
   if (showJobListings) {
     return (
-      <div className="min-h-screen w-full bg-gradient-to-br from-brand-50 via-brand-100 to-brand-200">
+      <div className="min-h-screen w-full bg-background">
         <Header />
         <div className="p-6">
           <Button
             onClick={() => setShowJobListings(false)}
-            className="mb-6 bg-gradient-to-r from-brand-500 to-brand-900 hover:from-brand-600 hover:to-brand-800 text-white shadow-primary"
+            className="mb-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
           >
             ← Back to Home
           </Button>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold text-brand-900 mb-4">Job Opportunities</h1>
-              <p className="text-lg text-brand-700">Find the perfect teaching position at schools and colleges</p>
+              <h1 className="text-4xl font-bold text-foreground mb-4">Job Opportunities</h1>
+              <p className="text-lg text-muted-foreground">Find the perfect teaching position at schools and colleges</p>
             </div>
             <JobListings />
           </div>
@@ -55,7 +55,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-brand-50 via-brand-100 to-brand-200 bg-pattern">
+    <div className="min-h-screen w-full bg-background">
       <Header />
       <main className="space-y-16 px-4 md:px-6 lg:px-8 py-8">
         <HeroSection />
@@ -64,14 +64,15 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               onClick={() => setShowProfileDemo(true)}
-              className="bg-gradient-to-r from-brand-500 to-brand-900 hover:from-brand-600 hover:to-brand-800 text-white shadow-primary-lg hover:shadow-primary transform hover:scale-105 transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <User className="w-4 h-4 mr-2" />
               View Profile Demo
             </Button>
             <Button
               onClick={() => setShowJobListings(true)}
-              className="bg-gradient-to-r from-brand-700 to-brand-900 hover:from-brand-800 hover:to-brand-950 text-white shadow-lg transform hover:scale-105 transition-all duration-300"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg transform hover:scale-105 transition-all duration-300"
             >
               <Briefcase className="w-4 h-4 mr-2" />
               Browse Job Postings

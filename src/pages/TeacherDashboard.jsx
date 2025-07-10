@@ -1,124 +1,233 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-import React from 'react';
-import { TeacherProfileCompletion } from '@/components/TeacherProfileCompletion';
-import { VerificationBadge } from '@/components/VerificationBadge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
 import { User, Briefcase, Settings, LogOut, Bell, Search, Star } from 'lucide-react';
 
+
+const sampleProfiles = {
+  teacher: {
+    id: '1',
+    name: 'Dr. Sarah Johnson',
+    email: 'sarah.johnson@email.com',
+    phone: '+91 98765 43210',
+    address: '123 Education Street, Academic District',
+    city: 'Mumbai',
+    userType: 'teacher',
+    qualification: 'PhD in Mathematics',
+    experience: '10+ years',
+    specialization: 'Advanced Mathematics & Physics',
+    subjects: ['Mathematics', 'Physics', 'Calculus', 'Algebra'],
+    rating: 4.8,
+    bio: 'Passionate mathematics educator with over 10 years of experience in teaching advanced mathematics and physics. Specialized in helping students prepare for competitive exams like JEE and NEET.',
+    joinDate: 'January 2020'
+  }
+};
+
 export const TeacherDashboard = () => {
+  const navigate = useNavigate();
+  const [selectedProfile, setSelectedProfile] = useState('teacher');
+  const [isOwnProfile, setIsOwnProfile] = useState(true);
+
+  const handleEdit = () => {
+    console.log('Edit profile clicked');
+  };
+
+
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
-      <div className="bg-gradient-to-r from-orange-500 to-amber-600 text-white p-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100 p-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="bg-orange-500 text-white p-4 rounded-t-lg flex justify-between items-center mb-4 border-2 border-orange-600">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
               <User className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Teacher Dashboard</h1>
-              <p className="text-orange-100 mt-1">Welcome back, Teacher!</p>
+              <h1 className="text-2xl font-bold">{sampleProfiles.teacher.name}</h1>
+              <p className="text-sm text-orange-100">{sampleProfiles.teacher.experience} <span className="text-green-300">Verified</span> <span className="text-green-300">Teacher</span></p>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <Button variant="secondary" size="sm" className="bg-white/20 hover:bg-white/30">
-              <Bell className="w-4 h-4 mr-2" />
-              Notifications
+          <div className="flex items-center space-x-2">
+            <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-orange-500">
+              Verify Profile
+            </Button>
+            <Button variant="outline" onClick={handleSubmit} size="sm" className="text-white border-white hover:bg-white hover:text-orange-500">
+
+              Edit Profile
             </Button>
             <Link to="/">
-              <Button variant="secondary" size="sm" className="bg-white/20 hover:bg-white/30">
-                <LogOut className="w-4 h-4 mr-2" />
-                Logout
+              <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-orange-500">
+                Home
               </Button>
             </Link>
           </div>
         </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto p-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 space-y-6">
-            <TeacherProfileCompletion />
-            
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>Recent Job Applications</span>
-                  <Button size="sm" variant="outline">
-                    <Search className="w-4 h-4 mr-2" />
-                    Find More Jobs
-                  </Button>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                    <div>
-                      <h3 className="font-medium">Mathematics Teacher - Delhi Public School</h3>
-                      <p className="text-sm text-gray-600">Applied 2 days ago</p>
-                    </div>
-                    <Badge variant="secondary">Under Review</Badge>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                    <div>
-                      <h3 className="font-medium">Physics Teacher - St. Mary's School</h3>
-                      <p className="text-sm text-gray-600">Applied 1 week ago</p>
-                    </div>
-                    <Badge variant="default">Interview Scheduled</Badge>
+        {/* Stats */}
+        <div className="grid grid-cols-4 gap-4 mb-6">
+          <Card className="border-2 border-orange-200">
+            <CardContent className="p-4">
+              <p className="text-gray-600 text-sm">Total Students</p>
+              <p className="text-xl font-bold">45</p>
+            </CardContent>
+          </Card>
+          <Card className="border-2 border-orange-200">
+            <CardContent className="p-4">
+              <p className="text-gray-600 text-sm">Active Classes</p>
+              <p className="text-xl font-bold">8</p>
+            </CardContent>
+          </Card>
+          <Card className="border-2 border-orange-200">
+            <CardContent className="p-4">
+              <p className="text-gray-600 text-sm">Monthly Earnings</p>
+              <p className="text-xl font-bold text-green-500">₹25,000</p>
+            </CardContent>
+          </Card>
+          <Card className="border-2 border-orange-200">
+            <CardContent className="p-4">
+              <p className="text-gray-600 text-sm">Profile Views</p>
+              <p className="text-xl font-bold">1250</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid grid-cols-3 gap-6">
+          {/* Profile Completion */}
+          <Card className="border-2 border-orange-200">
+            <CardHeader>
+              <CardTitle>Profile Completion</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-orange-600 mb-2">68% Complete</p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between"><span>Personal Information</span><span className="text-orange-500">Required</span></li>
+                <li className="flex justify-between"><span>Contact Details</span><span className="text-orange-500">Required</span></li>
+                <li className="flex justify-between"><span>Educational Qualifications</span><span>Complete</span></li>
+                <li className="flex justify-between"><span>Experience</span><span>Complete</span></li>
+                <li className="flex justify-between"><span>Teaching Subjects</span><span>Complete</span></li>
+                <li className="flex justify-between"><span>Certifications & Licenses</span><span>Complete</span></li>
+                <li className="flex justify-between"><span>Resume</span><span>Complete</span></li>
+                <li className="flex justify-between"><span>Profile Picture</span><span>Complete</span></li>
+                <li className="flex justify-between"><span>Expectations</span><span>Complete</span></li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Today's Classes */}
+          <Card className="border-2 border-orange-200 col-span-2">
+            <CardHeader>
+              <CardTitle>Today's Classes</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                <div className="p-2 bg-orange-50 rounded">
+                  <p>Mathematics</p>
+                  <p className="text-sm text-gray-600">Rahul Sharma - 10:00 AM</p>
+                </div>
+                <div className="p-2 bg-orange-50 rounded">
+                  <p>Physics</p>
+                  <p className="text-sm text-gray-600">Priya Patel - 2:00 PM</p>
+                </div>
+                <div className="p-2 bg-orange-50 rounded">
+                  <p>Calculus</p>
+                  <p className="text-sm text-gray-600">Amit Kumar - 4:00 PM</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Teaching Subjects */}
+          <Card className="border-2 border-orange-200">
+            <CardHeader>
+              <CardTitle>Teaching Subjects</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-1">
+                {sampleProfiles.teacher.subjects.map((subject, index) => (
+                  <li key={index} className="text-orange-500">{subject}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Quick Actions */}
+          <Card className="border-2 border-orange-200">
+            <CardHeader>
+              <CardTitle>Quick Actions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <Button className="w-full justify-start" variant="outline">
+                <Briefcase className="w-4 h-4 mr-2" />
+                Upload Resume
+              </Button>
+              <Button className="w-full justify-start" variant="outline">
+                <Star className="w-4 h-4 mr-2" />
+                Upload Certificate
+              </Button>
+              <Button className="w-full justify-start" variant="outline">
+                <Settings className="w-4 h-4 mr-2" />
+                Set Salary Expectations
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Profile Insights */}
+          <Card className="border-2 border-orange-200 col-span-2">
+            <CardHeader>
+              <CardTitle>Profile Insights</CardTitle>
+            </CardHeader>
+            <CardContent className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-gray-600">Profile Views</p>
+                <p className="text-xl font-bold">1250</p>
+              </div>
+              <div>
+                <p className="text-gray-600">Salary Expectation</p>
+                <p className="text-xl font-bold text-green-500">₹50,000</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Notifications */}
+          <Card className="border-2 border-orange-200">
+            <CardHeader>
+              <CardTitle>Notifications</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-gray-600">
+              <p>Complete your salary expectations</p>
+              <p>Upload your latest certificates</p>
+              <p>New job match available</p>
+            </CardContent>
+          </Card>
+
+          {/* Recent Reviews */}
+          <Card className="border-2 border-orange-200 col-span-2">
+            <CardHeader>
+              <CardTitle>Recent Reviews</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                <div className="p-2 bg-orange-50 rounded">
+                  <p>Anjali Singh</p>
+                  <p className="text-sm text-gray-600">"Excellent teaching method!"</p>
+                  <div className="flex space-x-1 text-yellow-500">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                  Profile Status
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span>Verification Status</span>
-                    <VerificationBadge status="pending" />
+                <div className="p-2 bg-orange-50 rounded">
+                  <p>Whiz Gupta</p>
+                  <p className="text-sm text-gray-600">"Very patient and helpful!"</p>
+                  <div className="flex space-x-1 text-yellow-500">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span>Profile Views</span>
-                    <Badge variant="outline">142 this month</Badge>
-                  </div>
-                  <Button className="w-full" size="sm">
-                    <Settings className="w-4 h-4 mr-2" />
-                    Edit Profile
-                  </Button>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <Link to="/jobs">
-                  <Button className="w-full justify-start" variant="outline">
-                    <Briefcase className="w-4 h-4 mr-2" />
-                    Browse Jobs
-                  </Button>
-                </Link>
-                <Link to="/verification-plans">
-                  <Button className="w-full justify-start" variant="outline">
-                    <Star className="w-4 h-4 mr-2" />
-                    Get Verified
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

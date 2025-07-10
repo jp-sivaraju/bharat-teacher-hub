@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 import { Plus, ArrowLeft, MapPin, DollarSign, Calendar, Users } from 'lucide-react';
 
 export const PostJob = () => {
+ 
+  
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
       <div className="bg-gradient-to-r from-orange-500 to-amber-600 text-white p-6">

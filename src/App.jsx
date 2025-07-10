@@ -10,9 +10,10 @@ import TeacherLogin  from "./pages/TeacherLogin";
 import { SchoolLogin } from "./pages/SchoolLogin";
 import { CollegeLogin } from "./pages/CollegeLogin";
 import { TeacherDashboard } from "./pages/TeacherDashboard";
-import { SchoolDashboard } from "./pages/SchoolDashboard";
+import SchoolDashboard  from "./pages/SchoolDashboard";
 import { CollegeDashboard } from "./pages/CollegeDashboard";
-import  TeacherRegister  from "./pages/TeacherRegister";
+
+import  TeacherRegister   from "./pages/TeacherRegister";
 import { SchoolRegister } from "./pages/SchoolRegister";
 import { CollegeRegister } from "./pages/CollegeRegister";
 import { VerificationPlans } from "./pages/VerificationPlans";

@@ -45,7 +45,7 @@ export const ServicesSection = () => {
   return (
     <div id="services" className="scroll-mt-24">
       <div className="text-center space-y-6">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-brand-700 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold text-foreground">
           Our Services
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -57,10 +57,10 @@ export const ServicesSection = () => {
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
-            <div key={index} className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-border">
+            <div key={index} className="bg-card rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-border">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-brand-700 rounded-lg flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-primary-foreground" />
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold ml-4 text-foreground">{service.title}</h3>
               </div>

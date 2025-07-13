@@ -2,101 +2,151 @@
 @import "tailwindcss";
 
 :root {
-  /* Color palette: #FAF7F3, #F0E4D3, #DCC5B2, #D9A299 */
-  --color-background: 32 25 11; /* #FAF7F3 converted to HSL */
-  --color-foreground: 210 40% 6%;
+  /* Color System - HSL Values */
+  --color-background: 0 0% 100%;
+  --color-foreground: 222 84% 4.9%;
   
-  --color-card: 32 25 11;
-  --color-card-foreground: 210 40% 6%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222 84% 4.9%;
   
-  --color-popover: 32 25 11;
-  --color-popover-foreground: 210 40% 6%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 222 84% 4.9%;
   
-  --color-primary: 8 42% 70%; /* #D9A299 - main accent color */
-  --color-primary-foreground: 32 25 11;
+  --color-primary: 162 100% 40%;
+  --color-primary-foreground: 210 40% 98%;
   
-  --color-secondary: 32 33% 85%; /* #F0E4D3 - secondary background */
-  --color-secondary-foreground: 210 40% 6%;
+  --color-secondary: 210 40% 96%;
+  --color-secondary-foreground: 222 47% 11%;
   
-  --color-muted: 28 25% 80%; /* #DCC5B2 - muted elements */
-  --color-muted-foreground: 210 40% 40%;
+  --color-muted: 210 40% 96%;
+  --color-muted-foreground: 215 16% 47%;
   
-  --color-accent: 28 25% 80%; /* #DCC5B2 */
-  --color-accent-foreground: 210 40% 6%;
+  --color-accent: 210 40% 96%;
+  --color-accent-foreground: 222 47% 11%;
   
   --color-destructive: 0 84% 60%;
-  --color-destructive-foreground: 0 0% 98%;
+  --color-destructive-foreground: 210 40% 98%;
   
-  --color-border: 28 25% 80%;
-  --color-input: 28 25% 80%;
-  --color-ring: 8 42% 70%;
+  --color-border: 214 32% 91%;
+  --color-input: 214 32% 91%;
+  --color-ring: 162 100% 40%;
   
-  /* Brand colors based on your palette */
-  --color-brand-50: 32 25 95; /* Lightest - close to #FAF7F3 */
-  --color-brand-100: 32 33 90; /* #F0E4D3 range */
-  --color-brand-200: 32 33 85;
-  --color-brand-300: 28 25 80; /* #DCC5B2 range */
-  --color-brand-400: 28 25 75;
-  --color-brand-500: 20 30 70;
-  --color-brand-600: 15 35 65;
-  --color-brand-700: 12 38 60;
-  --color-brand-800: 10 40 55;
-  --color-brand-900: 8 42 50;
-  --color-brand-950: 8 42 45;
+  /* Sidebar Colors */
+  --color-sidebar-background: 0 0% 98%;
+  --color-sidebar-foreground: 222 84% 4.9%;
+  --color-sidebar-primary: 162 100% 40%;
+  --color-sidebar-primary-foreground: 210 40% 98%;
+  --color-sidebar-accent: 210 40% 96%;
+  --color-sidebar-accent-foreground: 222 47% 11%;
+  --color-sidebar-border: 214 32% 91%;
+  --color-sidebar-ring: 162 100% 40%;
   
-  /* Sidebar colors */
-  --color-sidebar-background: 32 25 11;
-  --color-sidebar-foreground: 210 40% 6%;
-  --color-sidebar-primary: 8 42% 70%;
-  --color-sidebar-primary-foreground: 32 25 11;
-  --color-sidebar-accent: 28 25% 80%;
-  --color-sidebar-accent-foreground: 210 40% 6%;
-  --color-sidebar-border: 28 25% 80%;
-  --color-sidebar-ring: 8 42% 70%;
+  /* Brand Colors - Green Palette */
+  --color-brand-50: 155 100% 96%;
+  --color-brand-100: 158 100% 89%;
+  --color-brand-200: 159 100% 77%;
+  --color-brand-300: 160 100% 64%;
+  --color-brand-400: 161 100% 52%;
+  --color-brand-500: 162 100% 40%;
+  --color-brand-600: 163 100% 32%;
+  --color-brand-700: 164 100% 24%;
+  --color-brand-800: 165 84% 20%;
+  --color-brand-900: 166 72% 16%;
+  --color-brand-950: 167 84% 9%;
   
   /* Typography */
-  --font-family-sans: "Inter", system-ui, sans-serif;
-  --font-family-display: "Poppins", system-ui, sans-serif;
-  --font-family-inter: "Inter", system-ui, sans-serif;
-  --font-family-poppins: "Poppins", system-ui, sans-serif;
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-poppins: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
+  /* Layout */
   --radius: 0.5rem;
 }
 
 .dark {
-  --color-background: 210 40% 6%;
-  --color-foreground: 32 25 95;
+  --color-background: 222 84% 4.9%;
+  --color-foreground: 210 40% 98%;
   
-  --color-card: 210 40% 8%;
-  --color-card-foreground: 32 25 95;
+  --color-card: 222 84% 4.9%;
+  --color-card-foreground: 210 40% 98%;
   
-  --color-popover: 210 40% 8%;
-  --color-popover-foreground: 32 25 95;
+  --color-popover: 222 84% 4.9%;
+  --color-popover-foreground: 210 40% 98%;
   
-  --color-primary: 8 42% 70%;
-  --color-primary-foreground: 210 40% 6%;
+  --color-primary: 162 100% 40%;
+  --color-primary-foreground: 222 84% 4.9%;
   
-  --color-secondary: 210 40% 12%;
-  --color-secondary-foreground: 32 25 95;
+  --color-secondary: 217 33% 17%;
+  --color-secondary-foreground: 210 40% 98%;
   
-  --color-muted: 210 40% 12%;
-  --color-muted-foreground: 32 25 60;
+  --color-muted: 217 33% 17%;
+  --color-muted-foreground: 215 20% 65%;
   
-  --color-accent: 210 40% 12%;
-  --color-accent-foreground: 32 25 95;
+  --color-accent: 217 33% 17%;
+  --color-accent-foreground: 210 40% 98%;
   
-  --color-border: 210 40% 12%;
-  --color-input: 210 40% 12%;
-  --color-ring: 8 42% 70%;
+  --color-destructive: 0 62% 30%;
+  --color-destructive-foreground: 210 40% 98%;
+  
+  --color-border: 217 33% 17%;
+  --color-input: 217 33% 17%;
+  --color-ring: 162 100% 40%;
+  
+  --color-sidebar-background: 222 84% 4.9%;
+  --color-sidebar-foreground: 210 40% 98%;
+  --color-sidebar-primary: 162 100% 40%;
+  --color-sidebar-primary-foreground: 222 84% 4.9%;
+  --color-sidebar-accent: 217 33% 17%;
+  --color-sidebar-accent-foreground: 210 40% 98%;
+  --color-sidebar-border: 217 33% 17%;
+  --color-sidebar-ring: 162 100% 40%;
+}
+
+* {
+  border-color: hsl(var(--color-border));
 }
 
 body {
-  font-family: var(--font-family-sans);
   background-color: hsl(var(--color-background));
   color: hsl(var(--color-foreground));
+  font-family: var(--font-family-sans);
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--color-muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-primary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--color-primary) / 0.8);
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--color-ring));
+  outline-offset: 2px;
+}
+
+/* Background pattern for hero sections */
 .bg-pattern {
-  background-image: radial-gradient(circle at 25% 25%, hsl(var(--color-brand-100)) 0%, transparent 50%),
-                    radial-gradient(circle at 75% 75%, hsl(var(--color-brand-200)) 0%, transparent 50%);
+  background-image: 
+    radial-gradient(circle at 1px 1px, hsl(var(--color-primary) / 0.1) 1px, transparent 0);
+  background-size: 20px 20px;
 }

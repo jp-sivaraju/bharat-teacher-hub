@@ -68,10 +68,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Monaco', 'Menlo', 'Ubuntu Mono', 'monospace'],
-        display: ['Monaco', 'Menlo', 'Ubuntu Mono', 'monospace'],
-        inter: ['Monaco', 'Menlo', 'Ubuntu Mono', 'monospace'],
-        poppins: ['Monaco', 'Menlo', 'Ubuntu Mono', 'monospace'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        inter: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        poppins: ['Poppins', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
         mono: ['Monaco', 'Menlo', 'Ubuntu Mono', 'monospace'],
       },
       borderRadius: {
@@ -88,10 +88,24 @@ export default {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out',
+        'slide-up': 'slide-up 0.6s ease-out',
+      },
+      boxShadow: {
+        'educational': '0 1px 3px 0 hsl(var(--color-primary) / 0.1), 0 1px 2px 0 hsl(var(--color-primary) / 0.06)',
+        'educational-lg': '0 10px 15px -3px hsl(var(--color-primary) / 0.1), 0 4px 6px -2px hsl(var(--color-primary) / 0.05)',
       },
     },
   },

@@ -34,7 +34,7 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-card rounded-lg mb-8 p-6 md:p-8 shadow border border-border">
+    <section className="relative overflow-hidden bg-gradient-to-br from-card via-card to-accent/20 rounded-2xl mb-8 p-6 md:p-8 shadow-educational-lg border border-border animate-fade-in">
       <div className="scroll-mt-16">
         {/* Inspirational Carousel with Auto-scroll */}
         <div className="mb-8">
@@ -50,29 +50,29 @@ export const HeroSection = () => {
             <CarouselContent>
               {inspirationalMessages.map((message, index) => (
                 <CarouselItem key={index}>
-                  <div className="grid md:grid-cols-2 gap-6 items-center">
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <span className="bg-muted text-foreground px-2 py-1 rounded text-xs font-mono border">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className="space-y-6 animate-slide-up">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <span className="bg-gradient-to-r from-primary/10 to-brand-200/50 text-primary px-3 py-1.5 rounded-full text-sm font-medium border border-primary/20">
                           {message.language}
                         </span>
                       </div>
                       
-                      <h2 className="font-mono font-bold text-lg md:text-xl text-foreground leading-tight">
+                      <h2 className="font-bold text-xl md:text-2xl text-foreground leading-tight bg-gradient-to-r from-foreground to-primary bg-clip-text">
                         {message.title}
                       </h2>
                       
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-mono">
+                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                         {message.content.substring(0, 200)}...
                       </p>
                     </div>
                     
-                    <div className="relative">
-                      <div className="aspect-[4/3] rounded-lg overflow-hidden shadow border">
+                    <div className="relative group">
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-educational-lg border border-border/50 group-hover:shadow-xl transition-all duration-300">
                         <img 
                           src={message.image} 
                           alt={`Teacher teaching - ${message.language}`}
-                          className="w-full h-full object-cover object-center"
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                     </div>
@@ -80,74 +80,76 @@ export const HeroSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
+            <CarouselPrevious className="left-4 bg-card/90 border-primary/20 hover:bg-primary hover:text-primary-foreground" />
+            <CarouselNext className="right-4 bg-card/90 border-primary/20 hover:bg-primary hover:text-primary-foreground" />
           </Carousel>
         </div>
 
-        {/* Main Hero Content - Smaller */}
-        <div className="grid md:grid-cols-2 gap-6 items-center">
-          <div className="space-y-4">
-            <div className="space-y-3">
-              <h1 className="font-mono font-bold text-foreground text-2xl md:text-3xl leading-tight">
+        {/* Main Hero Content */}
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h1 className="font-bold text-foreground text-3xl md:text-4xl leading-tight">
                 India's Premier
-                <span className="block text-primary font-mono">Teaching Platform</span>
+                <span className="block bg-gradient-to-r from-primary via-brand-600 to-brand-700 bg-clip-text text-transparent">
+                  Teaching Platform
+                </span>
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-mono leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Connecting Excellence in Education
               </p>
             </div>
             
-            <div className="space-y-4">
-              <p className="text-sm md:text-base text-foreground leading-relaxed font-mono">
+            <div className="space-y-6">
+              <p className="text-base md:text-lg text-foreground leading-relaxed">
                 Join over 50,000+ certified teachers and connect with top educational institutions across India. 
                 From CBSE to IIT coaching centers, find your perfect teaching opportunity.
               </p>
-              <div className="flex flex-wrap gap-2 text-xs">
-                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">CBSE</span>
-                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">IIT</span>
-                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">Engineering</span>          
-                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">State Boards</span> 
+              <div className="flex flex-wrap gap-3 text-sm">
+                <span className="bg-gradient-to-r from-primary/10 to-brand-100 text-primary px-4 py-2 rounded-full border border-primary/20 font-medium hover:shadow-educational transition-all">CBSE</span>
+                <span className="bg-gradient-to-r from-primary/10 to-brand-100 text-primary px-4 py-2 rounded-full border border-primary/20 font-medium hover:shadow-educational transition-all">IIT</span>
+                <span className="bg-gradient-to-r from-primary/10 to-brand-100 text-primary px-4 py-2 rounded-full border border-primary/20 font-medium hover:shadow-educational transition-all">Engineering</span>          
+                <span className="bg-gradient-to-r from-primary/10 to-brand-100 text-primary px-4 py-2 rounded-full border border-primary/20 font-medium hover:shadow-educational transition-all">State Boards</span> 
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
-              <Users className="w-6 h-6 text-primary mb-2" />
-              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">50,000+</h3>
-              <p className="text-muted-foreground font-mono text-xs">Teachers</p>
+            <div className="bg-gradient-to-br from-card to-accent/20 rounded-xl p-6 border border-border shadow-educational hover:shadow-educational-lg transition-all duration-300 group">
+              <Users className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">50,000+</h3>
+              <p className="text-muted-foreground font-medium">Teachers</p>
             </div>
-            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
-              <Award className="w-6 h-6 text-primary mb-2" />
-              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">2,500+</h3>
-              <p className="text-muted-foreground font-mono text-xs">Institutions</p>
+            <div className="bg-gradient-to-br from-card to-accent/20 rounded-xl p-6 border border-border shadow-educational hover:shadow-educational-lg transition-all duration-300 group">
+              <Award className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">2,500+</h3>
+              <p className="text-muted-foreground font-medium">Institutions</p>
             </div>
-            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
-              <TrendingUp className="w-6 h-6 text-primary mb-2" />
-              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">98%</h3>
-              <p className="text-muted-foreground font-mono text-xs">Success Rate</p>
+            <div className="bg-gradient-to-br from-card to-accent/20 rounded-xl p-6 border border-border shadow-educational hover:shadow-educational-lg transition-all duration-300 group">
+              <TrendingUp className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">98%</h3>
+              <p className="text-muted-foreground font-medium">Success Rate</p>
             </div>
-            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
-              <GraduationCap className="w-6 h-6 text-primary mb-2" />
-              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">1000+</h3>
-              <p className="text-muted-foreground font-mono text-xs">Daily Jobs</p>
+            <div className="bg-gradient-to-br from-card to-accent/20 rounded-xl p-6 border border-border shadow-educational hover:shadow-educational-lg transition-all duration-300 group">
+              <GraduationCap className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">1000+</h3>
+              <p className="text-muted-foreground font-medium">Daily Jobs</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 grid md:grid-cols-3 gap-4">
-          <div className="text-center p-4 bg-card rounded-lg border border-border group shadow-sm">
-            <h4 className="font-mono font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-all">IIT, NEET & Civils</h4>
-            <p className="text-xs text-muted-foreground font-mono leading-relaxed">Competitive exam prep</p>
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          <div className="text-center p-6 bg-gradient-to-br from-card to-accent/20 rounded-xl border border-border group shadow-educational hover:shadow-educational-lg transition-all duration-300">
+            <h4 className="font-semibold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">IIT, NEET & Civils</h4>
+            <p className="text-muted-foreground leading-relaxed">Competitive exam prep coaching opportunities</p>
           </div>
-          <div className="text-center p-4 bg-card rounded-lg border border-border group shadow-sm">
-            <h4 className="font-mono font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-all">Verified Credentials</h4>
-            <p className="text-xs text-muted-foreground font-mono leading-relaxed">Thorough verification</p>
+          <div className="text-center p-6 bg-gradient-to-br from-card to-accent/20 rounded-xl border border-border group shadow-educational hover:shadow-educational-lg transition-all duration-300">
+            <h4 className="font-semibold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Verified Credentials</h4>
+            <p className="text-muted-foreground leading-relaxed">Thorough verification and background checks</p>
           </div>
-          <div className="text-center p-4 bg-card rounded-lg border border-border group shadow-sm">
-            <h4 className="font-mono font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-all">Instant Matching</h4>
-            <p className="text-xs text-muted-foreground font-mono leading-relaxed">AI-powered matching</p>
+          <div className="text-center p-6 bg-gradient-to-br from-card to-accent/20 rounded-xl border border-border group shadow-educational hover:shadow-educational-lg transition-all duration-300">
+            <h4 className="font-semibold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Instant Matching</h4>
+            <p className="text-muted-foreground leading-relaxed">AI-powered matching with suitable positions</p>
           </div>
         </div>
       </div>

@@ -11,25 +11,25 @@ export const HeroSection = () => {
       title: "Step into the Teacher Job Portal",
       content: "Step into the Teacher Job Portal, where passion fuels purpose! Teaching is a noble calling to shape minds, spark curiosity, and build a brighter future. Whether a novice or veteran, find opportunities across India to inspire change. Embrace challenges with resilience, turning classrooms into canvases of creativity. Mentor, guide, and empower the next generation, joining a community of educators to grow together. Your lessons plant seeds of knowledge and compassion. Start today, leave a lasting legacy, and illuminate paths for countless souls. Together, let's craft a future where education echoes through generations!",
       language: "English",
-      image: "/lovable-uploads/b8da7f8f-137b-4151-8fa9-5c87afd82052.png"
+      image: "/lovable-uploads/4081acfb-aee2-4ad2-91fa-39fb90a10c66.png"
     },
     {
       title: "शिक्षकों के लिए प्रेरणादायक संदेश",
       content: "शिक्षक जॉब पोर्टल में कदम रखें, जहां जुनून और उद्देश्य मिलते हैं! शिक्षण एक पवित्र कर्तव्य है, जो युवा मन को आकार देता, जिज्ञासा जगाता और उज्जवल भविष्य बनाता है। नौसिखिया हों या अनुभवी, भारत के विविध क्षेत्रों में अवसर पाएं और परिवर्तन प्रेरित करें। चुनौतियों को साहस से स्वीकार करें, कक्षा को रचनात्मकता का कैनवास बनाएं। अगली पीढ़ी का मार्गदर्शन करें, शिक्षकों के समुदाय से जुड़ें और साथ में बढ़ें। आपके पाठ ज्ञान और करुणा के बीज बोते हैं। आज शुरू करें, एक स्थायी विरासत छोड़ें, और अनगिनत आत्माओं के मार्ग प्रकाशित करें।",
       language: "हिंदी",
-      image: "/lovable-uploads/ccb72601-c931-459b-a3b5-4538069daa29.png"
+      image: "/lovable-uploads/90d19614-d045-477c-865e-aac12e3da991.png"
     },
     {
       title: "शिक्षकांसाठी प्रेरणादायक संदेश",
       content: "शिक्षक जॉब पोर्टलमध्ये पाऊल टाका, जिथे उत्साह आणि उद्देश्य एकत्र येतात! शिक्षण हे एक पवित्र कर्तव्य आहे, जे तरुण मनांना आकार देते, उत्सुकता जागवते आणि उज्ज्वल भविष्य घडवते. नवशिक्या असो वा अनुभवी, भारताच्या विविध भागांत संधी शोधा आणि बदल प्रेरित करा. आव्हानांना धैर्याने सामोरे जा, वर्गाला सर्जनशीलतेचा कॅनव्हास बनवा. पुढील पिढीचे मार्गदर्शन करा, शिक्षकांच्या समुदायात सामील व्हा आणि एकत्र वाढा. तुमचे धडे ज्ञान आणि करुणेचे बीज पेरतात. आज सुरुवात करा, कायमस्वरूपी वारसा सोडा आणि अनेक आत्म्यांचे मार्ग उजळवा!",
       language: "मराठी",
-      image: "/lovable-uploads/7102412d-a67c-4c9c-b6fc-4ed2bc82ecad.png"
+      image: "/lovable-uploads/a49f840c-b80a-46fd-a9e3-2f485aba11dc.png"
     },
     {
       title: "ஆசிரியர்களுக்கான உத்வேகமளிக்கும் செய்தி",
       content: "ஆசிரியர் வேலைவாய்ப்பு போர்டலில் பங்கேற்கவும், அங்கு ஆர்வமும் நோக்கமும் சேரும்! கற்பித்தல் ஒரு தூய கடமையாகும், இது இளம் மனங்களை வடிவமைக்கிறது, ஆர்வத்தைத் தூண்டுகிறது மற்றும் பிரகாசமான எதிர்காலத்தை உருவாக்குகிறது. புதுமுகராக இருந்தாலும் அல்லது அனுபவம் வாய்ந்தவராக இருந்தாலும், இந்தியாவின் பல்வேறு பகுதிகளில் வாய்ப்புகளை அறிந்து மாற்றத்தை ஊக்குவிக்கவும். சவால்களை தைரியத்துடன் எதிர்கொள்ளுங்கள், வகுப்பறையை படைப்பாற்றலின் ஓவியப்பலகையாக மாற்றுங்கள். அடுத்த தலைமுறையை வழிநடத்தி, ஆசிரியர் சமூகத்தில் இணைந்து வளருங்கள். உங்கள் பாடங்கள் அறிவு மற்றும் இரக்கத்தின் விதைகளை விதைக்கின்றன. இன்று தொடங்கி, நிலையான பாரம்பரியத்தை உருவாக்கி, பல ஆன்மாக்களின் பாதைகளை ஒளிரச் செய்யுங்கள்!",
       language: "தமிழ்",
-      image: "/lovable-uploads/a49f2754-4d11-46da-98d9-f75227e8ea56.png"
+      image: "/lovable-uploads/2722a380-7ddb-4650-9a33-9c5707e2ebec.png"
     }
   ];
 

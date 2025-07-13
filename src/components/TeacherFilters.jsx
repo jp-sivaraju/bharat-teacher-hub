@@ -1,8 +1,9 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Search, Filter, X, MapPin, Clock, GraduationCap, IndianRupee } from 'lucide-react';
 
 export const TeacherFilters = ({ filters, setFilters }) => {
   const handleFilterChange = (key, value) => {
@@ -14,23 +15,69 @@ export const TeacherFilters = ({ filters, setFilters }) => {
     // Search functionality can be implemented here
   };
 
+  const clearFilters = () => {
+    setFilters({
+      subject: '',
+      language: '',
+      experience: '',
+      board: '',
+      location: '',
+      priceRange: '',
+      teachingMode: '',
+      availability: '',
+      searchName: ''
+    });
+  };
+
+  const hasActiveFilters = Object.values(filters).some(value => value !== '');
+
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-orange-100 p-6 mb-8">
-      <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-2">
-          Find Your Perfect Teacher
-        </h2>
-        <p className="text-gray-600">Use our advanced filters to discover the ideal educator for your needs</p>
+      <div className="flex items-center justify-between mb-6">
+        <div className="text-center flex-1">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-2">
+            Find Your Perfect Teacher
+          </h2>
+          <p className="text-gray-600">Use our advanced filters to discover the ideal educator for your needs</p>
+        </div>
+        {hasActiveFilters && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={clearFilters}
+            className="ml-4 text-orange-600 border-orange-300 hover:bg-orange-50"
+          >
+            <X className="w-4 h-4 mr-1" />
+            Clear All
+          </Button>
+        )}
       </div>
 
+      {/* Search by Name */}
+      <div className="mb-6">
+        <div className="relative">
+          <Search className="w-4 h-4 absolute left-3 top-3 text-orange-400" />
+          <Input
+            placeholder="Search teachers by name..."
+            value={filters.searchName || ''}
+            onChange={(e) => handleFilterChange('searchName', e.target.value)}
+            className="pl-10 border-2 border-orange-200 focus:border-orange-500 rounded-xl"
+          />
+        </div>
+      </div>
+
+      {/* Main Filters Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">Subject</label>
+          <label className="text-sm font-medium text-gray-700 flex items-center">
+            <GraduationCap className="w-4 h-4 mr-1 text-orange-500" />
+            Subject
+          </label>
           <Select value={filters.subject} onValueChange={(value) => handleFilterChange('subject', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
               <SelectValue placeholder="Select subject" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border-orange-200">
               <SelectItem value="mathematics">Mathematics</SelectItem>
               <SelectItem value="physics">Physics</SelectItem>
               <SelectItem value="chemistry">Chemistry</SelectItem>
@@ -38,34 +85,47 @@ export const TeacherFilters = ({ filters, setFilters }) => {
               <SelectItem value="english">English</SelectItem>
               <SelectItem value="hindi">Hindi</SelectItem>
               <SelectItem value="computer-science">Computer Science</SelectItem>
+              <SelectItem value="history">History</SelectItem>
+              <SelectItem value="geography">Geography</SelectItem>
+              <SelectItem value="economics">Economics</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">Language</label>
-          <Select value={filters.language} onValueChange={(value) => handleFilterChange('language', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
-              <SelectValue placeholder="Select language" />
+          <label className="text-sm font-medium text-gray-700 flex items-center">
+            <MapPin className="w-4 h-4 mr-1 text-blue-500" />
+            Location
+          </label>
+          <Select value={filters.location} onValueChange={(value) => handleFilterChange('location', value)}>
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+              <SelectValue placeholder="Select city" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="english">English</SelectItem>
-              <SelectItem value="hindi">Hindi</SelectItem>
-              <SelectItem value="bengali">Bengali</SelectItem>
-              <SelectItem value="tamil">Tamil</SelectItem>
-              <SelectItem value="telugu">Telugu</SelectItem>
-              <SelectItem value="marathi">Marathi</SelectItem>
+            <SelectContent className="bg-white border-orange-200">
+              <SelectItem value="delhi">Delhi</SelectItem>
+              <SelectItem value="mumbai">Mumbai</SelectItem>
+              <SelectItem value="bangalore">Bangalore</SelectItem>
+              <SelectItem value="chennai">Chennai</SelectItem>
+              <SelectItem value="kolkata">Kolkata</SelectItem>
+              <SelectItem value="hyderabad">Hyderabad</SelectItem>
+              <SelectItem value="pune">Pune</SelectItem>
+              <SelectItem value="ahmedabad">Ahmedabad</SelectItem>
+              <SelectItem value="lucknow">Lucknow</SelectItem>
+              <SelectItem value="jaipur">Jaipur</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">Experience</label>
+          <label className="text-sm font-medium text-gray-700 flex items-center">
+            <Clock className="w-4 h-4 mr-1 text-green-500" />
+            Experience
+          </label>
           <Select value={filters.experience} onValueChange={(value) => handleFilterChange('experience', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
               <SelectValue placeholder="Select experience" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border-orange-200">
               <SelectItem value="fresher">Fresher (0-1 years)</SelectItem>
               <SelectItem value="1-3">1-3 years</SelectItem>
               <SelectItem value="3-5">3-5 years</SelectItem>
@@ -76,12 +136,53 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         </div>
 
         <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700 flex items-center">
+            <IndianRupee className="w-4 h-4 mr-1 text-purple-500" />
+            Price Range
+          </label>
+          <Select value={filters.priceRange} onValueChange={(value) => handleFilterChange('priceRange', value)}>
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+              <SelectValue placeholder="Select price range" />
+            </SelectTrigger>
+            <SelectContent className="bg-white border-orange-200">
+              <SelectItem value="0-500">₹0 - ₹500/hour</SelectItem>
+              <SelectItem value="500-800">₹500 - ₹800/hour</SelectItem>
+              <SelectItem value="800-1200">₹800 - ₹1200/hour</SelectItem>
+              <SelectItem value="1200+">₹1200+/hour</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      {/* Secondary Filters Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Language</label>
+          <Select value={filters.language} onValueChange={(value) => handleFilterChange('language', value)}>
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+              <SelectValue placeholder="Select language" />
+            </SelectTrigger>
+            <SelectContent className="bg-white border-orange-200">
+              <SelectItem value="english">English</SelectItem>
+              <SelectItem value="hindi">Hindi</SelectItem>
+              <SelectItem value="bengali">Bengali</SelectItem>
+              <SelectItem value="tamil">Tamil</SelectItem>
+              <SelectItem value="telugu">Telugu</SelectItem>
+              <SelectItem value="marathi">Marathi</SelectItem>
+              <SelectItem value="gujarati">Gujarati</SelectItem>
+              <SelectItem value="kannada">Kannada</SelectItem>
+              <SelectItem value="urdu">Urdu</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">Board</label>
           <Select value={filters.board} onValueChange={(value) => handleFilterChange('board', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
               <SelectValue placeholder="Select board" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border-orange-200">
               <SelectItem value="cbse">CBSE</SelectItem>
               <SelectItem value="icse">ICSE</SelectItem>
               <SelectItem value="state-board">State Board</SelectItem>
@@ -90,12 +191,94 @@ export const TeacherFilters = ({ filters, setFilters }) => {
             </SelectContent>
           </Select>
         </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Teaching Mode</label>
+          <Select value={filters.teachingMode} onValueChange={(value) => handleFilterChange('teachingMode', value)}>
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+              <SelectValue placeholder="Select mode" />
+            </SelectTrigger>
+            <SelectContent className="bg-white border-orange-200">
+              <SelectItem value="online">Online Only</SelectItem>
+              <SelectItem value="offline">Offline Only</SelectItem>
+              <SelectItem value="both">Both Online & Offline</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Availability</label>
+          <Select value={filters.availability} onValueChange={(value) => handleFilterChange('availability', value)}>
+            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+              <SelectValue placeholder="Select availability" />
+            </SelectTrigger>
+            <SelectContent className="bg-white border-orange-200">
+              <SelectItem value="available">Available Now</SelectItem>
+              <SelectItem value="busy">Busy</SelectItem>
+              <SelectItem value="weekend-only">Weekends Only</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
+      {/* Active Filters Display */}
+      {hasActiveFilters && (
+        <div className="mb-6">
+          <div className="flex flex-wrap gap-2">
+            {filters.searchName && (
+              <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-300">
+                Name: {filters.searchName}
+              </Badge>
+            )}
+            {filters.subject && (
+              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-300">
+                Subject: {filters.subject}
+              </Badge>
+            )}
+            {filters.location && (
+              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-300">
+                Location: {filters.location}
+              </Badge>
+            )}
+            {filters.experience && (
+              <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-300">
+                Experience: {filters.experience}
+              </Badge>
+            )}
+            {filters.priceRange && (
+              <Badge variant="outline" className="bg-pink-50 text-pink-700 border-pink-300">
+                Price: {filters.priceRange}
+              </Badge>
+            )}
+            {filters.language && (
+              <Badge variant="outline" className="bg-indigo-50 text-indigo-700 border-indigo-300">
+                Language: {filters.language}
+              </Badge>
+            )}
+            {filters.board && (
+              <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-300">
+                Board: {filters.board}
+              </Badge>
+            )}
+            {filters.teachingMode && (
+              <Badge variant="outline" className="bg-teal-50 text-teal-700 border-teal-300">
+                Mode: {filters.teachingMode}
+              </Badge>
+            )}
+            {filters.availability && (
+              <Badge variant="outline" className="bg-red-50 text-red-700 border-red-300">
+                Availability: {filters.availability}
+              </Badge>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Search Button */}
       <div className="flex justify-center">
         <Button 
           onClick={handleSearch}
-          className="bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-white px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
+          className="bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-white px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           <Search className="w-5 h-5 mr-2" />
           Search Teachers

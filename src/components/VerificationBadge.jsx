@@ -14,21 +14,21 @@ export const VerificationBadge = ({
           icon: CheckCircle,
           text: 'Verified',
           variant: 'default',
-          className: 'bg-green-100 text-green-800 border-green-300'
+          className: 'bg-emerald-light text-emerald border-emerald/30'
         };
       case 'pending':
         return {
           icon: Clock,
           text: 'Waiting for Verification',
           variant: 'secondary',
-          className: 'bg-yellow-100 text-yellow-800 border-yellow-300'
+          className: 'bg-brand-100 text-primary border-primary/30'
         };
       case 'not-verified':
         return {
           icon: AlertCircle,
           text: 'Not Verified',
           variant: 'outline',
-          className: 'bg-red-100 text-red-800 border-red-300'
+          className: 'bg-destructive/10 text-destructive border-destructive/30'
         };
     }
   };

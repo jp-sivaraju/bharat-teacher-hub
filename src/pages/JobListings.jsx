@@ -7,20 +7,20 @@ import { Briefcase, ArrowLeft } from 'lucide-react';
 
 export const JobListingsPage = () => {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
-      <div className="bg-gradient-to-r from-orange-500 to-amber-600 text-white p-6">
+    <div className="min-h-screen w-full bg-background font-inter">
+      <div className="bg-gradient-to-r from-deep-blue via-deep-blue to-primary text-ivory p-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-              <Briefcase className="w-6 h-6" />
+            <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+              <Briefcase className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Job Opportunities</h1>
-              <p className="text-orange-100 mt-1">Find the perfect teaching position for you</p>
+              <h1 className="text-3xl font-bold text-ivory">Job Opportunities</h1>
+              <p className="text-ivory/80 mt-1">Find the perfect teaching position for you</p>
             </div>
           </div>
           <Link to="/">
-            <Button variant="secondary" className="bg-white/20 hover:bg-white/30">
+            <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>

@@ -30,12 +30,12 @@ const Index = () => {
 
   if (showProfileDemo) {
     return (
-      <div className="min-h-screen w-full bg-background font-mono">
+      <div className="min-h-screen w-full bg-background font-inter">
         <Header />
         <div className="p-4">
           <Button
             onClick={() => setShowProfileDemo(false)}
-            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow font-mono text-sm"
+            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow-educational"
           >
             ← Back to Home
           </Button>
@@ -47,19 +47,19 @@ const Index = () => {
 
   if (showJobListings) {
     return (
-      <div className="min-h-screen w-full bg-background font-mono">
+      <div className="min-h-screen w-full bg-background font-inter">
         <Header />
         <div className="p-4">
           <Button
             onClick={() => setShowJobListings(false)}
-            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow font-mono text-sm"
+            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow-educational"
           >
             ← Back to Home
           </Button>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-6">
-              <h1 className="text-2xl font-bold text-foreground mb-2 font-mono">Job Opportunities</h1>
-              <p className="text-sm text-muted-foreground font-mono">Find teaching positions at schools and colleges</p>
+              <h1 className="text-2xl font-bold text-foreground mb-2">Job Opportunities</h1>
+              <p className="text-charcoal">Find teaching positions at schools and colleges</p>
             </div>
             <JobListings />
           </div>
@@ -70,19 +70,19 @@ const Index = () => {
 
   if (showTeacherSearch) {
     return (
-      <div className="min-h-screen w-full bg-background font-mono">
+      <div className="min-h-screen w-full bg-background font-inter">
         <Header />
         <div className="p-4">
           <Button
             onClick={() => setShowTeacherSearch(false)}
-            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow font-mono text-sm"
+            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow-educational"
           >
             ← Back to Home
           </Button>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-6">
-              <h1 className="text-2xl font-bold text-foreground mb-2 font-mono">Find Teachers</h1>
-              <p className="text-sm text-muted-foreground font-mono">Search and filter qualified teachers for your needs</p>
+              <h1 className="text-2xl font-bold text-foreground mb-2">Find Teachers</h1>
+              <p className="text-charcoal">Search and filter qualified teachers for your needs</p>
             </div>
             <TeacherFilters filters={filters} setFilters={setFilters} />
             <TeacherCards filters={filters} />
@@ -93,7 +93,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-background font-mono">
+    <div className="min-h-screen w-full bg-background font-inter">
       <Header />
       <main className="space-y-8 px-4 md:px-6 lg:px-8 py-6">
         <HeroSection />
@@ -102,7 +102,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <Button
               onClick={() => setShowProfileDemo(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow transform hover:scale-105 transition-all duration-300 font-mono text-sm"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-educational transform hover:scale-105 transition-all duration-300"
             >
               <User className="w-4 h-4 mr-2" />
               View Profile Demo
@@ -110,7 +110,7 @@ const Index = () => {
             <Button
               onClick={() => setShowJobListings(true)}
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow transform hover:scale-105 transition-all duration-300 font-mono text-sm"
+              className="border-emerald text-emerald hover:bg-emerald-light hover:text-emerald shadow-educational transform hover:scale-105 transition-all duration-300"
             >
               <Briefcase className="w-4 h-4 mr-2" />
               Browse Job Postings
@@ -118,7 +118,7 @@ const Index = () => {
             <Button
               onClick={() => setShowTeacherSearch(true)}
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow transform hover:scale-105 transition-all duration-300 font-mono text-sm"
+              className="border-emerald text-emerald hover:bg-emerald-light hover:text-emerald shadow-educational transform hover:scale-105 transition-all duration-300"
             >
               <Search className="w-4 h-4 mr-2" />
               Find Teachers

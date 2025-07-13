@@ -57,7 +57,7 @@ export const JobFilters = ({
             <SelectValue placeholder="Subject" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Subjects</SelectItem>
+            <SelectItem value="all">All Subjects</SelectItem>
             {subjects.map((subject) => (
               <SelectItem key={subject} value={subject}>{subject}</SelectItem>
             ))}
@@ -69,7 +69,7 @@ export const JobFilters = ({
             <SelectValue placeholder="Level" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Levels</SelectItem>
+            <SelectItem value="all">All Levels</SelectItem>
             {levels.map((level) => (
               <SelectItem key={level} value={level}>{level}</SelectItem>
             ))}
@@ -81,7 +81,7 @@ export const JobFilters = ({
             <SelectValue placeholder="Urgency" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Urgency</SelectItem>
+            <SelectItem value="all">All Urgency</SelectItem>
             <SelectItem value="High">High</SelectItem>
             <SelectItem value="Medium">Medium</SelectItem>
             <SelectItem value="Low">Low</SelectItem>
@@ -93,7 +93,7 @@ export const JobFilters = ({
             <SelectValue placeholder="Type" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Types</SelectItem>
+            <SelectItem value="all">All Types</SelectItem>
             <SelectItem value="school">School</SelectItem>
             <SelectItem value="college">College</SelectItem>
           </SelectContent>
@@ -107,22 +107,22 @@ export const JobFilters = ({
               Search: {searchTerm}
             </Badge>
           )}
-          {selectedSubject && (
+          {selectedSubject && selectedSubject !== "all" && (
             <Badge variant="outline" className="bg-orange-50 text-orange-700">
               Subject: {selectedSubject}
             </Badge>
           )}
-          {selectedLevel && (
+          {selectedLevel && selectedLevel !== "all" && (
             <Badge variant="outline" className="bg-orange-50 text-orange-700">
               Level: {selectedLevel}
             </Badge>
           )}
-          {selectedUrgency && (
+          {selectedUrgency && selectedUrgency !== "all" && (
             <Badge variant="outline" className="bg-orange-50 text-orange-700">
               Urgency: {selectedUrgency}
             </Badge>
           )}
-          {selectedType && (
+          {selectedType && selectedType !== "all" && (
             <Badge variant="outline" className="bg-orange-50 text-orange-700">
               Type: {selectedType}
             </Badge>

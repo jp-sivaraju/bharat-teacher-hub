@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,7 +8,7 @@ import { Search, Filter, X, MapPin, Clock, GraduationCap, IndianRupee } from 'lu
 
 export const TeacherFilters = ({ filters, setFilters }) => {
   const handleFilterChange = (key, value) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
+    setFilters(prev => ({ ...prev, [key]: value === 'all' ? '' : value }));
   };
 
   const handleSearch = () => {
@@ -73,11 +74,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
             <GraduationCap className="w-4 h-4 mr-1 text-primary" />
             Subject
           </label>
-          <Select value={filters.subject} onValueChange={(value) => handleFilterChange('subject', value)}>
+          <Select value={filters.subject || 'all'} onValueChange={(value) => handleFilterChange('subject', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select subject" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Subjects</SelectItem>
               <SelectItem value="mathematics">Mathematics</SelectItem>
               <SelectItem value="physics">Physics</SelectItem>
               <SelectItem value="chemistry">Chemistry</SelectItem>
@@ -97,11 +99,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
             <MapPin className="w-4 h-4 mr-1 text-primary" />
             Location
           </label>
-          <Select value={filters.location} onValueChange={(value) => handleFilterChange('location', value)}>
+          <Select value={filters.location || 'all'} onValueChange={(value) => handleFilterChange('location', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select city" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Cities</SelectItem>
               <SelectItem value="delhi">Delhi</SelectItem>
               <SelectItem value="mumbai">Mumbai</SelectItem>
               <SelectItem value="bangalore">Bangalore</SelectItem>
@@ -121,11 +124,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
             <Clock className="w-4 h-4 mr-1 text-primary" />
             Experience
           </label>
-          <Select value={filters.experience} onValueChange={(value) => handleFilterChange('experience', value)}>
+          <Select value={filters.experience || 'all'} onValueChange={(value) => handleFilterChange('experience', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select experience" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Experience</SelectItem>
               <SelectItem value="fresher">Fresher (0-1 years)</SelectItem>
               <SelectItem value="1-3">1-3 years</SelectItem>
               <SelectItem value="3-5">3-5 years</SelectItem>
@@ -140,11 +144,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
             <IndianRupee className="w-4 h-4 mr-1 text-primary" />
             Price Range
           </label>
-          <Select value={filters.priceRange} onValueChange={(value) => handleFilterChange('priceRange', value)}>
+          <Select value={filters.priceRange || 'all'} onValueChange={(value) => handleFilterChange('priceRange', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select price range" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Prices</SelectItem>
               <SelectItem value="0-500">₹0 - ₹500/hour</SelectItem>
               <SelectItem value="500-800">₹500 - ₹800/hour</SelectItem>
               <SelectItem value="800-1200">₹800 - ₹1200/hour</SelectItem>
@@ -158,11 +163,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground font-mono">Language</label>
-          <Select value={filters.language} onValueChange={(value) => handleFilterChange('language', value)}>
+          <Select value={filters.language || 'all'} onValueChange={(value) => handleFilterChange('language', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select language" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Languages</SelectItem>
               <SelectItem value="english">English</SelectItem>
               <SelectItem value="hindi">Hindi</SelectItem>
               <SelectItem value="bengali">Bengali</SelectItem>
@@ -178,11 +184,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground font-mono">Board</label>
-          <Select value={filters.board} onValueChange={(value) => handleFilterChange('board', value)}>
+          <Select value={filters.board || 'all'} onValueChange={(value) => handleFilterChange('board', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select board" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Boards</SelectItem>
               <SelectItem value="cbse">CBSE</SelectItem>
               <SelectItem value="icse">ICSE</SelectItem>
               <SelectItem value="state-board">State Board</SelectItem>
@@ -194,11 +201,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground font-mono">Teaching Mode</label>
-          <Select value={filters.teachingMode} onValueChange={(value) => handleFilterChange('teachingMode', value)}>
+          <Select value={filters.teachingMode || 'all'} onValueChange={(value) => handleFilterChange('teachingMode', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select mode" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Modes</SelectItem>
               <SelectItem value="online">Online Only</SelectItem>
               <SelectItem value="offline">Offline Only</SelectItem>
               <SelectItem value="both">Both Online & Offline</SelectItem>
@@ -208,11 +216,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground font-mono">Availability</label>
-          <Select value={filters.availability} onValueChange={(value) => handleFilterChange('availability', value)}>
+          <Select value={filters.availability || 'all'} onValueChange={(value) => handleFilterChange('availability', value)}>
             <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select availability" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
+              <SelectItem value="all">All Availabilities</SelectItem>
               <SelectItem value="available">Available Now</SelectItem>
               <SelectItem value="busy">Busy</SelectItem>
               <SelectItem value="weekend-only">Weekends Only</SelectItem>

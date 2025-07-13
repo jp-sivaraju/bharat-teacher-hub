@@ -10,7 +10,7 @@
   --color-card-foreground: 218 76% 27%; /* Deep Blue */
   
   --color-popover: 0 0% 100%;
-  --color-popover-foreground: 218 76% 27%;
+  --color-popover-foreground: 218 76% 15%; /* Darker Deep Blue for better contrast */
   
   --color-primary: 28 100% 60%; /* Saffron #FF9933 */
   --color-primary-foreground: 0 0% 100%;
@@ -19,10 +19,10 @@
   --color-secondary-foreground: 218 76% 27%; /* Deep Blue */
   
   --color-muted: 210 40% 96%; /* Light gray-blue */
-  --color-muted-foreground: 224 39% 48%; /* Charcoal Gray */
+  --color-muted-foreground: 218 76% 20%; /* Darker Deep Blue for muted text */
   
   --color-accent: 125 27% 93%; /* Very light emerald */
-  --color-accent-foreground: 145 63% 42%; /* Emerald Green */
+  --color-accent-foreground: 218 76% 27%; /* Deep Blue for accent text */
   
   --color-destructive: 0 84% 60%; /* Educational red */
   --color-destructive-foreground: 0 0% 100%;
@@ -64,7 +64,7 @@
   /* Typography - Clean and readable */
   --font-family-sans: 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
   --font-family-display: 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
-  --font-family-inter: 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
+  --font-family-inter: 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segue UI', sans-serif;
   --font-family-poppins: 'Poppins', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
   
   /* Layout */
@@ -121,6 +121,11 @@ body {
   line-height: 1.6;
 }
 
+/* Ensure all text defaults to Deep Blue */
+h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, button {
+  color: hsl(var(--color-foreground));
+}
+
 /* Custom Scrollbar - Indian theme */
 ::-webkit-scrollbar {
   width: 6px;
@@ -142,9 +147,9 @@ body {
 
 /* Smooth transitions for educational feel */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+  transition-duration: 300ms;
 }
 
 /* Enhanced focus styles for accessibility */
@@ -174,4 +179,67 @@ body {
 
 .shadow-educational-lg {
   box-shadow: 0 10px 15px -3px hsl(var(--color-primary) / 0.1), 0 4px 6px -2px hsl(var(--color-primary) / 0.05);
+}
+
+/* Animation utilities */
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Enhanced dropdown styles for better visibility */
+.dropdown-content {
+  background-color: hsl(var(--color-popover));
+  border: 1px solid hsl(var(--color-border));
+  box-shadow: 0 4px 6px -1px hsl(var(--color-primary) / 0.1), 0 2px 4px -1px hsl(var(--color-primary) / 0.06);
+}
+
+.dropdown-item {
+  color: hsl(var(--color-popover-foreground));
+  font-weight: 500;
+}
+
+.dropdown-item:hover {
+  background-color: hsl(var(--color-accent));
+  color: hsl(var(--color-accent-foreground));
 }

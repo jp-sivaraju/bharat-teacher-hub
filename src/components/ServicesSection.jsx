@@ -45,10 +45,10 @@ export const ServicesSection = () => {
   return (
     <div id="services" className="scroll-mt-24">
       <div className="text-center space-y-6">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-brand-700 bg-clip-text text-transparent">
           Our Services
         </h1>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           We provide comprehensive services to help teachers find their dream jobs and advance their careers in the education sector.
         </p>
       </div>
@@ -57,18 +57,18 @@ export const ServicesSection = () => {
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-orange-100">
+            <div key={index} className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-border">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-primary to-brand-700 rounded-lg flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold ml-4 text-gray-900">{service.title}</h3>
+                <h3 className="text-xl font-semibold ml-4 text-foreground">{service.title}</h3>
               </div>
-              <p className="text-gray-600 mb-4">{service.description}</p>
+              <p className="text-muted-foreground mb-4">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-gray-700">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+                  <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                    <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
                     {feature}
                   </li>
                 ))}

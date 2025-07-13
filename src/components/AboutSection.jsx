@@ -31,21 +31,21 @@ export const AboutSection = () => {
   return (
     <div id="about" className="scroll-mt-24">
       <div className="text-center space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-brand-700 bg-clip-text text-transparent">
           About TeacherConnect
         </h1>
-        <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
           TeacherConnect is India's leading platform connecting passionate educators with premier educational institutions. 
           Since 2020, we've been transforming the way teachers find opportunities and schools discover talent.
         </p>
       </div>
 
       {/* Hero Story Section */}
-      <div className="bg-gradient-to-r from-orange-500 to-blue-600 rounded-3xl p-8 md:p-12 text-white">
+      <div className="bg-gradient-to-r from-primary to-brand-700 rounded-3xl p-8 md:p-12 text-primary-foreground">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold">Our Story</h2>
-            <div className="space-y-4 text-lg text-orange-50 leading-relaxed">
+            <div className="space-y-4 text-lg text-primary-foreground/80 leading-relaxed">
               <p>
                 Founded by a team of experienced educators and technology professionals, TeacherConnect was born from the vision 
                 to democratize access to quality teaching opportunities across India. We recognized that talented teachers often 
@@ -61,10 +61,10 @@ export const AboutSection = () => {
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
-                  <Icon className="w-8 h-8 text-yellow-200 mx-auto mb-3" />
+                <div key={index} className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300">
+                  <Icon className="w-8 h-8 text-primary-foreground/70 mx-auto mb-3" />
                   <div className="text-2xl font-bold">{stat.number}</div>
-                  <div className="text-orange-100 text-sm">{stat.label}</div>
+                  <div className="text-primary-foreground/60 text-sm">{stat.label}</div>
                 </div>
               );
             })}
@@ -77,13 +77,13 @@ export const AboutSection = () => {
         {values.map((value, index) => {
           const Icon = value.icon;
           return (
-            <div key={index} className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-orange-100 p-8">
+            <div key={index} className="bg-card rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-border p-8">
               <div className="text-center space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-brand-700 rounded-2xl flex items-center justify-center mx-auto">
+                  <Icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">{value.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                <h3 className="text-2xl font-bold text-foreground">{value.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </div>
             </div>
           );
@@ -91,9 +91,9 @@ export const AboutSection = () => {
       </div>
 
       {/* Why Choose Us */}
-      <div className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-3xl p-8 md:p-12">
+      <div className="bg-gradient-to-r from-secondary to-muted rounded-3xl p-8 md:p-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Teachers Choose Us</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Why Teachers Choose Us</h2>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -103,12 +103,12 @@ export const AboutSection = () => {
             { title: 'Fair Salary', description: 'Competitive and transparent salary packages' },
             { title: 'Career Growth', description: 'Opportunities for advancement and skill development' }
           ].map((feature, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <div className="w-6 h-6 bg-white rounded-full"></div>
+            <div key={index} className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center border border-border">
+              <div className="w-12 h-12 bg-gradient-to-r from-primary to-brand-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-6 h-6 bg-primary-foreground rounded-full"></div>
               </div>
-              <h4 className="font-bold text-gray-800 mb-2">{feature.title}</h4>
-              <p className="text-gray-600 text-sm">{feature.description}</p>
+              <h4 className="font-bold text-foreground mb-2">{feature.title}</h4>
+              <p className="text-muted-foreground text-sm">{feature.description}</p>
             </div>
           ))}
         </div>

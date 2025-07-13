@@ -1,7 +1,9 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GraduationCap, Users, Award, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 export const HeroSection = () => {
   const inspirationalMessages = [
@@ -32,33 +34,41 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white rounded-3xl mb-12 p-10 md:p-16 shadow-lg border border-border">
-      <div className="scroll-mt-24">
-        {/* Inspirational Carousel */}
-        <div className="mb-16">
-          <Carousel className="w-full">
+    <section className="relative overflow-hidden bg-card rounded-lg mb-8 p-6 md:p-8 shadow border border-border">
+      <div className="scroll-mt-16">
+        {/* Inspirational Carousel with Auto-scroll */}
+        <div className="mb-8">
+          <Carousel 
+            className="w-full"
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: true,
+              }),
+            ]}
+          >
             <CarouselContent>
               {inspirationalMessages.map((message, index) => (
                 <CarouselItem key={index}>
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div className="space-y-6">
-                      <div className="flex items-center space-x-2 mb-4">
-                        <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="grid md:grid-cols-2 gap-6 items-center">
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <span className="bg-muted text-foreground px-2 py-1 rounded text-xs font-mono border">
                           {message.language}
                         </span>
                       </div>
                       
-                      <h2 className="font-display font-bold text-2xl md:text-3xl text-foreground leading-tight">
+                      <h2 className="font-mono font-bold text-lg md:text-xl text-foreground leading-tight">
                         {message.title}
                       </h2>
                       
-                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-inter text-pretty">
-                        {message.content}
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-mono">
+                        {message.content.substring(0, 200)}...
                       </p>
                     </div>
                     
                     <div className="relative">
-                      <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                      <div className="aspect-[4/3] rounded-lg overflow-hidden shadow border">
                         <img 
                           src={message.image} 
                           alt={`Teacher teaching - ${message.language}`}
@@ -70,74 +80,74 @@ export const HeroSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
           </Carousel>
         </div>
 
-        {/* Main Hero Content */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-8">
-            <div className="space-y-5">
-              <h1 className="font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-balance">
+        {/* Main Hero Content - Smaller */}
+        <div className="grid md:grid-cols-2 gap-6 items-center">
+          <div className="space-y-4">
+            <div className="space-y-3">
+              <h1 className="font-mono font-bold text-foreground text-2xl md:text-3xl leading-tight">
                 India's Premier
-                <span className="block text-primary font-display">Teaching Platform</span>
+                <span className="block text-primary font-mono">Teaching Platform</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-inter font-light leading-relaxed text-pretty">
+              <p className="text-base md:text-lg text-muted-foreground font-mono leading-relaxed">
                 Connecting Excellence in Education
               </p>
             </div>
             
-            <div className="space-y-6">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed font-inter text-pretty">
+            <div className="space-y-4">
+              <p className="text-sm md:text-base text-foreground leading-relaxed font-mono">
                 Join over 50,000+ certified teachers and connect with top educational institutions across India. 
-                From CBSE to IIT coaching centers, find your perfect teaching opportunity or hire exceptional educators.
+                From CBSE to IIT coaching centers, find your perfect teaching opportunity.
               </p>
-              <div className="flex flex-wrap gap-3 text-sm">
-                <span className="bg-primary/10 text-primary backdrop-blur-sm px-5 py-2.5 rounded-full border border-primary/20 font-semibold font-inter shadow-sm">CBSE Certified</span>
-                <span className="bg-primary/10 text-primary backdrop-blur-sm px-5 py-2.5 rounded-full border border-primary/20 font-semibold font-inter shadow-sm">IIT Coaching</span>
-                <span className="bg-primary/10 text-primary backdrop-blur-sm px-5 py-2.5 rounded-full border border-primary/20 font-semibold font-inter shadow-sm">Engineering Subjects</span>          
-                <span className="bg-primary/10 text-primary backdrop-blur-sm px-5 py-2.5 rounded-full border border-primary/20 font-semibold font-inter shadow-sm">State Boards</span> 
+              <div className="flex flex-wrap gap-2 text-xs">
+                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">CBSE</span>
+                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">IIT</span>
+                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">Engineering</span>          
+                <span className="bg-muted text-foreground px-3 py-1.5 rounded border font-mono">State Boards</span> 
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-card backdrop-blur-md rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-lg border border-border shadow-sm">
-              <Users className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl md:text-3xl font-bold font-display text-foreground">50,000+</h3>
-              <p className="text-muted-foreground font-inter font-medium">Certified Teachers</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
+              <Users className="w-6 h-6 text-primary mb-2" />
+              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">50,000+</h3>
+              <p className="text-muted-foreground font-mono text-xs">Teachers</p>
             </div>
-            <div className="bg-card backdrop-blur-md rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-lg border border-border shadow-sm">
-              <Award className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl md:text-3xl font-bold font-display text-foreground">2,500+</h3>
-              <p className="text-muted-foreground font-inter font-medium">Partner Institutions</p>
+            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
+              <Award className="w-6 h-6 text-primary mb-2" />
+              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">2,500+</h3>
+              <p className="text-muted-foreground font-mono text-xs">Institutions</p>
             </div>
-            <div className="bg-card backdrop-blur-md rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-lg border border-border shadow-sm">
-              <TrendingUp className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl md:text-3xl font-bold font-display text-foreground">98%</h3>
-              <p className="text-muted-foreground font-inter font-medium">Success Rate</p>
+            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
+              <TrendingUp className="w-6 h-6 text-primary mb-2" />
+              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">98%</h3>
+              <p className="text-muted-foreground font-mono text-xs">Success Rate</p>
             </div>
-            <div className="bg-card backdrop-blur-md rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-lg border border-border shadow-sm">
-              <GraduationCap className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl md:text-3xl font-bold font-display text-foreground">1000+</h3>
-              <p className="text-muted-foreground font-inter font-medium">Daily Opportunities</p>
+            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
+              <GraduationCap className="w-6 h-6 text-primary mb-2" />
+              <h3 className="text-lg md:text-xl font-bold font-mono text-foreground">1000+</h3>
+              <p className="text-muted-foreground font-mono text-xs">Daily Jobs</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="text-center p-8 bg-card rounded-xl backdrop-blur-md transition-all duration-300 border border-border group shadow-sm hover:shadow-lg">
-            <h4 className="font-display font-semibold text-lg mb-3 text-foreground group-hover:text-primary transition-all">IIT, NEET & Civils Focused</h4>
-            <p className="text-base text-muted-foreground font-inter leading-relaxed text-pretty">Specialized opportunities in competitive exam preparation</p>
+        <div className="mt-8 grid md:grid-cols-3 gap-4">
+          <div className="text-center p-4 bg-card rounded-lg border border-border group shadow-sm">
+            <h4 className="font-mono font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-all">IIT, NEET & Civils</h4>
+            <p className="text-xs text-muted-foreground font-mono leading-relaxed">Competitive exam prep</p>
           </div>
-          <div className="text-center p-8 bg-card rounded-xl backdrop-blur-md transition-all duration-300 border border-border group shadow-sm hover:shadow-lg">
-            <h4 className="font-display font-semibold text-lg mb-3 text-foreground group-hover:text-primary transition-all">Verified Credentials</h4>
-            <p className="text-base text-muted-foreground font-inter leading-relaxed text-pretty">All teachers undergo thorough verification</p>
+          <div className="text-center p-4 bg-card rounded-lg border border-border group shadow-sm">
+            <h4 className="font-mono font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-all">Verified Credentials</h4>
+            <p className="text-xs text-muted-foreground font-mono leading-relaxed">Thorough verification</p>
           </div>
-          <div className="text-center p-8 bg-card rounded-xl backdrop-blur-md transition-all duration-300 border border-border group shadow-sm hover:shadow-lg">
-            <h4 className="font-display font-semibold text-lg mb-3 text-foreground group-hover:text-primary transition-all">Instant Matching</h4>
-            <p className="text-base text-muted-foreground font-inter leading-relaxed text-pretty">AI-powered job matching system</p>
+          <div className="text-center p-4 bg-card rounded-lg border border-border group shadow-sm">
+            <h4 className="font-mono font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-all">Instant Matching</h4>
+            <p className="text-xs text-muted-foreground font-mono leading-relaxed">AI-powered matching</p>
           </div>
         </div>
       </div>

@@ -16,12 +16,12 @@ const Index = () => {
 
   if (showProfileDemo) {
     return (
-      <div className="min-h-screen w-full bg-background">
+      <div className="min-h-screen w-full bg-background font-mono">
         <Header />
-        <div className="p-6">
+        <div className="p-4">
           <Button
             onClick={() => setShowProfileDemo(false)}
-            className="mb-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow font-mono text-sm"
           >
             ← Back to Home
           </Button>
@@ -33,19 +33,19 @@ const Index = () => {
 
   if (showJobListings) {
     return (
-      <div className="min-h-screen w-full bg-background">
+      <div className="min-h-screen w-full bg-background font-mono">
         <Header />
-        <div className="p-6">
+        <div className="p-4">
           <Button
             onClick={() => setShowJobListings(false)}
-            className="mb-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+            className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow font-mono text-sm"
           >
             ← Back to Home
           </Button>
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold text-foreground mb-4">Job Opportunities</h1>
-              <p className="text-lg text-muted-foreground">Find the perfect teaching position at schools and colleges</p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-6">
+              <h1 className="text-2xl font-bold text-foreground mb-2 font-mono">Job Opportunities</h1>
+              <p className="text-sm text-muted-foreground font-mono">Find teaching positions at schools and colleges</p>
             </div>
             <JobListings />
           </div>
@@ -55,16 +55,16 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-background">
+    <div className="min-h-screen w-full bg-background font-mono">
       <Header />
-      <main className="space-y-16 px-4 md:px-6 lg:px-8 py-8">
+      <main className="space-y-8 px-4 md:px-6 lg:px-8 py-6">
         <HeroSection />
         
-        <section className="max-w-7xl mx-auto text-center">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <section className="max-w-6xl mx-auto text-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <Button
               onClick={() => setShowProfileDemo(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow transform hover:scale-105 transition-all duration-300 font-mono text-sm"
             >
               <User className="w-4 h-4 mr-2" />
               View Profile Demo
@@ -72,7 +72,7 @@ const Index = () => {
             <Button
               onClick={() => setShowJobListings(true)}
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg transform hover:scale-105 transition-all duration-300"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow transform hover:scale-105 transition-all duration-300 font-mono text-sm"
             >
               <Briefcase className="w-4 h-4 mr-2" />
               Browse Job Postings
@@ -80,15 +80,15 @@ const Index = () => {
           </div>
         </section>
         
-        <section className="max-w-7xl mx-auto">
+        <section className="max-w-6xl mx-auto">
           <AboutSection />
         </section>
         
-        <section className="max-w-7xl mx-auto">
+        <section className="max-w-6xl mx-auto">
           <ServicesSection />
         </section>
         
-        <section className="max-w-7xl mx-auto">
+        <section className="max-w-6xl mx-auto">
           <TestimonialsSection />
         </section>
       </main>

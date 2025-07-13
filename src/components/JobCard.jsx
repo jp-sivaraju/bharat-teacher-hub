@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -49,13 +50,24 @@ export const JobCard = ({ job, onViewDetails }) => {
             )}
             <span className="text-sm text-charcoal capitalize">{job.type}</span>
           </div>
-          <Button 
-            size="sm" 
-            onClick={() => onViewDetails(job)}
-            className="bg-gradient-to-r from-primary via-brand-500 to-brand-600 hover:from-primary/90 hover:via-brand-500/90 hover:to-brand-600/90 text-primary-foreground shadow-educational"
-          >
-            View Details
-          </Button>
+          <div className="flex space-x-2">
+            <Button 
+              size="sm" 
+              onClick={() => onViewDetails(job)}
+              variant="outline"
+              className="border-charcoal text-charcoal hover:bg-muted hover:text-charcoal shadow-educational"
+            >
+              Quick View
+            </Button>
+            <Link to={`/job/${job.id}`}>
+              <Button 
+                size="sm" 
+                className="bg-gradient-to-r from-primary via-brand-500 to-brand-600 hover:from-primary/90 hover:via-brand-500/90 hover:to-brand-600/90 text-primary-foreground shadow-educational"
+              >
+                View Details
+              </Button>
+            </Link>
+          </div>
         </div>
       </CardContent>
     </Card>

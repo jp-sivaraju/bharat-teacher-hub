@@ -19,6 +19,7 @@ import { CollegeRegister } from "./pages/CollegeRegister";
 import { VerificationPlans } from "./pages/VerificationPlans";
 import { PostJob } from "./pages/PostJob";
 import { JobListingsPage } from "./pages/JobListings";
+import { JobDetail } from "./pages/JobDetail";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/verification-plans" element={<VerificationPlans />} />
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/jobs" element={<JobListingsPage />} />
+          <Route path="/job/:id" element={<JobDetail />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

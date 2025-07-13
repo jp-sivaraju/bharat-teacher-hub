@@ -1,16 +1,16 @@
-
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, MapPin, Clock, Users, BookOpen, Building, DollarSign, Calendar, Award, Home } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Mock data - In a real app, this would come from an API
 const mockJobs = [
   {
     id: '1',
     title: 'Mathematics Teacher',
-    subject: 'Mathematics',
+    subject: 'Mathematics', 
     level: 'Secondary',
     type: 'school',
     instituteName: 'Sunrise International School',
@@ -104,41 +104,44 @@ const mockJobs = [
 export const JobDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   
   const job = mockJobs.find(j => j.id === id);
   
   if (!job) {
     return (
       <div className="min-h-screen w-full bg-background font-inter">
-        <div className="bg-gradient-to-r from-deep-blue via-deep-blue to-primary text-ivory p-6">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-primary" />
+        <div className="bg-gradient-to-r from-deep-blue via-deep-blue to-primary text-ivory p-4 sm:p-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                </div>
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-ivory">Job Not Found</h1>
+                  <p className="text-ivory/80 mt-1 text-sm sm:text-base">The requested job posting could not be found</p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-3xl font-bold text-ivory">Job Not Found</h1>
-                <p className="text-ivory/80 mt-1">The requested job posting could not be found</p>
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 w-full sm:w-auto">
+                <Link to="/" className="w-full sm:w-auto">
+                  <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational w-full">
+                    <Home className="w-4 h-4 mr-2" />
+                    Back to Home
+                  </Button>
+                </Link>
+                <Link to="/jobs" className="w-full sm:w-auto">
+                  <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational w-full">
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Back to Jobs
+                  </Button>
+                </Link>
               </div>
-            </div>
-            <div className="flex space-x-3">
-              <Link to="/">
-                <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational">
-                  <Home className="w-4 h-4 mr-2" />
-                  Back to Home
-                </Button>
-              </Link>
-              <Link to="/jobs">
-                <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Jobs
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto p-6 text-center">
-          <p className="text-charcoal text-lg">Please check the job listing and try again.</p>
+        <div className="max-w-7xl mx-auto p-4 sm:p-6 text-center">
+          <p className="text-charcoal text-base sm:text-lg">Please check the job listing and try again.</p>
         </div>
       </div>
     );
@@ -147,27 +150,27 @@ export const JobDetail = () => {
   return (
     <div className="min-h-screen w-full bg-background font-inter">
       {/* Header */}
-      <div className="bg-gradient-to-r from-deep-blue via-deep-blue to-primary text-ivory p-6">
+      <div className="bg-gradient-to-r from-deep-blue via-deep-blue to-primary text-ivory p-4 sm:p-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-primary" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0 mb-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-ivory">Job Details</h1>
-                <p className="text-ivory/80 mt-1">Complete information about this position</p>
+                <h1 className="text-2xl sm:text-3xl font-bold text-ivory">Job Details</h1>
+                <p className="text-ivory/80 mt-1 text-sm sm:text-base">Complete information about this position</p>
               </div>
             </div>
-            <div className="flex space-x-3">
-              <Link to="/">
-                <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 w-full sm:w-auto">
+              <Link to="/" className="w-full sm:w-auto">
+                <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational w-full">
                   <Home className="w-4 h-4 mr-2" />
                   Back to Home
                 </Button>
               </Link>
-              <Link to="/jobs">
-                <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational">
+              <Link to="/jobs" className="w-full sm:w-auto">
+                <Button variant="secondary" className="bg-ivory/20 hover:bg-ivory/30 text-ivory border-ivory/30 shadow-educational w-full">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Jobs
                 </Button>
@@ -178,20 +181,20 @@ export const JobDetail = () => {
       </div>
 
       {/* Job Content */}
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-4xl mx-auto p-3 sm:p-6">
         <div className="bg-card rounded-lg border-2 border-border shadow-educational-lg overflow-hidden">
           {/* Job Header */}
-          <div className="bg-gradient-to-r from-primary/5 to-brand-100/20 p-6 border-b border-border">
-            <div className="flex items-start justify-between mb-4">
+          <div className="bg-gradient-to-r from-primary/5 to-brand-100/20 p-4 sm:p-6 border-b border-border">
+            <div className="flex flex-col sm:flex-row items-start justify-between space-y-4 sm:space-y-0 mb-4">
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-deep-blue mb-2">{job.title}</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-deep-blue mb-2">{job.title}</h2>
                 <div className="flex items-center space-x-2 mb-2">
-                  <Building className="w-5 h-5 text-emerald" />
-                  <p className="text-lg text-deep-blue font-medium">{job.instituteName}</p>
+                  <Building className="w-4 h-4 sm:w-5 sm:h-5 text-emerald" />
+                  <p className="text-base sm:text-lg text-deep-blue font-medium">{job.instituteName}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4 text-charcoal" />
-                  <span className="text-charcoal">{job.location}</span>
+                  <span className="text-charcoal text-sm sm:text-base">{job.location}</span>
                 </div>
               </div>
               <Badge 
@@ -203,7 +206,7 @@ export const JobDetail = () => {
             </div>
 
             {/* Quick Info Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
               <div className="flex items-center space-x-2 text-sm">
                 <BookOpen className="w-4 h-4 text-emerald" />
                 <div>
@@ -236,26 +239,26 @@ export const JobDetail = () => {
           </div>
 
           {/* Job Description */}
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-deep-blue mb-3 flex items-center">
-                <Building className="w-5 h-5 mr-2 text-emerald" />
+              <h3 className="text-lg sm:text-xl font-semibold text-deep-blue mb-3 flex items-center">
+                <Building className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-emerald" />
                 Job Description
               </h3>
-              <p className="text-charcoal leading-relaxed">{job.description}</p>
+              <p className="text-charcoal leading-relaxed text-sm sm:text-base">{job.description}</p>
             </div>
 
             {/* Requirements */}
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-deep-blue mb-3 flex items-center">
-                <Award className="w-5 h-5 mr-2 text-emerald" />
+              <h3 className="text-lg sm:text-xl font-semibold text-deep-blue mb-3 flex items-center">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-emerald" />
                 Requirements
               </h3>
               <ul className="space-y-2">
                 {job.requirements.map((requirement, index) => (
                   <li key={index} className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-charcoal">{requirement}</span>
+                    <span className="text-charcoal text-sm sm:text-base">{requirement}</span>
                   </li>
                 ))}
               </ul>
@@ -263,7 +266,7 @@ export const JobDetail = () => {
 
             {/* Additional Info */}
             <div className="bg-gradient-to-r from-brand-50 to-brand-100/30 p-4 rounded-lg mb-6">
-              <div className="flex items-center justify-between text-sm">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-2">
                   <Calendar className="w-4 h-4 text-emerald" />
                   <span className="text-charcoal">Posted {job.postedDate}</span>
@@ -276,34 +279,36 @@ export const JobDetail = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4 border-t border-border">
-              <Button className="flex-1 bg-gradient-to-r from-primary via-brand-500 to-brand-600 hover:from-primary/90 hover:via-brand-500/90 hover:to-brand-600/90 text-primary-foreground shadow-educational">
+            <div className="flex flex-col space-y-3 pt-4 border-t border-border">
+              <Button className="w-full bg-gradient-to-r from-primary via-brand-500 to-brand-600 hover:from-primary/90 hover:via-brand-500/90 hover:to-brand-600/90 text-primary-foreground shadow-educational">
                 Apply Now
               </Button>
-              <Button 
-                variant="outline" 
-                className="flex-1 border-emerald text-emerald hover:bg-emerald-light hover:text-emerald shadow-educational"
-              >
-                Save Job
-              </Button>
-              <Button 
-                variant="outline" 
-                className="flex-1 border-charcoal text-charcoal hover:bg-muted hover:text-charcoal shadow-educational"
-                onClick={() => window.print()}
-              >
-                Print Details
-              </Button>
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                <Button 
+                  variant="outline" 
+                  className="flex-1 border-emerald text-emerald hover:bg-emerald-light hover:text-emerald shadow-educational"
+                >
+                  Save Job
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="flex-1 border-charcoal text-charcoal hover:bg-muted hover:text-charcoal shadow-educational"
+                  onClick={() => window.print()}
+                >
+                  Print Details
+                </Button>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Related Jobs Section */}
         <div className="mt-8">
-          <h3 className="text-xl font-semibold text-deep-blue mb-4">Similar Positions</h3>
-          <div className="text-center p-8 bg-card rounded-lg border border-border">
-            <p className="text-charcoal mb-4">Discover more opportunities that match your profile</p>
+          <h3 className="text-lg sm:text-xl font-semibold text-deep-blue mb-4">Similar Positions</h3>
+          <div className="text-center p-6 sm:p-8 bg-card rounded-lg border border-border">
+            <p className="text-charcoal mb-4 text-sm sm:text-base">Discover more opportunities that match your profile</p>
             <Link to="/jobs">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-educational">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-educational w-full sm:w-auto">
                 Browse All Jobs
               </Button>
             </Link>

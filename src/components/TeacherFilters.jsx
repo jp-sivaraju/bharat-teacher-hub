@@ -32,20 +32,20 @@ export const TeacherFilters = ({ filters, setFilters }) => {
   const hasActiveFilters = Object.values(filters).some(value => value !== '');
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border border-orange-100 p-6 mb-8">
+    <div className="bg-card rounded-2xl shadow-xl border border-border p-6 mb-8">
       <div className="flex items-center justify-between mb-6">
         <div className="text-center flex-1">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-2">
+          <h2 className="text-3xl font-bold text-foreground mb-2 font-mono">
             Find Your Perfect Teacher
           </h2>
-          <p className="text-gray-600">Use our advanced filters to discover the ideal educator for your needs</p>
+          <p className="text-muted-foreground font-mono">Use our advanced filters to discover the ideal educator for your needs</p>
         </div>
         {hasActiveFilters && (
           <Button
             variant="outline"
             size="sm"
             onClick={clearFilters}
-            className="ml-4 text-orange-600 border-orange-300 hover:bg-orange-50"
+            className="ml-4 text-primary border-border hover:bg-muted font-mono"
           >
             <X className="w-4 h-4 mr-1" />
             Clear All
@@ -56,12 +56,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
       {/* Search by Name */}
       <div className="mb-6">
         <div className="relative">
-          <Search className="w-4 h-4 absolute left-3 top-3 text-orange-400" />
+          <Search className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
           <Input
             placeholder="Search teachers by name..."
             value={filters.searchName || ''}
             onChange={(e) => handleFilterChange('searchName', e.target.value)}
-            className="pl-10 border-2 border-orange-200 focus:border-orange-500 rounded-xl"
+            className="pl-10 border-2 border-border focus:border-primary rounded-xl font-mono"
           />
         </div>
       </div>
@@ -69,15 +69,15 @@ export const TeacherFilters = ({ filters, setFilters }) => {
       {/* Main Filters Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700 flex items-center">
-            <GraduationCap className="w-4 h-4 mr-1 text-orange-500" />
+          <label className="text-sm font-medium text-foreground flex items-center font-mono">
+            <GraduationCap className="w-4 h-4 mr-1 text-primary" />
             Subject
           </label>
           <Select value={filters.subject} onValueChange={(value) => handleFilterChange('subject', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select subject" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="mathematics">Mathematics</SelectItem>
               <SelectItem value="physics">Physics</SelectItem>
               <SelectItem value="chemistry">Chemistry</SelectItem>
@@ -93,15 +93,15 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700 flex items-center">
-            <MapPin className="w-4 h-4 mr-1 text-blue-500" />
+          <label className="text-sm font-medium text-foreground flex items-center font-mono">
+            <MapPin className="w-4 h-4 mr-1 text-primary" />
             Location
           </label>
           <Select value={filters.location} onValueChange={(value) => handleFilterChange('location', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select city" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="delhi">Delhi</SelectItem>
               <SelectItem value="mumbai">Mumbai</SelectItem>
               <SelectItem value="bangalore">Bangalore</SelectItem>
@@ -117,15 +117,15 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700 flex items-center">
-            <Clock className="w-4 h-4 mr-1 text-green-500" />
+          <label className="text-sm font-medium text-foreground flex items-center font-mono">
+            <Clock className="w-4 h-4 mr-1 text-primary" />
             Experience
           </label>
           <Select value={filters.experience} onValueChange={(value) => handleFilterChange('experience', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select experience" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="fresher">Fresher (0-1 years)</SelectItem>
               <SelectItem value="1-3">1-3 years</SelectItem>
               <SelectItem value="3-5">3-5 years</SelectItem>
@@ -136,15 +136,15 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700 flex items-center">
-            <IndianRupee className="w-4 h-4 mr-1 text-purple-500" />
+          <label className="text-sm font-medium text-foreground flex items-center font-mono">
+            <IndianRupee className="w-4 h-4 mr-1 text-primary" />
             Price Range
           </label>
           <Select value={filters.priceRange} onValueChange={(value) => handleFilterChange('priceRange', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select price range" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="0-500">₹0 - ₹500/hour</SelectItem>
               <SelectItem value="500-800">₹500 - ₹800/hour</SelectItem>
               <SelectItem value="800-1200">₹800 - ₹1200/hour</SelectItem>
@@ -157,12 +157,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
       {/* Secondary Filters Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">Language</label>
+          <label className="text-sm font-medium text-foreground font-mono">Language</label>
           <Select value={filters.language} onValueChange={(value) => handleFilterChange('language', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select language" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="english">English</SelectItem>
               <SelectItem value="hindi">Hindi</SelectItem>
               <SelectItem value="bengali">Bengali</SelectItem>
@@ -177,12 +177,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">Board</label>
+          <label className="text-sm font-medium text-foreground font-mono">Board</label>
           <Select value={filters.board} onValueChange={(value) => handleFilterChange('board', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select board" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="cbse">CBSE</SelectItem>
               <SelectItem value="icse">ICSE</SelectItem>
               <SelectItem value="state-board">State Board</SelectItem>
@@ -193,12 +193,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">Teaching Mode</label>
+          <label className="text-sm font-medium text-foreground font-mono">Teaching Mode</label>
           <Select value={filters.teachingMode} onValueChange={(value) => handleFilterChange('teachingMode', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select mode" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="online">Online Only</SelectItem>
               <SelectItem value="offline">Offline Only</SelectItem>
               <SelectItem value="both">Both Online & Offline</SelectItem>
@@ -207,12 +207,12 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">Availability</label>
+          <label className="text-sm font-medium text-foreground font-mono">Availability</label>
           <Select value={filters.availability} onValueChange={(value) => handleFilterChange('availability', value)}>
-            <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300 rounded-xl">
+            <SelectTrigger className="border-2 hover:border-muted-foreground focus:border-primary transition-all duration-300 rounded-xl font-mono">
               <SelectValue placeholder="Select availability" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-orange-200">
+            <SelectContent className="bg-card border-border">
               <SelectItem value="available">Available Now</SelectItem>
               <SelectItem value="busy">Busy</SelectItem>
               <SelectItem value="weekend-only">Weekends Only</SelectItem>
@@ -226,47 +226,47 @@ export const TeacherFilters = ({ filters, setFilters }) => {
         <div className="mb-6">
           <div className="flex flex-wrap gap-2">
             {filters.searchName && (
-              <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Name: {filters.searchName}
               </Badge>
             )}
             {filters.subject && (
-              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Subject: {filters.subject}
               </Badge>
             )}
             {filters.location && (
-              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Location: {filters.location}
               </Badge>
             )}
             {filters.experience && (
-              <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Experience: {filters.experience}
               </Badge>
             )}
             {filters.priceRange && (
-              <Badge variant="outline" className="bg-pink-50 text-pink-700 border-pink-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Price: {filters.priceRange}
               </Badge>
             )}
             {filters.language && (
-              <Badge variant="outline" className="bg-indigo-50 text-indigo-700 border-indigo-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Language: {filters.language}
               </Badge>
             )}
             {filters.board && (
-              <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Board: {filters.board}
               </Badge>
             )}
             {filters.teachingMode && (
-              <Badge variant="outline" className="bg-teal-50 text-teal-700 border-teal-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Mode: {filters.teachingMode}
               </Badge>
             )}
             {filters.availability && (
-              <Badge variant="outline" className="bg-red-50 text-red-700 border-red-300">
+              <Badge variant="outline" className="bg-muted text-foreground border-border font-mono">
                 Availability: {filters.availability}
               </Badge>
             )}
@@ -278,7 +278,7 @@ export const TeacherFilters = ({ filters, setFilters }) => {
       <div className="flex justify-center">
         <Button 
           onClick={handleSearch}
-          className="bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-white px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg font-mono"
         >
           <Search className="w-5 h-5 mr-2" />
           Search Teachers

@@ -36,12 +36,12 @@ export const RegistrationSection = ({ onSelectType }) => {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center mb-4">
-          <GraduationCap className="w-12 h-12 text-orange-500" />
+          <GraduationCap className="w-12 h-12 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold text-foreground font-mono">
           Registration Portal
         </h1>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-mono">
           Choose your registration type to get started with our comprehensive education platform
         </p>
       </div>
@@ -53,19 +53,19 @@ export const RegistrationSection = ({ onSelectType }) => {
             <Card 
               key={type.id}
               onClick={() => onSelectType?.(type.id)}
-              className="cursor-pointer hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 hover:border-orange-300"
+              className="cursor-pointer hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 hover:border-primary bg-card"
             >
               <CardHeader className="text-center">
                 <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                 </div>
-                <CardTitle className="text-xl">{type.title}</CardTitle>
-                <CardDescription>{type.description}</CardDescription>
+                <CardTitle className="text-xl text-foreground font-mono">{type.title}</CardTitle>
+                <CardDescription className="text-muted-foreground font-mono">{type.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-mono">
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register as {type.title.slice(0, -1)}
                 </Button>

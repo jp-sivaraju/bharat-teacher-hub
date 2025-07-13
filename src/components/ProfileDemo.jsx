@@ -47,23 +47,25 @@ export const ProfileDemo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50 p-6">
+    <div className="min-h-screen bg-background p-6 font-mono">
       <div className="max-w-6xl mx-auto space-y-6">
-        <Card className="border-2">
+        <Card className="border-2 border-border bg-card">
           <CardHeader>
-            <CardTitle>Profile View Demo</CardTitle>
+            <CardTitle className="text-foreground font-mono">Profile View Demo</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex space-x-4">
               <Button
                 variant={selectedProfile === 'teacher' ? 'default' : 'outline'}
                 onClick={() => setSelectedProfile('teacher')}
+                className="font-mono"
               >
                 Teacher Profile
               </Button>
               <Button
                 variant={selectedProfile === 'student' ? 'default' : 'outline'}
                 onClick={() => setSelectedProfile('student')}
+                className="font-mono"
               >
                 Student Profile
               </Button>
@@ -74,9 +76,9 @@ export const ProfileDemo = () => {
                   type="checkbox"
                   checked={isOwnProfile}
                   onChange={(e) => setIsOwnProfile(e.target.checked)}
-                  className="rounded border-orange-300"
+                  className="rounded border-border"
                 />
-                <span>Show as own profile (enables edit button)</span>
+                <span className="text-foreground font-mono">Show as own profile (enables edit button)</span>
               </label>
             </div>
           </CardContent>

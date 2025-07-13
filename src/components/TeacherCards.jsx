@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -212,10 +211,10 @@ export const TeacherCards = ({ filters }) => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold text-foreground font-mono">
           Available Teachers ({filteredTeachers.length})
         </h2>
-        <div className="text-sm text-gray-600 bg-orange-50 px-4 py-2 rounded-full">
+        <div className="text-sm text-muted-foreground bg-muted px-4 py-2 rounded-full font-mono">
           उपलब्ध शिक्षक
         </div>
       </div>
@@ -224,7 +223,7 @@ export const TeacherCards = ({ filters }) => {
         {filteredTeachers.map((teacher) => (
           <div 
             key={teacher.id}
-            className="bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] border border-orange-100 overflow-hidden group"
+            className="bg-card rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] border border-border overflow-hidden group"
           >
             <div className="p-8">
               {/* Header Section */}
@@ -233,76 +232,76 @@ export const TeacherCards = ({ filters }) => {
                   <img 
                     src={teacher.image} 
                     alt={teacher.name}
-                    className="w-20 h-20 rounded-2xl object-cover border-4 border-gradient-to-r from-orange-200 to-blue-200 shadow-lg"
+                    className="w-20 h-20 rounded-2xl object-cover border-4 border-border shadow-lg"
                   />
                   {teacher.verified && (
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-                      <GraduationCap className="w-4 h-4 text-white" />
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full border-4 border-card flex items-center justify-center">
+                      <GraduationCap className="w-4 h-4 text-primary-foreground" />
                     </div>
                   )}
-                  <div className="absolute -top-1 -left-1 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 -left-1 w-4 h-4 bg-primary rounded-full animate-pulse"></div>
                 </div>
                 
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-2xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors">
+                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors font-mono">
                       {teacher.name}
                     </h3>
-                    <div className="flex items-center space-x-1 bg-yellow-50 px-3 py-1 rounded-full">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-sm font-bold text-yellow-600">{teacher.rating}</span>
+                    <div className="flex items-center space-x-1 bg-muted px-3 py-1 rounded-full">
+                      <Star className="w-4 h-4 fill-primary text-primary" />
+                      <span className="text-sm font-bold text-foreground font-mono">{teacher.rating}</span>
                     </div>
                   </div>
                   
                   <div className="flex flex-wrap gap-2 mb-3">
-                    <Badge variant="secondary" className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 font-medium">
+                    <Badge variant="secondary" className="bg-muted text-foreground font-medium font-mono">
                       {teacher.subject}
                     </Badge>
-                    <Badge variant="outline" className="border-blue-200 text-blue-800 bg-blue-50">
+                    <Badge variant="outline" className="border-border text-foreground bg-card font-mono">
                       {teacher.board}
                     </Badge>
-                    <Badge variant="outline" className="border-green-200 text-green-800 bg-green-50">
+                    <Badge variant="outline" className="border-border text-foreground bg-card font-mono">
                       {teacher.language}
                     </Badge>
                   </div>
                   
-                  <div className="flex items-center justify-between text-sm text-gray-600">
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <div className="flex items-center space-x-1">
-                      <MapPin className="w-4 h-4 text-orange-500" />
-                      <span>{teacher.location}</span>
+                      <MapPin className="w-4 h-4 text-primary" />
+                      <span className="font-mono">{teacher.location}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4 text-blue-500" />
-                      <span>{teacher.experience}</span>
+                      <Clock className="w-4 h-4 text-primary" />
+                      <span className="font-mono">{teacher.experience}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <Users className="w-4 h-4 text-green-500" />
-                      <span>{teacher.students}+ students</span>
+                      <Users className="w-4 h-4 text-primary" />
+                      <span className="font-mono">{teacher.students}+ students</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Details Section */}
-              <div className="bg-gradient-to-r from-orange-50 via-blue-50 to-purple-50 rounded-2xl p-6 mb-6">
+              <div className="bg-muted rounded-2xl p-6 mb-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">Qualification</p>
-                    <p className="font-semibold text-gray-800">{teacher.qualification}</p>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1 font-mono">Qualification</p>
+                    <p className="font-semibold text-foreground font-mono">{teacher.qualification}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">Specialization</p>
-                    <p className="font-semibold text-gray-800">{teacher.specialization}</p>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1 font-mono">Specialization</p>
+                    <p className="font-semibold text-foreground font-mono">{teacher.specialization}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">Rate</p>
-                    <p className="font-bold text-green-600 text-lg">{teacher.hourlyRate}</p>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1 font-mono">Rate</p>
+                    <p className="font-bold text-primary text-lg font-mono">{teacher.hourlyRate}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">Mode</p>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1 font-mono">Mode</p>
                     <div className="flex space-x-1">
                       {teacher.teachingModes.map((mode, idx) => (
-                        <span key={idx} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                        <span key={idx} className="text-xs bg-card text-foreground px-2 py-1 rounded-full border border-border font-mono">
                           {mode}
                         </span>
                       ))}
@@ -313,10 +312,10 @@ export const TeacherCards = ({ filters }) => {
 
               {/* Subjects Section */}
               <div className="mb-6">
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-3">Subjects Taught</p>
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3 font-mono">Subjects Taught</p>
                 <div className="flex flex-wrap gap-2">
                   {teacher.subjects.map((subject, idx) => (
-                    <span key={idx} className="text-sm bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 px-3 py-1 rounded-full font-medium">
+                    <span key={idx} className="text-sm bg-muted text-foreground px-3 py-1 rounded-full font-medium border border-border font-mono">
                       {subject}
                     </span>
                   ))}
@@ -325,11 +324,11 @@ export const TeacherCards = ({ filters }) => {
 
               {/* Action Buttons */}
               <div className="flex space-x-4">
-                <Button className="flex-1 bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 transition-all duration-300 py-3 font-semibold">
+                <Button className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 py-3 font-semibold font-mono">
                   <Phone className="w-4 h-4 mr-2" />
                   Contact Now
                 </Button>
-                <Button variant="outline" className="flex-1 hover:bg-gradient-to-r hover:from-orange-50 hover:to-blue-50 hover:border-orange-300 transition-all duration-300 py-3">
+                <Button variant="outline" className="flex-1 hover:bg-muted hover:border-primary transition-all duration-300 py-3 font-mono">
                   <BookOpen className="w-4 h-4 mr-2" />
                   View Profile
                 </Button>
@@ -341,11 +340,11 @@ export const TeacherCards = ({ filters }) => {
 
       {filteredTeachers.length === 0 && (
         <div className="text-center py-16">
-          <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <BookOpen className="w-12 h-12 text-gray-400" />
+          <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
+            <BookOpen className="w-12 h-12 text-muted-foreground" />
           </div>
-          <h3 className="text-xl font-semibold text-gray-600 mb-2">No teachers found</h3>
-          <p className="text-gray-500">Try adjusting your filters to see more results</p>
+          <h3 className="text-xl font-semibold text-muted-foreground mb-2 font-mono">No teachers found</h3>
+          <p className="text-muted-foreground font-mono">Try adjusting your filters to see more results</p>
         </div>
       )}
     </div>

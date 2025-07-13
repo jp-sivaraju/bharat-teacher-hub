@@ -57,20 +57,20 @@ export const AuthModal = ({ isOpen, onClose, authType, onAuthTypeChange }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-card border-border">
         <DialogHeader className="relative">
           {showBackButton && (
             <Button
               variant="ghost"
               size="sm"
               onClick={handleBackToMenu}
-              className="absolute left-0 top-0 flex items-center gap-2 text-orange-600 hover:text-orange-700"
+              className="absolute left-0 top-0 flex items-center gap-2 text-primary hover:text-primary/80 font-mono"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Menu
             </Button>
           )}
-          <DialogTitle className="text-2xl bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+          <DialogTitle className="text-2xl text-foreground font-mono">
             {getModalTitle()}
           </DialogTitle>
         </DialogHeader>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -41,13 +40,13 @@ export const SchoolRegistration = () => {
   };
 
   return (
-    <Card className="border-2 shadow-2xl">
-      <CardHeader className="bg-gradient-to-r from-orange-500 to-blue-600 text-white">
+    <Card className="border-2 shadow-educational-lg">
+      <CardHeader className="bg-gradient-to-r from-primary to-deep-blue text-white">
         <div className="flex items-center space-x-3">
           <School className="w-8 h-8" />
           <div>
             <CardTitle className="text-2xl">School Registration</CardTitle>
-            <CardDescription className="text-orange-100">
+            <CardDescription className="text-brand-100">
               Register your school to find qualified teachers
             </CardDescription>
           </div>
@@ -57,7 +56,7 @@ export const SchoolRegistration = () => {
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">School Information</h3>
+            <h3 className="text-xl font-semibold text-deep-blue border-b border-border pb-2">School Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="schoolName">School Name *</Label>
@@ -66,7 +65,7 @@ export const SchoolRegistration = () => {
                   value={formData.schoolName}
                   onChange={(e) => handleInputChange('schoolName', e.target.value)}
                   placeholder="Enter school name"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                   required
                 />
               </div>
@@ -78,7 +77,7 @@ export const SchoolRegistration = () => {
                   value={formData.contactPersonName}
                   onChange={(e) => handleInputChange('contactPersonName', e.target.value)}
                   placeholder="Principal/Administrator name"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                   required
                 />
               </div>
@@ -91,7 +90,7 @@ export const SchoolRegistration = () => {
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="school@example.com"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                   required
                 />
               </div>
@@ -103,7 +102,7 @@ export const SchoolRegistration = () => {
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   placeholder="+91 98765 43210"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                   required
                 />
               </div>
@@ -115,7 +114,7 @@ export const SchoolRegistration = () => {
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
                   placeholder="Enter city"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                   required
                 />
               </div>
@@ -123,7 +122,7 @@ export const SchoolRegistration = () => {
               <div className="space-y-2">
                 <Label htmlFor="boardAffiliation">Board Affiliation *</Label>
                 <Select value={formData.boardAffiliation} onValueChange={(value) => handleInputChange('boardAffiliation', value)}>
-                  <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
+                  <SelectTrigger className="border-2 hover:border-primary focus:border-primary transition-all duration-300">
                     <SelectValue placeholder="Select board" />
                   </SelectTrigger>
                   <SelectContent>
@@ -143,7 +142,7 @@ export const SchoolRegistration = () => {
                   value={formData.registrationId}
                   onChange={(e) => handleInputChange('registrationId', e.target.value)}
                   placeholder="School registration ID"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                   required
                 />
               </div>
@@ -155,7 +154,7 @@ export const SchoolRegistration = () => {
                   value={formData.certificate}
                   onChange={(e) => handleInputChange('certificate', e.target.value)}
                   placeholder="Certificate details"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                   required
                 />
               </div>
@@ -167,7 +166,7 @@ export const SchoolRegistration = () => {
                   value={formData.establishedYear}
                   onChange={(e) => handleInputChange('establishedYear', e.target.value)}
                   placeholder="Year established"
-                  className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                  className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                 />
               </div>
             </div>
@@ -179,7 +178,7 @@ export const SchoolRegistration = () => {
                 value={formData.address}
                 onChange={(e) => handleInputChange('address', e.target.value)}
                 placeholder="Enter complete school address"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                 required
               />
             </div>
@@ -191,7 +190,7 @@ export const SchoolRegistration = () => {
                 value={formData.grades}
                 onChange={(e) => handleInputChange('grades', e.target.value)}
                 placeholder="e.g., Pre-K to 12th Grade"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                 required
               />
             </div>
@@ -203,14 +202,14 @@ export const SchoolRegistration = () => {
                 value={formData.requirements}
                 onChange={(e) => handleInputChange('requirements', e.target.value)}
                 placeholder="Tell us about the subjects and qualifications you're looking for in teachers"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
               />
             </div>
           </div>
 
           <Button 
             type="submit" 
-            className="w-full bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-lg py-6 transition-all duration-300"
+            className="w-full bg-gradient-to-r from-primary to-deep-blue hover:from-brand-600 hover:to-deep-blue text-lg py-6 transition-all duration-300 shadow-educational"
           >
             <UserPlus className="w-5 h-5 mr-2" />
             Register School

@@ -26,16 +26,16 @@ export const Header = () => {
 
   return (
     <>
-      <header className="w-full bg-white/95 backdrop-blur-md text-gray-800 sticky top-0 z-50 shadow-lg border-b border-purple-200">
+      <header className="w-full bg-white/95 backdrop-blur-md text-deep-blue sticky top-0 z-50 shadow-lg border-b border-border">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo/Brand - Using Purple and Orange gradient */}
+            {/* Logo/Brand - Using Saffron and Deep Blue */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 via-purple-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-deep-blue rounded-xl flex items-center justify-center shadow-lg">
                 <BookOpen className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-purple-500 to-orange-500 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-deep-blue bg-clip-text text-transparent">
                   TeacherConnect
                 </h1>
               </div>
@@ -49,7 +49,7 @@ export const Header = () => {
                   <button
                     key={item.id}
                     onClick={item.action}
-                    className="flex items-center space-x-2 px-4 py-2.5 rounded-lg transition-all duration-300 text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium hover:shadow-md group"
+                    className="flex items-center space-x-2 px-4 py-2.5 rounded-lg transition-all duration-300 text-deep-blue hover:bg-accent hover:text-primary font-medium hover:shadow-md group"
                   >
                     <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     <span>{item.label}</span>
@@ -68,31 +68,31 @@ export const Header = () => {
                   }}
                   size="sm"
                   variant="outline"
-                  className="border-2 border-purple-300 hover:border-purple-500 hover:bg-purple-50 text-gray-700 hover:text-purple-600 font-medium transition-all duration-200 hover:shadow-md"
+                  className="border-2 border-primary hover:border-primary hover:bg-accent text-deep-blue hover:text-primary font-medium transition-all duration-200 hover:shadow-md"
                 >
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
                 {showRegisterDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-purple-200 rounded-xl shadow-xl z-50 overflow-hidden">
+                  <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-border rounded-xl shadow-xl z-50 overflow-hidden">
                     <div className="py-2">
                       <Link 
                         to="/teacher-register" 
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-all duration-200 border-l-2 border-transparent hover:border-purple-500"
+                        className="block px-4 py-3 text-sm text-deep-blue hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         Teacher Registration
                       </Link>
                       <Link 
                         to="/school-register" 
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-all duration-200 border-l-2 border-transparent hover:border-purple-500"
+                        className="block px-4 py-3 text-sm text-deep-blue hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         School Registration
                       </Link>
                       <Link 
                         to="/college-register" 
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-all duration-200 border-l-2 border-transparent hover:border-purple-500"
+                        className="block px-4 py-3 text-sm text-deep-blue hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         College Registration
@@ -108,31 +108,31 @@ export const Header = () => {
                     setShowLoginDropdown(!showLoginDropdown);
                     setShowRegisterDropdown(false);
                   }}
-                  className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 hover:from-orange-600 hover:via-orange-500 hover:to-orange-700 text-white shadow-lg hover:shadow-xl font-medium transition-all duration-300 transform hover:scale-105"
+                  className="bg-primary hover:bg-brand-600 text-white shadow-lg hover:shadow-xl font-medium transition-all duration-300 transform hover:scale-105"
                 >
                   <LogIn className="w-4 h-4 mr-2" />
                   Sign In
                 </Button>
                 {showLoginDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-purple-200 rounded-xl shadow-xl z-50 overflow-hidden">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-border rounded-xl shadow-xl z-50 overflow-hidden">
                     <div className="py-2">
                       <Link 
                         to="/teacher-login" 
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-all duration-200 border-l-2 border-transparent hover:border-purple-500"
+                        className="block px-4 py-3 text-sm text-deep-blue hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         Teacher Login
                       </Link>
                       <Link 
                         to="/school-login" 
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-all duration-200 border-l-2 border-transparent hover:border-purple-500"
+                        className="block px-4 py-3 text-sm text-deep-blue hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         School Login
                       </Link>
                       <Link 
                         to="/college-login" 
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-all duration-200 border-l-2 border-transparent hover:border-purple-500"
+                        className="block px-4 py-3 text-sm text-deep-blue hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         College Login
@@ -147,7 +147,7 @@ export const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+              className="lg:hidden text-deep-blue hover:bg-accent hover:text-primary"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -156,7 +156,7 @@ export const Header = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-purple-200 backdrop-blur-md bg-white/90">
+            <div className="lg:hidden py-4 border-t border-border backdrop-blur-md bg-white/90">
               <div className="space-y-2">
                 {menuItems.map((item) => {
                   const Icon = item.icon;
@@ -164,7 +164,7 @@ export const Header = () => {
                     <button
                       key={item.id}
                       onClick={item.action}
-                      className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-all duration-200"
+                      className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left text-deep-blue hover:bg-accent hover:text-primary transition-all duration-200"
                     >
                       <Icon className="w-5 h-5" />
                       <span>{item.label}</span>
@@ -174,12 +174,12 @@ export const Header = () => {
               </div>
               
               {/* Mobile Auth Buttons */}
-              <div className="mt-4 pt-4 border-t border-purple-200 flex space-x-3">
-                <Button size="sm" variant="outline" className="flex-1 border-purple-300 text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium">
+              <div className="mt-4 pt-4 border-t border-border flex space-x-3">
+                <Button size="sm" variant="outline" className="flex-1 border-primary text-deep-blue hover:bg-accent hover:text-primary font-medium">
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
-                <Button size="sm" className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium">
+                <Button size="sm" className="flex-1 bg-primary hover:bg-brand-600 text-white font-medium">
                   <LogIn className="w-4 h-4 mr-2" />
                   Login
                 </Button>

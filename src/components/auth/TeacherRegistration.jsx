@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -38,13 +37,13 @@ export const TeacherRegistration = () => {
   };
 
   return (
-    <Card className="border-2 shadow-2xl">
-      <CardHeader className="bg-gradient-to-r from-orange-500 to-blue-600 text-white">
+    <Card className="border-2 shadow-educational-lg">
+      <CardHeader className="bg-gradient-to-r from-primary to-deep-blue text-white">
         <div className="flex items-center space-x-3">
           <User className="w-8 h-8" />
           <div>
             <CardTitle className="text-2xl">Teacher Registration</CardTitle>
-            <CardDescription className="text-orange-100">
+            <CardDescription className="text-brand-100">
               Join our platform as a certified teacher
             </CardDescription>
           </div>
@@ -61,7 +60,7 @@ export const TeacherRegistration = () => {
                 value={formData.fullName}
                 onChange={(e) => handleInputChange('fullName', e.target.value)}
                 placeholder="Enter your full name"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                 required
               />
             </div>
@@ -74,7 +73,7 @@ export const TeacherRegistration = () => {
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="your.email@example.com"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                 required
               />
             </div>
@@ -86,7 +85,7 @@ export const TeacherRegistration = () => {
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 placeholder="+91 98765 43210"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                 required
               />
             </div>
@@ -98,7 +97,7 @@ export const TeacherRegistration = () => {
                 value={formData.city}
                 onChange={(e) => handleInputChange('city', e.target.value)}
                 placeholder="Enter city"
-                className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+                className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
                 required
               />
             </div>
@@ -106,11 +105,10 @@ export const TeacherRegistration = () => {
             <div className="space-y-2">
               <Label htmlFor="qualification">Highest Qualification *</Label>
               <Select value={formData.qualification} onValueChange={(value) => handleInputChange('qualification', value)}>
-                <SelectTrigger className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300">
+                <SelectTrigger className="border-2 hover:border-primary focus:border-primary transition-all duration-300">
                   <SelectValue placeholder="Select qualification" />
                 </SelectTrigger>
                 <SelectContent className="bg-white shadow-md">
-
                   <SelectItem value="b.tech">B.Tech</SelectItem>
                   <SelectItem value="m.tech">M.Tech</SelectItem>
                   <SelectItem value="phd">PhD</SelectItem>
@@ -125,7 +123,7 @@ export const TeacherRegistration = () => {
             <div className="space-y-2">
               <Label htmlFor="experience">Teaching Experience *</Label>
               <Select value={formData.experience} onValueChange={(value) => handleInputChange('experience', value)}>
-                <SelectTrigger className="border-2 hover:border-orange-300 bg-yellow-50 focus:border-orange-500 transition-all duration-300">
+                <SelectTrigger className="border-2 hover:border-primary focus:border-primary transition-all duration-300">
                   <SelectValue placeholder="Select experience" />
                 </SelectTrigger>
                 <SelectContent className="bg-white shadow-md">
@@ -146,7 +144,7 @@ export const TeacherRegistration = () => {
               value={formData.address}
               onChange={(e) => handleInputChange('address', e.target.value)}
               placeholder="Enter complete address"
-              className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+              className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
               required
             />
           </div>
@@ -158,7 +156,7 @@ export const TeacherRegistration = () => {
               value={formData.specialization}
               onChange={(e) => handleInputChange('specialization', e.target.value)}
               placeholder="Mathematics, Physics, Chemistry, Engineering, etc."
-              className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+              className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
               required
             />
           </div>
@@ -170,13 +168,13 @@ export const TeacherRegistration = () => {
               value={formData.requirements}
               onChange={(e) => handleInputChange('requirements', e.target.value)}
               placeholder="Tell us about your teaching approach, achievements, etc."
-              className="border-2 hover:border-orange-300 focus:border-orange-500 transition-all duration-300"
+              className="border-2 hover:border-primary focus:border-primary transition-all duration-300"
             />
           </div>
 
           <Button 
             type="submit" 
-            className="w-full bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-lg py-6 transition-all duration-300"
+            className="w-full bg-gradient-to-r from-primary to-deep-blue hover:from-brand-600 hover:to-deep-blue text-lg py-6 transition-all duration-300 shadow-educational"
           >
             <UserPlus className="w-5 h-5 mr-2" />
             Register as Teacher

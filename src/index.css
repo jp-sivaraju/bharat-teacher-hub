@@ -2,57 +2,64 @@
 @import "tailwindcss";
 
 :root {
-  /* Educational Color System - Warm blues and greens */
-  --color-background: 248 250 252; /* Very light blue-gray */
-  --color-foreground: 30 41 59; /* Deep slate blue */
+  /* Indian Educational Color System */
+  --color-background: 248 241 233; /* Ivory White #F8F1E9 */
+  --color-foreground: 30 58 138; /* Deep Blue #1E3A8A */
   
   --color-card: 255 255 255; /* Pure white for cards */
-  --color-card-foreground: 30 41 59;
+  --color-card-foreground: 30 58 138; /* Deep Blue */
   
   --color-popover: 255 255 255;
-  --color-popover-foreground: 30 41 59;
+  --color-popover-foreground: 30 58 138;
   
-  --color-primary: 59 130 246; /* Bright educational blue */
+  --color-primary: 255 153 51; /* Saffron #FF9933 */
   --color-primary-foreground: 255 255 255;
   
-  --color-secondary: 240 249 255; /* Very light blue */
-  --color-secondary-foreground: 30 58 138; /* Deep blue */
+  --color-secondary: 248 241 233; /* Light ivory */
+  --color-secondary-foreground: 30 58 138; /* Deep Blue */
   
   --color-muted: 241 245 249; /* Light gray-blue */
-  --color-muted-foreground: 71 85 105; /* Medium slate */
+  --color-muted-foreground: 75 94 170; /* Charcoal Gray #4B5EAA */
   
-  --color-accent: 236 254 255; /* Very light cyan */
-  --color-accent-foreground: 22 78 99; /* Deep cyan */
+  --color-accent: 232 245 233; /* Very light emerald */
+  --color-accent-foreground: 46 125 50; /* Emerald Green #2E7D32 */
   
   --color-destructive: 239 68 68; /* Educational red */
   --color-destructive-foreground: 255 255 255;
   
-  --color-border: 226 232 240; /* Light slate border */
-  --color-input: 241 245 249; /* Light input background */
-  --color-ring: 59 130 246; /* Blue focus ring */
+  --color-border: 200 214 229; /* Light border based on charcoal */
+  --color-input: 248 241 233; /* Light input background */
+  --color-ring: 255 153 51; /* Saffron focus ring */
   
-  /* Sidebar Colors - Educational theme */
+  /* Sidebar Colors - Indian theme */
   --color-sidebar-background: 255 255 255;
-  --color-sidebar-foreground: 30 41 59;
-  --color-sidebar-primary: 59 130 246;
+  --color-sidebar-foreground: 30 58 138;
+  --color-sidebar-primary: 255 153 51;
   --color-sidebar-primary-foreground: 255 255 255;
-  --color-sidebar-accent: 240 249 255;
+  --color-sidebar-accent: 248 241 233;
   --color-sidebar-accent-foreground: 30 58 138;
-  --color-sidebar-border: 226 232 240;
-  --color-sidebar-ring: 59 130 246;
+  --color-sidebar-border: 200 214 229;
+  --color-sidebar-ring: 255 153 51;
   
-  /* Brand Colors - Educational blues and greens */
-  --color-brand-50: 240 249 255; /* Very light blue */
-  --color-brand-100: 224 242 254; /* Light blue */
-  --color-brand-200: 186 230 253; /* Soft blue */
-  --color-brand-300: 125 211 252; /* Medium light blue */
-  --color-brand-400: 56 189 248; /* Medium blue */
-  --color-brand-500: 59 130 246; /* Primary blue */
-  --color-brand-600: 37 99 235; /* Deeper blue */
-  --color-brand-700: 29 78 216; /* Deep blue */
-  --color-brand-800: 30 58 138; /* Very deep blue */
-  --color-brand-900: 23 37 84; /* Darkest blue */
-  --color-brand-950: 15 23 42; /* Almost navy */
+  /* Brand Colors - Indian Educational palette */
+  --color-brand-50: 255 248 240; /* Very light saffron */
+  --color-brand-100: 255 237 213; /* Light saffron */
+  --color-brand-200: 255 224 178; /* Soft saffron */
+  --color-brand-300: 255 204 128; /* Medium light saffron */
+  --color-brand-400: 255 183 77; /* Medium saffron */
+  --color-brand-500: 255 153 51; /* Primary saffron */
+  --color-brand-600: 230 138 46; /* Deeper saffron */
+  --color-brand-700: 204 122 41; /* Deep saffron */
+  --color-brand-800: 153 92 31; /* Very deep saffron */
+  --color-brand-900: 102 61 20; /* Darkest saffron */
+  --color-brand-950: 51 31 10; /* Almost brown */
+  
+  /* Additional Indian theme colors */
+  --color-emerald: 46 125 50; /* Emerald Green #2E7D32 */
+  --color-emerald-light: 232 245 233;
+  --color-deep-blue: 30 58 138; /* Deep Blue #1E3A8A */
+  --color-charcoal: 75 94 170; /* Charcoal Gray #4B5EAA */
+  --color-ivory: 248 241 233; /* Ivory White #F8F1E9 */
   
   /* Typography - Clean and readable */
   --font-family-sans: 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
@@ -66,41 +73,41 @@
 
 .dark {
   --color-background: 15 23 42; /* Dark slate */
-  --color-foreground: 248 250 252; /* Light blue-gray */
+  --color-foreground: 248 241 233; /* Ivory white */
   
   --color-card: 30 41 59; /* Dark slate blue */
-  --color-card-foreground: 248 250 252;
+  --color-card-foreground: 248 241 233;
   
   --color-popover: 30 41 59;
-  --color-popover-foreground: 248 250 252;
+  --color-popover-foreground: 248 241 233;
   
-  --color-primary: 96 165 250; /* Lighter blue for dark mode */
+  --color-primary: 255 183 77; /* Lighter saffron for dark mode */
   --color-primary-foreground: 15 23 42;
   
   --color-secondary: 51 65 85; /* Dark slate */
-  --color-secondary-foreground: 248 250 252;
+  --color-secondary-foreground: 248 241 233;
   
   --color-muted: 51 65 85;
   --color-muted-foreground: 148 163 184;
   
   --color-accent: 51 65 85;
-  --color-accent-foreground: 248 250 252;
+  --color-accent-foreground: 46 125 50; /* Emerald green */
   
   --color-destructive: 248 113 113; /* Softer red for dark mode */
   --color-destructive-foreground: 15 23 42;
   
   --color-border: 51 65 85;
   --color-input: 51 65 85;
-  --color-ring: 96 165 250;
+  --color-ring: 255 183 77;
   
   --color-sidebar-background: 30 41 59;
-  --color-sidebar-foreground: 248 250 252;
-  --color-sidebar-primary: 96 165 250;
+  --color-sidebar-foreground: 248 241 233;
+  --color-sidebar-primary: 255 183 77;
   --color-sidebar-primary-foreground: 15 23 42;
   --color-sidebar-accent: 51 65 85;
-  --color-sidebar-accent-foreground: 248 250 252;
+  --color-sidebar-accent-foreground: 248 241 233;
   --color-sidebar-border: 51 65 85;
-  --color-sidebar-ring: 96 165 250;
+  --color-sidebar-ring: 255 183 77;
 }
 
 * {
@@ -114,7 +121,7 @@ body {
   line-height: 1.6; /* Better readability */
 }
 
-/* Custom Scrollbar - Educational theme */
+/* Custom Scrollbar - Indian theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -147,13 +154,17 @@ body {
   border-radius: calc(var(--radius) - 2px);
 }
 
-/* Educational accent gradients */
+/* Indian educational accent gradients */
 .gradient-primary {
   background: linear-gradient(135deg, hsl(var(--color-primary)), hsl(var(--color-brand-400)));
 }
 
 .gradient-secondary {
   background: linear-gradient(135deg, hsl(var(--color-brand-100)), hsl(var(--color-brand-200)));
+}
+
+.gradient-emerald {
+  background: linear-gradient(135deg, hsl(var(--color-emerald)), hsl(var(--color-emerald-light)));
 }
 
 /* Subtle shadows for depth */

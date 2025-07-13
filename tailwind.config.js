@@ -66,6 +66,27 @@ export default {
           900: 'hsl(var(--color-brand-900))',
           950: 'hsl(var(--color-brand-950))',
         },
+        // Indian theme specific colors
+        emerald: {
+          DEFAULT: 'hsl(var(--color-emerald))',
+          light: 'hsl(var(--color-emerald-light))',
+        },
+        'deep-blue': 'hsl(var(--color-deep-blue))',
+        charcoal: 'hsl(var(--color-charcoal))',
+        ivory: 'hsl(var(--color-ivory))',
+        saffron: {
+          DEFAULT: 'hsl(var(--color-primary))',
+          50: 'hsl(var(--color-brand-50))',
+          100: 'hsl(var(--color-brand-100))',
+          200: 'hsl(var(--color-brand-200))',
+          300: 'hsl(var(--color-brand-300))',
+          400: 'hsl(var(--color-brand-400))',
+          500: 'hsl(var(--color-brand-500))',
+          600: 'hsl(var(--color-brand-600))',
+          700: 'hsl(var(--color-brand-700))',
+          800: 'hsl(var(--color-brand-800))',
+          900: 'hsl(var(--color-brand-900))',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],

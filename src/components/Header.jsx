@@ -29,13 +29,13 @@ export const Header = () => {
       <header className="w-full bg-card/95 backdrop-blur-md text-foreground sticky top-0 z-50 shadow-educational border-b border-border">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo/Brand */}
+            {/* Logo/Brand - Using Saffron gradient */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-brand-600 rounded-xl flex items-center justify-center shadow-educational">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary via-brand-500 to-brand-600 rounded-xl flex items-center justify-center shadow-educational">
                 <BookOpen className="w-7 h-7 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-brand-700 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary via-brand-600 to-deep-blue bg-clip-text text-transparent">
                   TeacherConnect
                 </h1>
               </div>
@@ -49,7 +49,7 @@ export const Header = () => {
                   <button
                     key={item.id}
                     onClick={item.action}
-                    className="flex items-center space-x-2 px-4 py-2.5 rounded-lg transition-all duration-300 text-foreground hover:bg-accent hover:text-primary font-medium hover:shadow-educational group"
+                    className="flex items-center space-x-2 px-4 py-2.5 rounded-lg transition-all duration-300 text-foreground hover:bg-emerald-light hover:text-emerald font-medium hover:shadow-educational group"
                   >
                     <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     <span>{item.label}</span>
@@ -68,7 +68,7 @@ export const Header = () => {
                   }}
                   size="sm"
                   variant="outline"
-                  className="border-2 border-primary/20 hover:border-primary hover:bg-primary/5 text-foreground hover:text-primary font-medium transition-all duration-200 hover:shadow-educational"
+                  className="border-2 border-emerald/30 hover:border-emerald hover:bg-emerald-light text-foreground hover:text-emerald font-medium transition-all duration-200 hover:shadow-educational"
                 >
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
@@ -78,21 +78,21 @@ export const Header = () => {
                     <div className="py-2">
                       <Link 
                         to="/teacher-register" 
-                        className="block px-4 py-3 text-sm text-foreground hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                        className="block px-4 py-3 text-sm text-foreground hover:bg-emerald-light hover:text-emerald transition-all duration-200 border-l-2 border-transparent hover:border-emerald"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         Teacher Registration
                       </Link>
                       <Link 
                         to="/school-register" 
-                        className="block px-4 py-3 text-sm text-foreground hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                        className="block px-4 py-3 text-sm text-foreground hover:bg-emerald-light hover:text-emerald transition-all duration-200 border-l-2 border-transparent hover:border-emerald"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         School Registration
                       </Link>
                       <Link 
                         to="/college-register" 
-                        className="block px-4 py-3 text-sm text-foreground hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                        className="block px-4 py-3 text-sm text-foreground hover:bg-emerald-light hover:text-emerald transition-all duration-200 border-l-2 border-transparent hover:border-emerald"
                         onClick={() => setShowRegisterDropdown(false)}
                       >
                         College Registration
@@ -108,7 +108,7 @@ export const Header = () => {
                     setShowLoginDropdown(!showLoginDropdown);
                     setShowRegisterDropdown(false);
                   }}
-                  className="bg-gradient-to-r from-primary to-brand-600 hover:from-primary/90 hover:to-brand-600/90 text-primary-foreground shadow-educational hover:shadow-educational-lg font-medium transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-primary via-brand-500 to-brand-600 hover:from-primary/90 hover:via-brand-500/90 hover:to-brand-600/90 text-primary-foreground shadow-educational hover:shadow-educational-lg font-medium transition-all duration-300 transform hover:scale-105"
                 >
                   <LogIn className="w-4 h-4 mr-2" />
                   Sign In
@@ -118,21 +118,21 @@ export const Header = () => {
                     <div className="py-2">
                       <Link 
                         to="/teacher-login" 
-                        className="block px-4 py-3 text-sm text-foreground hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                        className="block px-4 py-3 text-sm text-foreground hover:bg-emerald-light hover:text-emerald transition-all duration-200 border-l-2 border-transparent hover:border-emerald"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         Teacher Login
                       </Link>
                       <Link 
                         to="/school-login" 
-                        className="block px-4 py-3 text-sm text-foreground hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                        className="block px-4 py-3 text-sm text-foreground hover:bg-emerald-light hover:text-emerald transition-all duration-200 border-l-2 border-transparent hover:border-emerald"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         School Login
                       </Link>
                       <Link 
                         to="/college-login" 
-                        className="block px-4 py-3 text-sm text-foreground hover:bg-accent hover:text-primary transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                        className="block px-4 py-3 text-sm text-foreground hover:bg-emerald-light hover:text-emerald transition-all duration-200 border-l-2 border-transparent hover:border-emerald"
                         onClick={() => setShowLoginDropdown(false)}
                       >
                         College Login
@@ -147,7 +147,7 @@ export const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden text-foreground hover:bg-accent hover:text-primary"
+              className="lg:hidden text-foreground hover:bg-emerald-light hover:text-emerald"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -164,7 +164,7 @@ export const Header = () => {
                     <button
                       key={item.id}
                       onClick={item.action}
-                      className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left text-foreground hover:bg-accent hover:text-primary transition-all duration-200"
+                      className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left text-foreground hover:bg-emerald-light hover:text-emerald transition-all duration-200"
                     >
                       <Icon className="w-5 h-5" />
                       <span>{item.label}</span>
@@ -175,7 +175,7 @@ export const Header = () => {
               
               {/* Mobile Auth Buttons */}
               <div className="mt-4 pt-4 border-t border-border/50 flex space-x-3">
-                <Button size="sm" variant="outline" className="flex-1 border-primary/20 text-foreground hover:bg-accent hover:text-primary font-medium">
+                <Button size="sm" variant="outline" className="flex-1 border-emerald/30 text-foreground hover:bg-emerald-light hover:text-emerald font-medium">
                   <UserPlus className="w-4 h-4 mr-2" />
                   Register
                 </Button>
